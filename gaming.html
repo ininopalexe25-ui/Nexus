@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS GAMING | Official Esports Gear & Battlestation Store</title>
+  
+  <!-- Google Fonts: Rubik (Headings) & Plus Jakarta Sans (Body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rubik:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            heading: ['"Rubik"', '"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            gaming: {
+              neon: '#00ff87',
+              emerald: '#10b981',
+              cyan: '#00f0ff',
+              rose: '#f43f5e',
+              crimson: '#ff0055',
+              violet: '#a855f7',
+              amber: '#f59e0b',
+              dark: '#08090e',
+              card: '#0f121d',
+              surface: '#151926',
+              border: '#1e2538'
+            },
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-zinc-50 text-zinc-900 dark:bg-[#08090e] dark:text-zinc-100 min-h-screen flex flex-col font-sans transition-colors duration-200">
+
+  <!-- ============================================================
+       CHROMA RGB LIGHTBAR
+       ============================================================ -->
+  <div class="h-[2.5px] w-full rgb-lightbar"></div>
+
+  <!-- ============================================================
+       TOP ANNOUNCEMENT BAR
+       ============================================================ -->
+  <aside class="bg-zinc-950 text-zinc-300 text-xs font-medium py-2 px-4 text-center border-b border-zinc-800/80">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 font-bold text-[10px] tracking-wider uppercase font-mono shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+          <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+          LIVE BATTLESTATION DEALS
+        </span>
+        <span class="hidden lg:inline text-zinc-400"><i class="fa-solid fa-truck-fast mr-1 text-emerald-400"></i> Gratis Ongkir All-ID: <strong class="text-white font-mono">GRATISONGKIR</strong></span>
+      </div>
+      
+      <span class="mx-auto sm:mx-0 font-semibold tracking-wide">
+        <i class="fa-solid fa-bolt text-rose-500 mr-1 animate-pulse"></i>
+        Turnamen Flash Sale: Diskon Ekstra 10% Kode: <strong class="text-emerald-400 font-mono font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded border border-emerald-500/30">HEMAT10</strong>
+      </span>
+
+      <div class="hidden md:flex items-center gap-3 text-zinc-400 text-[11px] font-mono">
+        <a href="#katalog" class="hover:text-emerald-400 transition">KATALOG GEAR</a>
+        <span>•</span>
+        <a href="#keunggulan" class="hover:text-emerald-400 transition">GARANSI RESMI</a>
+        <span>•</span>
+        <a href="#ulasan" class="hover:text-emerald-400 transition">REVIEW</a>
+        <span>•</span>
+        <a href="#faq" class="hover:text-emerald-400 transition">FAQ</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       STICKY NAVBAR & SMART NAVIGATION
+       ============================================================ -->
+  <header class="sticky top-0 z-40 glass-effect transition-all duration-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Brand Logo -->
+        <a href="#" class="flex items-center gap-2.5 shrink-0 group">
+          <div class="relative w-10 h-10 rounded-xl bg-zinc-900 border border-emerald-500/50 flex items-center justify-center text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.3)] group-hover:scale-105 group-hover:shadow-[0_0_20px_rgba(0,255,135,0.5)] transition-all duration-200">
+            <i class="fa-solid fa-gamepad text-lg group-hover:rotate-6 transition-transform"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-emerald-400 rounded-full gaming-pulse"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="text-2xl font-black tracking-tight text-zinc-950 dark:text-white">NEXUS</span>
+              <span class="bg-gradient-to-r from-emerald-500 to-cyan-500 text-zinc-950 text-[10px] font-black px-1.5 py-0.5 rounded tracking-wider uppercase shadow-[0_0_10px_rgba(0,255,135,0.4)]">GEAR</span>
+            </div>
+            <span class="text-[10px] font-semibold block uppercase tracking-widest text-emerald-600 dark:text-emerald-400 -mt-1 font-mono">Official Esports Store</span>
+          </div>
+        </a>
+
+        <!-- Live Search Bar with Debounce -->
+        <div class="flex-1 max-w-2xl relative hidden md:block">
+          <div class="relative flex items-center">
+            <span class="absolute left-4 text-zinc-400 dark:text-zinc-500 pointer-events-none">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </span>
+            <input 
+              type="text" 
+              id="searchInput" 
+              placeholder="Cari 8KHz mouse, mechanical keyboard, OLED 240Hz, RTX 4080..." 
+              class="w-full pl-11 pr-10 py-2.5 rounded-full bg-zinc-100/90 dark:bg-zinc-900/90 border border-zinc-200 dark:border-zinc-800 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 focus:shadow-[0_0_15px_rgba(16,185,129,0.3)] transition placeholder-zinc-400 dark:placeholder-zinc-500 font-medium"
+            >
+            <button 
+              id="clearSearchBtn" 
+              class="hidden absolute right-3 w-6 h-6 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-500 hover:text-zinc-700 dark:hover:text-zinc-200 flex items-center justify-center text-xs transition"
+              title="Hapus Pencarian"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Action Buttons (Theme, Wishlist, Cart, Luxury Edition) -->
+        <div class="flex items-center gap-2 sm:gap-3">
+          
+          <!-- Switch to Apex Luxury Edition -->
+          <a 
+            href="index.html" 
+            class="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 hover:border-emerald-400 text-emerald-400 hover:text-emerald-300 text-xs font-bold font-mono transition shadow-xs"
+            title="Kunjungi Nexus Apex Luxury Battlestation Atelier"
+          >
+            <i class="fa-solid fa-crown text-[10px]"></i>
+            <span class="hidden md:inline">APEX LUXURY</span>
+          </a>
+
+          <!-- Dark/Light Mode Toggle -->
+          <button 
+            id="themeToggleBtn" 
+            class="w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-transparent dark:border-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:border-emerald-500/40 text-zinc-600 dark:text-zinc-300 flex items-center justify-center transition shadow-xs"
+            title="Ubah Mode Tampilan"
+          >
+            <i id="themeIcon" class="fa-regular fa-sun text-lg text-amber-400"></i>
+          </button>
+
+          <!-- Wishlist Button -->
+          <button 
+            id="wishlistDrawerBtn" 
+            class="relative w-10 h-10 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-transparent dark:border-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-800 hover:border-rose-500/40 text-zinc-600 dark:text-zinc-300 flex items-center justify-center transition shadow-xs"
+            title="Wishlist Tersimpan"
+          >
+            <i class="fa-regular fa-heart text-lg hover:text-rose-500 transition-colors"></i>
+            <span 
+              id="wishlistCountBadge" 
+              class="hidden absolute -top-1.5 -right-1.5 bg-rose-500 text-white text-[11px] font-bold w-5 h-5 rounded-full flex items-center justify-center border-2 border-white dark:border-zinc-900 shadow-[0_0_10px_rgba(244,63,94,0.5)] font-mono"
+            >
+              0
+            </span>
+          </button>
+
+          <!-- Shopping Cart Button with Count Badge & Bounce -->
+          <button 
+            id="cartDrawerBtn" 
+            class="relative flex items-center gap-2.5 h-10 px-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 font-black text-sm shadow-[0_0_15px_rgba(16,185,129,0.35)] transition group cursor-pointer"
+            title="Buka Keranjang Belanja"
+          >
+            <div id="cartIconWrapper" class="relative flex items-center">
+              <i class="fa-solid fa-cart-shopping text-sm text-zinc-950"></i>
+              <span 
+                id="cartCountBadge" 
+                class="hidden absolute -top-2 -right-2.5 bg-zinc-950 text-emerald-400 border border-emerald-400/40 text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center font-mono shadow-xs"
+              >
+                0
+              </span>
+            </div>
+            <span class="hidden sm:inline font-mono">KERANJANG</span>
+            <span id="navCartSubtotal" class="hidden lg:inline text-xs bg-zinc-950/20 text-zinc-950 px-2 py-0.5 rounded-md font-mono font-bold">Rp 0</span>
+          </button>
+
+        </div>
+      </div>
+
+      <!-- Mobile Search Bar (visible on small devices) -->
+      <div class="pb-3 md:hidden">
+        <div class="relative flex items-center">
+          <span class="absolute left-3.5 text-zinc-400 dark:text-zinc-500 pointer-events-none">
+            <i class="fa-solid fa-magnifying-glass text-sm"></i>
+          </span>
+          <input 
+            type="text" 
+            id="mobileSearchInput" 
+            placeholder="Cari mouse 8K, keyboard, monitor 240Hz..." 
+            class="w-full pl-9 pr-9 py-2 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-xs focus:outline-none focus:ring-2 focus:ring-emerald-500 transition"
+          >
+          <button 
+            id="mobileClearSearchBtn" 
+            class="hidden absolute right-3 w-5 h-5 rounded-full bg-zinc-200 dark:bg-zinc-800 text-zinc-500 flex items-center justify-center text-[10px]"
+          >
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO PROMOTION SECTION (GAMING BATTLESTATION)
+       ============================================================ -->
+  <section class="relative gaming-grid-bg bg-zinc-50 dark:bg-[#090b12] py-12 md:py-20 border-b border-zinc-200 dark:border-zinc-800/80 overflow-hidden">
+    <!-- Ambient Gaming Neon Orbs -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-emerald-500/10 dark:bg-emerald-500/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-32 -right-32 w-96 h-96 bg-cyan-500/10 dark:bg-cyan-500/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        
+        <!-- Hero Copy -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-xs font-bold font-mono tracking-wide shadow-[0_0_12px_rgba(16,185,129,0.2)]">
+            <span class="flex h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            #1 ESPORTS HARDWARE & BATTLESTATION RETAIL INDONESIA
+          </div>
+
+          <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight text-zinc-950 dark:text-white leading-[1.12]">
+            Dominasi Arena Turnamen dengan <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400 drop-shadow-[0_0_25px_rgba(0,255,135,0.4)]">Hardware Esports Juara</span>
+          </h1>
+
+          <p class="text-base sm:text-lg text-zinc-600 dark:text-zinc-300 max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Senjata periferal akurasi tinggi: mouse ultra-light 8KHz, keyboard hotswap Rapid Trigger, monitor OLED 240Hz, audio imaging spasial, dan kartu grafis RTX 40-Series bergaransi resmi distributor Indonesia.
+          </p>
+
+          <!-- CTAs and Benefits -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 sm:gap-4 pt-2">
+            <a 
+              href="#katalog" 
+              class="w-full sm:w-auto px-7 py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 font-black text-sm shadow-[0_0_20px_rgba(16,185,129,0.4)] flex items-center justify-center gap-2 transition hover:-translate-y-0.5 cursor-pointer uppercase tracking-wider font-mono"
+            >
+              <i class="fa-solid fa-gamepad"></i>
+              JELAJAHI GEAR GAMING
+            </a>
+            <a 
+              href="#flashSaleSection" 
+              class="w-full sm:w-auto px-6 py-3.5 rounded-xl bg-zinc-900/90 dark:bg-zinc-900 hover:bg-zinc-800 text-white border border-zinc-700 hover:border-rose-500/50 hover:shadow-[0_0_15px_rgba(244,63,94,0.3)] font-bold text-sm flex items-center justify-center gap-2 transition cursor-pointer font-mono"
+            >
+              <i class="fa-solid fa-bolt text-rose-500 animate-pulse"></i>
+              FLASH SALE ARENA
+            </a>
+          </div>
+
+          <!-- Trust Badges with Cyber HUD Styling -->
+          <div class="grid grid-cols-3 gap-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80 max-w-md mx-auto lg:mx-0">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-sm shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                <i class="fa-solid fa-bolt"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-xs font-bold text-zinc-800 dark:text-zinc-200">0.01ms Latency</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Standar Turnamen</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-sm shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                <i class="fa-solid fa-shield-halved"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-xs font-bold text-zinc-800 dark:text-zinc-200">100% Resmi</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Distributor Resmi ID</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-emerald-500/10 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-sm shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                <i class="fa-solid fa-box-open"></i>
+              </div>
+              <div class="text-left">
+                <p class="text-xs font-bold text-zinc-800 dark:text-zinc-200">Packing Kayu</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Aman Kirim Monitor/PC</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual Showcase -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Hero Card Main with Gaming Border Glow -->
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-emerald-500/30 dark:border-emerald-500/40 bg-white dark:bg-[#0f121d] group hover:border-emerald-400 transition-colors duration-300">
+              <img 
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/PlayStation_5_and_DualSense.jpg?width=800" 
+                alt="Sony PlayStation 5 Slim Disc Edition" 
+                class="w-full h-80 object-cover group-hover:scale-105 transition-transform duration-500"
+              >
+              <div class="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/60 to-transparent flex flex-col justify-end p-6 text-white">
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="inline-block px-2.5 py-1 rounded-md bg-emerald-500 text-zinc-950 text-xs font-black uppercase tracking-wider shadow-[0_0_10px_rgba(0,255,135,0.4)] font-mono">PILIHAN UTAMA</span>
+                  <span class="text-[10px] text-emerald-400 font-mono font-bold bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 rounded">4K 120FPS HDR</span>
+                </div>
+                <h3 class="text-xl font-bold">Sony PlayStation 5 Slim Disc Edition</h3>
+                <p class="text-xs text-zinc-300 mt-1 line-clamp-2">Konsol gaming flagship dengan SSD 1TB ultra-high speed, visual 4K 120Hz, Ray Tracing, dan kontroler DualSense haptic feedback.</p>
+                <div class="mt-3 flex items-center justify-between">
+                  <div class="flex items-baseline gap-2">
+                    <span class="text-lg font-black text-emerald-400 font-mono drop-shadow-[0_0_10px_rgba(16,185,129,0.3)]">Rp 8.999.000</span>
+                    <span class="text-xs text-zinc-400 line-through font-mono">Rp 9.999.000</span>
+                  </div>
+                  <button 
+                    data-action="open-detail" 
+                    data-product-id="CON-001" 
+                    class="px-3.5 py-1.5 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs transition cursor-pointer shadow-[0_0_10px_rgba(0,255,135,0.3)]"
+                  >
+                    Lihat Produk
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Promo Badge -->
+            <div class="absolute -bottom-4 -left-3 sm:-left-5 bg-white dark:bg-[#0f121d] border border-emerald-500/30 rounded-xl p-3 shadow-xl flex items-center gap-3 backdrop-blur-md">
+              <div class="w-9 h-9 rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-base shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+                <i class="fa-solid fa-gamepad"></i>
+              </div>
+              <div>
+                <p class="text-xs font-bold text-zinc-900 dark:text-white font-mono">Kode HEMAT10</p>
+                <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Ekstra diskon 10% semua hardware</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       GAMING DEPARTMENTS / QUICK NAV SECTION
+       ============================================================ -->
+  <section class="py-8 bg-zinc-100/90 dark:bg-[#0c0e17] border-b border-zinc-200 dark:border-zinc-800/80">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h2 class="text-sm sm:text-base font-extrabold uppercase tracking-wider text-zinc-900 dark:text-white flex items-center gap-2 font-mono">
+            <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 gaming-pulse"></span>
+            KATEGORI GEAR & DEPARTEMEN BATTLESTATION
+          </h2>
+        </div>
+        <a href="#katalog" class="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-300 flex items-center gap-1 font-mono transition">
+          LIHAT 140 GEAR <i class="fa-solid fa-arrow-right text-[10px]"></i>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+        
+        <!-- Dept 1: Rakit PC (Cyan Neon) -->
+        <button 
+          data-action="category-filter" 
+          data-category="Komponen Rakit PC" 
+          class="p-3.5 rounded-xl bg-white dark:bg-[#111422] border border-zinc-200/90 dark:border-zinc-800/80 hover:border-cyan-400 dark:hover:border-cyan-400 hover:shadow-[0_0_20px_rgba(0,240,255,0.25)] text-left transition-all duration-200 group shadow-xs cursor-pointer flex flex-col justify-between"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-cyan-500/15 text-cyan-400 border border-cyan-500/30 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(0,240,255,0.2)]">
+              <i class="fa-solid fa-microchip"></i>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">50+ ITEM</span>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-cyan-400 transition leading-tight font-heading">Rakit PC</h3>
+            <p class="text-[10px] text-zinc-400 truncate mt-0.5 font-sans">CPU, GPU, RAM, Cooler</p>
+          </div>
+        </button>
+
+        <!-- Dept 2: PC & Konsol (Emerald Neon) -->
+        <button 
+          data-action="category-filter" 
+          data-category="PC & Konsol Gaming" 
+          class="p-3.5 rounded-xl bg-white dark:bg-[#111422] border border-zinc-200/90 dark:border-zinc-800/80 hover:border-emerald-400 dark:hover:border-emerald-400 hover:shadow-[0_0_20px_rgba(16,185,129,0.25)] text-left transition-all duration-200 group shadow-xs cursor-pointer flex flex-col justify-between"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-emerald-500/15 text-emerald-400 border border-emerald-500/30 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(16,185,129,0.2)]">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">20+ ITEM</span>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-emerald-400 transition leading-tight font-heading">PC & Konsol</h3>
+            <p class="text-[10px] text-zinc-400 truncate mt-0.5 font-sans">PS5, Xbox, ROG Ally</p>
+          </div>
+        </button>
+
+        <!-- Dept 3: Keyboard & Mouse (Amber/Gold Neon) -->
+        <button 
+          data-action="category-filter" 
+          data-category="Keyboard & Mouse Gaming" 
+          class="p-3.5 rounded-xl bg-white dark:bg-[#111422] border border-zinc-200/90 dark:border-zinc-800/80 hover:border-amber-400 dark:hover:border-amber-400 hover:shadow-[0_0_20px_rgba(245,158,11,0.25)] text-left transition-all duration-200 group shadow-xs cursor-pointer flex flex-col justify-between"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-amber-500/15 text-amber-400 border border-amber-500/30 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(245,158,11,0.2)]">
+              <i class="fa-solid fa-keyboard"></i>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-amber-500/10 text-amber-400 border border-amber-500/20">30+ ITEM</span>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-amber-400 transition leading-tight font-heading">Keyboard & Mouse</h3>
+            <p class="text-[10px] text-zinc-400 truncate mt-0.5 font-sans">8KHz, Rapid Trigger</p>
+          </div>
+        </button>
+
+        <!-- Dept 4: Audio & Headset (Purple Neon) -->
+        <button 
+          data-action="category-filter" 
+          data-category="Audio & Headset Gaming" 
+          class="p-3.5 rounded-xl bg-white dark:bg-[#111422] border border-zinc-200/90 dark:border-zinc-800/80 hover:border-purple-400 dark:hover:border-purple-400 hover:shadow-[0_0_20px_rgba(168,85,247,0.25)] text-left transition-all duration-200 group shadow-xs cursor-pointer flex flex-col justify-between"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-purple-500/15 text-purple-400 border border-purple-500/30 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(168,85,247,0.2)]">
+              <i class="fa-solid fa-headphones"></i>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-purple-500/10 text-purple-400 border border-purple-500/20">18+ ITEM</span>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-purple-400 transition leading-tight font-heading">Audio & Headset</h3>
+            <p class="text-[10px] text-zinc-400 truncate mt-0.5 font-sans">Spatial 7.1, Mic IEM</p>
+          </div>
+        </button>
+
+        <!-- Dept 5: Monitor Gaming (Rose Neon) -->
+        <button 
+          data-action="category-filter" 
+          data-category="Monitor & Setup Gaming" 
+          class="p-3.5 rounded-xl bg-white dark:bg-[#111422] border border-zinc-200/90 dark:border-zinc-800/80 hover:border-rose-400 dark:hover:border-rose-400 hover:shadow-[0_0_20px_rgba(244,63,94,0.25)] text-left transition-all duration-200 group shadow-xs cursor-pointer flex flex-col justify-between"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-rose-500/15 text-rose-400 border border-rose-500/30 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(244,63,94,0.2)]">
+              <i class="fa-solid fa-desktop"></i>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-rose-500/10 text-rose-400 border border-rose-500/20">15+ ITEM</span>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-rose-400 transition leading-tight font-heading">Monitor Gaming</h3>
+            <p class="text-[10px] text-zinc-400 truncate mt-0.5 font-sans">OLED 240Hz, 360Hz IPS</p>
+          </div>
+        </button>
+
+        <!-- Dept 6: Kursi & Meja (Electric Blue) -->
+        <button 
+          data-action="category-filter" 
+          data-category="Kursi & Meja Gaming" 
+          class="p-3.5 rounded-xl bg-white dark:bg-[#111422] border border-zinc-200/90 dark:border-zinc-800/80 hover:border-blue-400 dark:hover:border-blue-400 hover:shadow-[0_0_20px_rgba(59,130,246,0.25)] text-left transition-all duration-200 group shadow-xs cursor-pointer flex flex-col justify-between"
+        >
+          <div class="flex items-center justify-between mb-3">
+            <div class="w-10 h-10 rounded-lg bg-blue-500/15 text-blue-400 border border-blue-500/30 flex items-center justify-center text-lg group-hover:scale-110 transition-transform shadow-[0_0_10px_rgba(59,130,246,0.2)]">
+              <i class="fa-solid fa-chair"></i>
+            </div>
+            <span class="text-[10px] font-mono font-bold px-1.5 py-0.5 rounded bg-blue-500/10 text-blue-400 border border-blue-500/20">7+ ITEM</span>
+          </div>
+          <div>
+            <h3 class="text-xs font-bold text-zinc-900 dark:text-white group-hover:text-blue-400 transition leading-tight font-heading">Kursi & Meja</h3>
+            <p class="text-[10px] text-zinc-400 truncate mt-0.5 font-sans">Ergonomis, Motorized</p>
+          </div>
+        </button>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FLASH SALE COUNTDOWN SECTION (ESPORTS ARENA)
+       ============================================================ -->
+  <section id="flashSaleSection" class="py-12 bg-gradient-to-b from-[#090b12] via-[#0d0f1a] to-[#090b12] text-white border-b border-zinc-800/80 relative overflow-hidden gaming-grid-bg">
+    <!-- Ambient Rose Glow -->
+    <div class="absolute -top-10 left-1/3 w-96 h-96 bg-rose-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Flash Sale Header & Timer -->
+      <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+        <div class="flex items-center gap-3">
+          <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rose-600 to-red-600 text-white flex items-center justify-center text-xl shadow-[0_0_20px_rgba(244,63,94,0.4)]">
+            <i class="fa-solid fa-bolt"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <h2 class="text-2xl font-black text-white uppercase tracking-tight font-heading">Flash Sale Esports Arena</h2>
+              <span class="bg-gradient-to-r from-rose-600 to-amber-500 text-white text-[10px] font-black px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-[0_0_12px_rgba(244,63,94,0.4)] flex items-center gap-1 font-mono">
+                <i class="fa-solid fa-fire animate-bounce"></i> ARENA LIVE
+              </span>
+            </div>
+            <p class="text-xs text-zinc-400">Diskon khusus perlengkapan pro-player dengan kuota stok terbatas!</p>
+          </div>
+        </div>
+
+        <!-- Real-time Countdown Timer with LED Glow -->
+        <div class="flex items-center gap-2 self-start md:self-auto bg-zinc-950/90 border border-rose-500/40 px-4 py-2.5 rounded-xl shadow-[0_0_20px_rgba(244,63,94,0.25)] backdrop-blur-md">
+          <span class="text-xs font-black text-rose-400 mr-2 uppercase tracking-wider flex items-center gap-1.5 font-mono">
+            <i class="fa-solid fa-stopwatch text-rose-500 animate-spin" style="animation-duration: 8s;"></i>
+            Berakhir Dalam:
+          </span>
+          <div class="flex items-center gap-1.5 font-mono font-black text-white">
+            <span id="countdownHours" class="bg-zinc-900 border border-rose-500/50 text-rose-400 px-2.5 py-1 rounded-md text-sm min-w-[36px] text-center shadow-[0_0_10px_rgba(244,63,94,0.3)]">08</span>
+            <span class="text-rose-500 text-base font-bold animate-pulse">:</span>
+            <span id="countdownMinutes" class="bg-zinc-900 border border-rose-500/50 text-rose-400 px-2.5 py-1 rounded-md text-sm min-w-[36px] text-center shadow-[0_0_10px_rgba(244,63,94,0.3)]">45</span>
+            <span class="text-rose-500 text-base font-bold animate-pulse">:</span>
+            <span id="countdownSeconds" class="bg-zinc-900 border border-rose-500/50 text-rose-400 px-2.5 py-1 rounded-md text-sm min-w-[36px] text-center shadow-[0_0_10px_rgba(244,63,94,0.3)]">20</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Flash Sale Product Grid -->
+      <div id="flashSaleContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CATALOG, MULTI-CRITERIA FILTERING & SEARCH SECTION
+       ============================================================ -->
+  <main id="katalog" class="flex-1 py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Catalog Section Header -->
+      <div class="mb-8 flex flex-col md:flex-row md:items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">Katalog Perangkat & Aksesoris Gaming</h2>
+          <p class="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Eksplorasi senjata periferal dan komponen pendukung untuk memaksimalkan win-rate Anda.</p>
+        </div>
+        <div class="text-xs text-zinc-500 dark:text-zinc-400">
+          Menampilkan <strong id="productCountLabel" class="text-emerald-600 dark:text-emerald-400 font-bold font-mono">0</strong> gear terverifikasi
+        </div>
+      </div>
+
+      <!-- Category Filter Pills Bar -->
+      <div class="mb-6 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none" id="categoryPillsContainer">
+        <!-- Category pills generated dynamically -->
+      </div>
+
+      <!-- Advanced Filter & Sorting Toolbar -->
+      <div class="bg-white dark:bg-[#0f121d] p-4 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 shadow-sm mb-8 space-y-4">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-4 items-center">
+          
+          <!-- Price Range Min & Max Inputs -->
+          <div class="md:col-span-5 flex items-center gap-2">
+            <div class="relative flex-1">
+              <span class="absolute left-3 top-2.5 text-xs text-zinc-400 font-semibold font-mono">Min</span>
+              <input 
+                type="number" 
+                id="minPriceInput" 
+                placeholder="Rp 0" 
+                min="0"
+                class="w-full pl-11 pr-3 py-2 text-xs rounded-xl bg-zinc-50 dark:bg-[#151928] border border-zinc-200 dark:border-zinc-700/80 focus:outline-none focus:ring-2 focus:ring-emerald-400 font-mono"
+              >
+            </div>
+            <span class="text-zinc-400 text-xs font-bold">-</span>
+            <div class="relative flex-1">
+              <span class="absolute left-3 top-2.5 text-xs text-zinc-400 font-semibold font-mono">Max</span>
+              <input 
+                type="number" 
+                id="maxPriceInput" 
+                placeholder="Rp Tak Terbatas" 
+                min="0"
+                class="w-full pl-11 pr-3 py-2 text-xs rounded-xl bg-zinc-50 dark:bg-[#151928] border border-zinc-200 dark:border-zinc-700/80 focus:outline-none focus:ring-2 focus:ring-emerald-400 font-mono"
+              >
+            </div>
+            <button 
+              id="applyPriceFilterBtn" 
+              class="px-4 py-2 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 font-black text-xs font-mono transition shadow-[0_0_12px_rgba(16,185,129,0.3)] shrink-0 cursor-pointer"
+            >
+              FILTER
+            </button>
+          </div>
+
+          <!-- Rating 4.0+ Filter Checkbox -->
+          <div class="md:col-span-3 flex items-center">
+            <label class="flex items-center gap-2 cursor-pointer select-none text-xs font-semibold text-zinc-700 dark:text-zinc-300 font-mono">
+              <input 
+                type="checkbox" 
+                id="ratingFilterCheckbox" 
+                class="w-4 h-4 rounded text-emerald-500 focus:ring-emerald-400 dark:bg-zinc-800 border-zinc-300 dark:border-zinc-700 accent-emerald-500"
+              >
+              <span>Hanya Rating <i class="fa-solid fa-star text-amber-400 ml-0.5"></i> 4.0+</span>
+            </label>
+          </div>
+
+          <!-- Sort Dropdown -->
+          <div class="md:col-span-4 flex items-center justify-end gap-2">
+            <span class="text-xs text-zinc-500 dark:text-zinc-400 shrink-0 font-medium font-mono">Urutkan:</span>
+            <select 
+              id="sortSelect" 
+              class="w-full sm:w-auto text-xs py-2 px-3 rounded-xl bg-zinc-50 dark:bg-[#151928] border border-zinc-200 dark:border-zinc-700/80 focus:outline-none focus:ring-2 focus:ring-emerald-400 font-medium text-zinc-800 dark:text-zinc-200 cursor-pointer"
+            >
+              <option value="relevance">Paling Relevan</option>
+              <option value="price-asc">Harga Terendah ke Tertinggi</option>
+              <option value="price-desc">Harga Tertinggi ke Terendah</option>
+              <option value="sold-desc">Terlaris (Pro Choice)</option>
+              <option value="rating-desc">Rating Tertinggi</option>
+            </select>
+          </div>
+
+        </div>
+
+        <!-- Quick Price Range Shortcuts with Gaming Hotkey Styling -->
+        <div class="flex items-center gap-1.5 flex-wrap pt-2 border-t border-zinc-100 dark:border-zinc-800/80 text-[11px] font-mono">
+          <span class="text-emerald-500 font-bold mr-1 flex items-center gap-1"><i class="fa-solid fa-sliders text-xs"></i> Rentang Cepat:</span>
+          <button data-action="quick-price-filter" data-min="" data-max="" class="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:text-emerald-400 border border-transparent dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-bold transition cursor-pointer">Semua</button>
+          <button data-action="quick-price-filter" data-min="0" data-max="1000000" class="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:text-emerald-400 border border-transparent dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-bold transition cursor-pointer">&lt; Rp 1 Jt</button>
+          <button data-action="quick-price-filter" data-min="1000000" data-max="5000000" class="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:text-emerald-400 border border-transparent dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-bold transition cursor-pointer">Rp 1 Jt - 5 Jt</button>
+          <button data-action="quick-price-filter" data-min="5000000" data-max="15000000" class="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:text-emerald-400 border border-transparent dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-bold transition cursor-pointer">Rp 5 Jt - 15 Jt</button>
+          <button data-action="quick-price-filter" data-min="15000000" data-max="" class="px-2.5 py-1 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 hover:text-emerald-400 border border-transparent dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 font-bold transition cursor-pointer">&gt; Rp 15 Jt</button>
+        </div>
+
+        <!-- Active Filter Indicator & Reset Button -->
+        <div id="activeFilterTags" class="hidden pt-2 border-t border-zinc-100 dark:border-zinc-800/80 flex flex-wrap items-center gap-2 text-xs">
+          <span class="text-zinc-500">Filter Aktif:</span>
+          <div id="filterChipsList" class="flex flex-wrap gap-1.5"></div>
+          <button 
+            id="resetAllFiltersBtn" 
+            class="text-rose-500 hover:text-rose-600 font-semibold ml-2 underline transition text-xs"
+          >
+            Reset Semua Filter
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Products Grid Container -->
+      <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Products or Skeleton Loading rendered by JavaScript -->
+      </div>
+
+      <!-- Pagination Controls Bar -->
+      <div id="paginationContainer" class="mt-10 flex flex-col sm:flex-row items-center justify-between gap-4 py-4 px-6 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm">
+        <div class="text-xs text-zinc-500 dark:text-zinc-400" id="paginationInfoLabel">
+          Menampilkan <span class="font-bold text-zinc-900 dark:text-white font-mono" id="pageRangeLabel">1-16</span> dari <span class="font-bold text-zinc-900 dark:text-white font-mono" id="totalItemsLabel">140</span> gear gaming
+        </div>
+        <div class="flex items-center gap-1.5 flex-wrap justify-center" id="paginationButtons">
+          <!-- Page buttons rendered by JavaScript -->
+        </div>
+      </div>
+
+      <!-- Empty State View (Shown when 0 items found) -->
+      <div id="emptyState" class="hidden py-16 text-center">
+        <div class="max-w-md mx-auto p-8 rounded-2xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 shadow-sm space-y-4">
+          <div class="w-16 h-16 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center text-3xl mx-auto">
+            <i class="fa-solid fa-box-open"></i>
+          </div>
+          <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Tidak Ada Produk yang Cocok</h3>
+          <p class="text-xs text-zinc-500 dark:text-zinc-400">
+            Kombinasi kata kunci atau filter harga yang Anda tentukan belum menemukan hasil. Coba atur ulang filter pencarian Anda.
+          </p>
+          <button 
+            id="emptyStateResetBtn" 
+            class="px-5 py-2.5 rounded-xl bg-zinc-900 hover:bg-black dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-bold shadow-sm transition"
+          >
+            Reset Semua Filter
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- ============================================================
+       TRUST PILLARS / HARDWARE GUARANTEE SECTION
+       ============================================================ -->
+  <section id="keunggulan" class="py-16 bg-zinc-900 border-y border-zinc-800 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <span class="text-emerald-400 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-1.5 mb-2 font-mono">
+          <i class="fa-solid fa-shield-halved"></i>
+          Nexus Certified Hardware
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Standar Ekosistem Gaming Profesional</h2>
+        <p class="text-xs sm:text-sm text-zinc-400 mt-2">
+          Kami bukan sekadar menjual barang; kami memastikan setiap gear terkalibrasi dan siap untuk skenario kompetitif tanpa kompromi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Pillar 1 -->
+        <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800/80 hover:border-zinc-700 transition space-y-3 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white">100% Garansi Distributor Resmi</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Unit original dari distributor tunggal Indonesia (Astrindo, Surya Candra, EMD, DTG). Bebas risiko barang black market atau refurbish.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800/80 hover:border-zinc-700 transition space-y-3 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white">QC & Stress Test Mandiri</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Khusus komponen rakitan PC dan monitor, tim kami melakukan uji stabilitas suhu, benchmark sintetis 3DMark, dan verifikasi zero dead-pixel.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800/80 hover:border-zinc-700 transition space-y-3 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-box-archive"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white">Packing Kayu & Asuransi 100%</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Pengiriman monitor OLED dan casing tempered glass dilengkapi palet kayu bersertifikasi serta asuransi ekspedisi ganti unit baru bila ada kerusakan.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="bg-zinc-950 p-6 rounded-2xl border border-zinc-800/80 hover:border-zinc-700 transition space-y-3 group">
+          <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 class="text-sm font-bold text-white">Konsultasi Battlestation Tech</h3>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Konsultasi langsung dengan PC Builder profesional seputar kompatibilitas motherboard, GPU clearance, dan tuning latency perifer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       VERIFIED ESPORTS PRO & COMMUNITY REVIEWS
+       ============================================================ -->
+  <section id="ulasan" class="py-16 bg-white dark:bg-zinc-950 transition-colors">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-10">
+        <div>
+          <span class="text-emerald-600 dark:text-emerald-400 font-bold text-xs uppercase tracking-widest flex items-center gap-1.5 mb-2 font-mono">
+            <i class="fa-solid fa-users"></i>
+            Suara Komunitas & Atlet
+          </span>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
+            Dipercaya Komunitas & Pro Player Nusantara
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+            Ulasan nyata dari pengguna kompetitif yang membutuhkan stabilitas frame rate dan presisi sensor tertinggi.
+          </p>
+        </div>
+        <div class="flex items-center gap-3 bg-zinc-50 dark:bg-zinc-900 px-4 py-2 rounded-xl border border-zinc-200 dark:border-zinc-800 self-start md:self-auto">
+          <div class="flex text-amber-400 text-sm">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <span class="text-xs font-bold text-zinc-900 dark:text-white font-mono">4.9 / 5.0</span>
+          <span class="text-xs text-zinc-400">(4.800+ Pembeli Terverifikasi)</span>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Review 1 -->
+        <div class="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-400 text-xs">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] text-zinc-400 font-mono">2 hari lalu</span>
+            </div>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed italic">
+              "Beli Razer Viper V3 Pro dan mousepad Artisan Zero di Nexus Gear buat persiapan kualifikasi turnamen. Paket tiba H+1 di Surabaya, packing kayu super solid. Sensor 8000Hz jalan mulus tanpa stuttering. Sangat recommended!"
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-200/60 dark:border-zinc-800 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-zinc-800 text-emerald-400 font-black flex items-center justify-center text-xs font-mono">
+              KP
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
+                Kevin "ViperX" Pratama
+                <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]" title="Pembeli Terverifikasi"></i>
+              </h4>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Radiant Valorant • Pembeli Razer Viper V3 Pro</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 2 -->
+        <div class="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-400 text-xs">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] text-zinc-400 font-mono">5 hari lalu</span>
+            </div>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed italic">
+              "Order paketan Rakit PC Ryzen 7 7800X3D + RTX 4080 Super dan case Fractal North. Kabel di-manage rapi banget sampai bagian belakang. Suhu GPU cuma 62°C pas streaming 1440p berjam-jam. Invoice dan stiker garansi lengkap."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-200/60 dark:border-zinc-800 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-zinc-800 text-purple-400 font-black flex items-center justify-center text-xs font-mono">
+              SA
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
+                Sarah Amanda
+                <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]" title="Pembeli Terverifikasi"></i>
+              </h4>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Content Creator & Streamer • Rakit PC Battlestation</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Review 3 -->
+        <div class="bg-zinc-50 dark:bg-zinc-900 p-6 rounded-2xl border border-zinc-200/80 dark:border-zinc-800 flex flex-col justify-between space-y-4">
+          <div class="space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-amber-400 text-xs">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[11px] text-zinc-400 font-mono">1 minggu lalu</span>
+            </div>
+            <p class="text-xs text-zinc-700 dark:text-zinc-300 leading-relaxed italic">
+              "Klaim garansi headset SteelSeries Arctis Nova Pro Wireless sangat responsif. CS bantu forward ke distributor resmi dan unit replacement baru sampai dalam tempo 48 jam. Customer service paling terpercaya untuk gear mahal."
+            </p>
+          </div>
+          <div class="pt-4 border-t border-zinc-200/60 dark:border-zinc-800 flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-zinc-800 text-cyan-400 font-black flex items-center justify-center text-xs font-mono">
+              RA
+            </div>
+            <div>
+              <h4 class="text-xs font-bold text-zinc-900 dark:text-white flex items-center gap-1.5">
+                Rian Adhitama
+                <i class="fa-solid fa-circle-check text-emerald-500 text-[10px]" title="Pembeli Terverifikasi"></i>
+              </h4>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Competitive Sim-Racer • Pembeli SteelSeries Nova Pro</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FREQUENTLY ASKED QUESTIONS (FAQ) ACCORDION
+       ============================================================ -->
+  <section id="faq" class="py-16 bg-zinc-50 dark:bg-zinc-900/60 border-t border-zinc-200 dark:border-zinc-800">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-10">
+        <span class="text-emerald-600 dark:text-emerald-400 font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-1.5 mb-2 font-mono">
+          <i class="fa-solid fa-circle-question"></i>
+          Pusat Bantuan & FAQ
+        </span>
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-zinc-900 dark:text-white tracking-tight">
+          Pertanyaan yang Sering Diajukan
+        </h2>
+        <p class="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mt-1">
+          Transparansi penuh mengenai garansi distributor, metode pengiriman hardware, dan penggunaan voucher promo.
+        </p>
+      </div>
+
+      <div class="space-y-3.5">
+        <!-- FAQ 1 -->
+        <details class="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 cursor-pointer shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-xs sm:text-sm text-zinc-900 dark:text-white select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-shield-halved text-emerald-500 text-sm"></i>
+              Bagaimana status garansi produk yang dijual di Nexus Gear?
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 group-open:rotate-180 transition-transform duration-200 faq-chevron shrink-0 ml-2"></i>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Semua produk berstatus <strong>100% Baru & Garansi Resmi Distributor Indonesia</strong> (seperti PT. Astrindo Senayasa, PT. Surya Candra, PT. Nusantara Jaya Teknologi, DTG, dan EMD). Setiap pembelian disertakan nomor serial tercatat dan invoice resmi untuk kemudahan klaim di service center resmi seluruh Indonesia.
+          </div>
+        </details>
+
+        <!-- FAQ 2 -->
+        <details class="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 cursor-pointer shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-xs sm:text-sm text-zinc-900 dark:text-white select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-truck-fast text-emerald-500 text-sm"></i>
+              Apakah pengiriman monitor gaming dan rakitan PC aman ke luar pulau?
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 group-open:rotate-180 transition-transform duration-200 faq-chevron shrink-0 ml-2"></i>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Sangat aman. Khusus pengiriman monitor (termasuk panel OLED/Curved) dan komponen PC sensitif, kami menerapkan standar <strong>Triple-Layer Protective Packaging</strong>: bubble wrap tebal anti-statis, pengaman busa EPS, dan rangka packing kayu bersertifikat ekspedisi dengan asuransi penuh 100%.
+          </div>
+        </details>
+
+        <!-- FAQ 3 -->
+        <details class="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 cursor-pointer shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-xs sm:text-sm text-zinc-900 dark:text-white select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-ticket text-emerald-500 text-sm"></i>
+              Kode voucher promo apa saja yang bisa digunakan saat ini?
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 group-open:rotate-180 transition-transform duration-200 faq-chevron shrink-0 ml-2"></i>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Anda dapat memanfaatkan 3 voucher resmi aktif:
+            <ul class="list-disc list-inside mt-2 space-y-1 font-mono">
+              <li><strong class="text-emerald-600 dark:text-emerald-400 font-bold">HEMAT10</strong>: Diskon langsung 10% tanpa syarat minimum belanja.</li>
+              <li><strong class="text-emerald-600 dark:text-emerald-400 font-bold">BELANJA50</strong>: Potongan Rp 50.000 untuk transaksi minimal Rp 300.000.</li>
+              <li><strong class="text-emerald-600 dark:text-emerald-400 font-bold">GRATISONGKIR</strong>: Gratis biaya ongkir ke seluruh Indonesia.</li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- FAQ 4 -->
+        <details class="group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-5 cursor-pointer shadow-sm">
+          <summary class="flex items-center justify-between font-bold text-xs sm:text-sm text-zinc-900 dark:text-white select-none">
+            <span class="flex items-center gap-2.5">
+              <i class="fa-solid fa-tv text-emerald-500 text-sm"></i>
+              Bagaimana garansi Zero Dead Pixel untuk monitor gaming?
+            </span>
+            <i class="fa-solid fa-chevron-down text-xs text-zinc-400 group-open:rotate-180 transition-transform duration-200 faq-chevron shrink-0 ml-2"></i>
+          </summary>
+          <div class="mt-3 pt-3 border-t border-zinc-100 dark:border-zinc-800 text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed">
+            Kami memberlakukan jaminan <strong>7-Day Zero Dead Pixel Replacement</strong>. Jika dalam 7 hari setelah monitor diterima ditemukan bahkan 1 titik dead pixel atau bright sub-pixel, kami akan menukar unit dengan barang baru tanpa proses servis yang berbelit-belit.
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE-OVER SHOPPING CART DRAWER
+       ============================================================ -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300">
+    <!-- Backdrop Blur Overlay -->
+    <div 
+      id="cartBackdrop" 
+      class="absolute inset-0 bg-zinc-950/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+
+    <!-- Slide-over Drawer Panel -->
+    <div 
+      id="cartPanel" 
+      class="absolute inset-y-0 right-0 max-w-full w-full sm:w-[480px] bg-white dark:bg-zinc-900 shadow-2xl flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300 ease-out border-l border-zinc-200 dark:border-zinc-800"
+    >
+      <!-- Drawer Header -->
+      <div class="p-5 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-zinc-100 dark:bg-zinc-800 text-zinc-900 dark:text-white flex items-center justify-center">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-zinc-900 dark:text-white">Keranjang Belanja</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400"><span id="cartDrawerItemCount" class="font-mono">0</span> barang dipilih</p>
+          </div>
+        </div>
+        <button 
+          id="closeCartBtn" 
+          class="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-500 dark:text-zinc-400 flex items-center justify-center transition"
+          title="Tutup Keranjang"
+        >
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Items List Container -->
+      <div id="cartItemsList" class="flex-1 overflow-y-auto p-5 space-y-4 divide-y divide-zinc-100 dark:divide-zinc-800">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Drawer Footer & Calculations -->
+      <div id="cartDrawerFooter" class="p-5 bg-zinc-50 dark:bg-zinc-950/80 border-t border-zinc-200 dark:border-zinc-800 space-y-4">
+        
+        <!-- Voucher Input Box -->
+        <div class="space-y-1.5">
+          <div class="flex items-center gap-2">
+            <div class="relative flex-1">
+              <span class="absolute left-3 top-2.5 text-xs text-zinc-400"><i class="fa-solid fa-ticket"></i></span>
+              <input 
+                type="text" 
+                id="promoInput" 
+                placeholder="Kode Promo (HEMAT10, BELANJA50)" 
+                class="w-full pl-8 pr-3 py-2 text-xs rounded-xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 uppercase focus:outline-none focus:ring-2 focus:ring-emerald-500 font-mono font-semibold"
+              >
+            </div>
+            <button 
+              id="applyPromoBtn" 
+              class="px-4 py-2 rounded-xl bg-zinc-900 hover:bg-black dark:bg-white dark:hover:bg-zinc-100 text-white dark:text-zinc-950 text-xs font-bold transition shrink-0"
+            >
+              Terapkan
+            </button>
+          </div>
+
+          <!-- Applied Voucher Tag -->
+          <div id="appliedPromoBadge" class="hidden flex items-center justify-between bg-emerald-50 dark:bg-emerald-950/50 border border-emerald-200 dark:border-emerald-800 px-3 py-1.5 rounded-xl text-xs text-emerald-700 dark:text-emerald-300">
+            <div class="flex items-center gap-1.5">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Voucher Aktif: <strong id="appliedPromoCodeText" class="font-mono"></strong></span>
+            </div>
+            <button id="removePromoBtn" class="text-rose-500 hover:text-rose-600 font-bold ml-2">
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- Price Breakdown -->
+        <div class="space-y-1.5 text-xs">
+          <div class="flex justify-between text-zinc-600 dark:text-zinc-400">
+            <span>Subtotal Harga Produk</span>
+            <span id="cartSubtotalText" class="font-semibold text-zinc-900 dark:text-zinc-100 font-mono">Rp 0</span>
+          </div>
+          <div id="cartDiscountRow" class="hidden flex justify-between text-emerald-600 dark:text-emerald-400">
+            <span>Potongan Voucher Promo</span>
+            <span id="cartDiscountText" class="font-semibold font-mono">- Rp 0</span>
+          </div>
+          <div class="flex justify-between text-zinc-600 dark:text-zinc-400">
+            <span>Pajak PPN (11%)</span>
+            <span id="cartTaxText" class="font-semibold text-zinc-900 dark:text-zinc-100 font-mono">Rp 0</span>
+          </div>
+          <div class="flex justify-between text-zinc-600 dark:text-zinc-400">
+            <span>Estimasi Ongkir</span>
+            <span id="cartShippingText" class="font-semibold text-zinc-900 dark:text-zinc-100 font-mono">Rp 15.000</span>
+          </div>
+          <div class="border-t border-zinc-200 dark:border-zinc-800 pt-2 flex justify-between items-baseline text-sm font-bold text-zinc-900 dark:text-white">
+            <span>Total Akhir</span>
+            <span id="cartGrandTotalText" class="text-base font-black text-zinc-900 dark:text-white font-mono">Rp 0</span>
+          </div>
+        </div>
+
+        <!-- Drawer Actions -->
+        <div class="space-y-2">
+          <button 
+            id="proceedToCheckoutBtn" 
+            class="w-full py-3.5 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 font-black text-xs tracking-wider uppercase font-mono shadow-[0_0_20px_rgba(16,185,129,0.35)] flex items-center justify-center gap-2 transition cursor-pointer"
+          >
+            <span>LANJUT KE PEMBAYARAN</span>
+            <i class="fa-solid fa-arrow-right text-xs"></i>
+          </button>
+          
+          <button 
+            id="clearCartBtn" 
+            class="w-full py-2 rounded-xl text-zinc-500 hover:text-rose-500 dark:text-zinc-400 dark:hover:text-rose-400 text-xs font-semibold transition"
+          >
+            <i class="fa-regular fa-trash-can mr-1"></i> Kosongkan Keranjang
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       SLIDE-OVER WISHLIST DRAWER
+       ============================================================ -->
+  <div id="wishlistDrawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300">
+    <div 
+      id="wishlistBackdrop" 
+      class="absolute inset-0 bg-zinc-950/60 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-300"
+    ></div>
+
+    <div 
+      id="wishlistPanel" 
+      class="absolute inset-y-0 right-0 max-w-full w-full sm:w-[440px] bg-white dark:bg-zinc-900 shadow-2xl flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300 ease-out border-l border-zinc-200 dark:border-zinc-800"
+    >
+      <div class="p-5 border-b border-zinc-200 dark:border-zinc-800 flex items-center justify-between">
+        <div class="flex items-center gap-2.5">
+          <div class="w-9 h-9 rounded-xl bg-rose-50 dark:bg-rose-950/50 text-rose-500 flex items-center justify-center">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-zinc-900 dark:text-white">Wishlist Tersimpan</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400"><span id="wishlistDrawerItemCount" class="font-mono">0</span> barang disukai</p>
+          </div>
+        </div>
+        <button 
+          id="closeWishlistBtn" 
+          class="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-500 dark:text-zinc-400 flex items-center justify-center transition"
+        >
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <div id="wishlistItemsList" class="flex-1 overflow-y-auto p-5 space-y-4">
+        <!-- Wishlist items rendered by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRODUCT DETAIL / QUICK VIEW MODAL
+       ============================================================ -->
+  <div id="productDetailModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="productDetailBackdrop" class="fixed inset-0 bg-zinc-950/60 backdrop-blur-sm"></div>
+
+    <div class="relative bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 max-w-4xl w-full max-h-[90vh] overflow-y-auto z-10 p-6 md:p-8">
+      
+      <!-- Close Button -->
+      <button 
+        id="closeDetailModalBtn" 
+        class="absolute top-5 right-5 w-9 h-9 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 dark:hover:bg-zinc-700 text-zinc-500 dark:text-zinc-400 flex items-center justify-center transition z-20"
+      >
+        <i class="fa-solid fa-xmark text-base"></i>
+      </button>
+
+      <!-- Modal Content Body -->
+      <div id="productDetailContent" class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        <!-- Rendered dynamically -->
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CHECKOUT MODAL & PAYMENT SIMULATION
+       ============================================================ -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="checkoutBackdrop" class="fixed inset-0 bg-zinc-950/60 backdrop-blur-sm"></div>
+
+    <div class="relative bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 max-w-3xl w-full max-h-[92vh] overflow-y-auto z-10 p-6 md:p-8">
+      
+      <!-- Header -->
+      <div class="flex items-center justify-between pb-5 border-b border-zinc-200 dark:border-zinc-800 mb-6">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-2xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 flex items-center justify-center text-lg shadow-sm">
+            <i class="fa-solid fa-shield-check"></i>
+          </div>
+          <div>
+            <h3 class="text-lg font-bold text-zinc-900 dark:text-white">Checkout Pengiriman & Pembayaran</h3>
+            <p class="text-xs text-zinc-500 dark:text-zinc-400">Transaksi terenkripsi aman SSL 256-Bit</p>
+          </div>
+        </div>
+        <button 
+          id="closeCheckoutModalBtn" 
+          class="w-8 h-8 rounded-full bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 text-zinc-500 flex items-center justify-center transition"
+        >
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Checkout Form -->
+      <form id="checkoutForm" class="space-y-6">
+        
+        <!-- 1. Data Penerima -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-location-dot text-emerald-600 dark:text-emerald-400"></i> 1. Alamat Pengiriman
+          </h4>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Nama Lengkap Penerima *</label>
+              <input 
+                type="text" 
+                id="recipientName" 
+                required 
+                placeholder="Contoh: Nopal Ardiansyah" 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-zinc-900 dark:text-white"
+              >
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-1">No. WhatsApp / Handphone *</label>
+              <input 
+                type="tel" 
+                id="recipientPhone" 
+                required 
+                placeholder="Contoh: 081234567890" 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-zinc-900 dark:text-white"
+              >
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Kota & Provinsi *</label>
+              <input 
+                type="text" 
+                id="recipientCity" 
+                required 
+                placeholder="Contoh: Jakarta Selatan, DKI Jakarta" 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-zinc-900 dark:text-white"
+              >
+            </div>
+            <div>
+              <label class="block text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Kode Pos *</label>
+              <input 
+                type="text" 
+                id="recipientPostalCode" 
+                required 
+                placeholder="Contoh: 12190" 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 font-mono text-zinc-900 dark:text-white"
+              >
+            </div>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-zinc-700 dark:text-zinc-300 mb-1">Alamat Lengkap & Patokan Rumah *</label>
+            <textarea 
+              id="recipientAddress" 
+              rows="2" 
+              required 
+              placeholder="Jl. Jend. Sudirman No. 45, Gedung Menara Hijau Lt. 12 (Samping Pos Satpam)" 
+              class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-50 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700 focus:outline-none focus:ring-2 focus:ring-emerald-500 text-zinc-900 dark:text-white"
+            ></textarea>
+          </div>
+        </div>
+
+        <!-- 2. Pilihan Kurir Ekspedisi -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-truck text-emerald-600 dark:text-emerald-400"></i> 2. Pilihan Jasa Ekspedisi
+          </h4>
+          <div id="courierOptionsContainer" class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <!-- Dynamic courier radios -->
+          </div>
+        </div>
+
+        <!-- 3. Metode Pembayaran -->
+        <div class="space-y-3">
+          <h4 class="text-xs font-bold uppercase tracking-wider text-zinc-900 dark:text-white flex items-center gap-1.5">
+            <i class="fa-solid fa-credit-card text-emerald-600 dark:text-emerald-400"></i> 3. Metode Pembayaran
+          </h4>
+          <div id="paymentOptionsContainer" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <!-- Dynamic payment options -->
+          </div>
+        </div>
+
+        <!-- 4. Ringkasan Pesanan Checkout -->
+        <div class="p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-200 dark:border-zinc-800 space-y-2 text-xs">
+          <div class="flex justify-between text-zinc-600 dark:text-zinc-400">
+            <span>Subtotal Produk</span>
+            <span id="checkoutSubtotal" class="font-mono font-semibold text-zinc-900 dark:text-zinc-100">Rp 0</span>
+          </div>
+          <div id="checkoutDiscountRow" class="hidden flex justify-between text-emerald-600 dark:text-emerald-400">
+            <span>Diskon Promo</span>
+            <span id="checkoutDiscount" class="font-mono font-semibold">- Rp 0</span>
+          </div>
+          <div class="flex justify-between text-zinc-600 dark:text-zinc-400">
+            <span>Pajak Pertambahan Nilai (PPN 11%)</span>
+            <span id="checkoutTax" class="font-mono font-semibold text-zinc-900 dark:text-zinc-100">Rp 0</span>
+          </div>
+          <div class="flex justify-between text-zinc-600 dark:text-zinc-400">
+            <span>Biaya Ongkir Kurir</span>
+            <span id="checkoutShipping" class="font-mono font-semibold text-zinc-900 dark:text-zinc-100">Rp 15.000</span>
+          </div>
+          <div class="pt-2 border-t border-zinc-200 dark:border-zinc-800 flex justify-between items-baseline font-bold text-zinc-900 dark:text-white">
+            <span class="text-sm">Total Pembayaran</span>
+            <span id="checkoutGrandTotal" class="text-lg font-black text-zinc-900 dark:text-white font-mono">Rp 0</span>
+          </div>
+        </div>
+
+        <!-- Form Submit Button -->
+        <div class="flex items-center gap-3 pt-2">
+          <button 
+            type="button" 
+            id="cancelCheckoutBtn" 
+            class="w-1/3 py-3 rounded-xl bg-zinc-100 hover:bg-zinc-200 dark:bg-zinc-800 text-zinc-700 dark:text-zinc-300 font-semibold text-xs transition"
+          >
+            Batal
+          </button>
+          <button 
+            type="submit" 
+            id="submitOrderBtn" 
+            class="w-2/3 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-zinc-950 font-black text-xs font-mono shadow-[0_0_20px_rgba(16,185,129,0.35)] flex items-center justify-center gap-2 transition cursor-pointer"
+          >
+            <i class="fa-solid fa-lock"></i>
+            <span>BAYAR & KONFIRMASI SEKARANG</span>
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PAYMENT PROCESSING SIMULATION SPINNER
+       ============================================================ -->
+  <div id="paymentProcessingModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
+    <div class="fixed inset-0 bg-zinc-950/75 backdrop-blur-md"></div>
+    <div class="relative bg-white dark:bg-zinc-900 rounded-3xl p-8 max-w-sm w-full text-center space-y-4 shadow-2xl border border-zinc-200 dark:border-zinc-800 z-10">
+      <div class="w-16 h-16 rounded-full border-4 border-zinc-200 dark:border-zinc-700 border-t-emerald-500 animate-spin mx-auto"></div>
+      <h3 class="text-base font-bold text-zinc-900 dark:text-white">Memproses Transaksi...</h3>
+      <p class="text-xs text-zinc-500 dark:text-zinc-400">Menghubungkan ke payment gateway dan memverifikasi pesanan Anda. Mohon jangan tutup halaman.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ORDER SUCCESS INVOICE MODAL (PRINTABLE RECEIPT)
+       ============================================================ -->
+  <div id="invoiceModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="invoiceBackdrop" class="fixed inset-0 bg-zinc-950/70 backdrop-blur-sm"></div>
+
+    <div class="relative bg-white dark:bg-zinc-900 rounded-3xl shadow-2xl border border-zinc-200 dark:border-zinc-800 max-w-2xl w-full max-h-[92vh] overflow-y-auto z-10 p-6 sm:p-8">
+      
+      <!-- Printable Container -->
+      <div id="printableInvoice" class="space-y-6">
+        
+        <!-- Header Receipt -->
+        <div class="flex items-start justify-between border-b border-zinc-200 dark:border-zinc-800 pb-5">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-2xl bg-zinc-900 dark:bg-white text-white dark:text-zinc-950 flex items-center justify-center text-2xl shadow-sm">
+              <i class="fa-solid fa-gamepad"></i>
+            </div>
+            <div>
+              <h2 class="text-xl font-black text-zinc-900 dark:text-white tracking-tight">NEXUS GEAR</h2>
+              <p class="text-[11px] text-zinc-500 dark:text-zinc-400">Bukti Transaksi Resmi Esports Hardware</p>
+            </div>
+          </div>
+          <div class="text-right">
+            <span class="inline-block px-3 py-1 rounded-full bg-emerald-100 dark:bg-emerald-950/80 text-emerald-700 dark:text-emerald-300 text-xs font-bold uppercase tracking-wider">
+              <i class="fa-solid fa-circle-check mr-1"></i> LUNAS
+            </span>
+            <p id="invoiceOrderDate" class="text-xs text-zinc-400 mt-1 font-mono">11 Okt 2026, 19:30 WIB</p>
+          </div>
+        </div>
+
+        <!-- Order Meta Details -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 p-4 rounded-2xl bg-zinc-50 dark:bg-zinc-950/60 border border-zinc-100 dark:border-zinc-800/80 text-xs">
+          <div>
+            <span class="text-zinc-400 block text-[10px] uppercase font-bold">No. Referensi</span>
+            <strong id="invoiceOrderRef" class="font-mono text-zinc-800 dark:text-zinc-200">INV-20261011-XXXX</strong>
+          </div>
+          <div>
+            <span class="text-zinc-400 block text-[10px] uppercase font-bold">Metode Bayar</span>
+            <strong id="invoicePaymentMethod" class="text-zinc-800 dark:text-zinc-200">QRIS Instant</strong>
+          </div>
+          <div>
+            <span class="text-zinc-400 block text-[10px] uppercase font-bold">Ekspedisi</span>
+            <strong id="invoiceCourier" class="text-zinc-800 dark:text-zinc-200">Reguler (2-3 Hari)</strong>
+          </div>
+          <div>
+            <span class="text-zinc-400 block text-[10px] uppercase font-bold">Status Stok</span>
+            <strong class="text-emerald-600 dark:text-emerald-400 font-semibold">Telah Dikurangi</strong>
+          </div>
+        </div>
+
+        <!-- Shipping Destination -->
+        <div class="text-xs space-y-1">
+          <p class="font-bold text-zinc-700 dark:text-zinc-300 uppercase tracking-wide text-[10px]">Tujuan Pengiriman:</p>
+          <p id="invoiceRecipientName" class="font-semibold text-zinc-900 dark:text-white text-sm">Nopal Ardiansyah (081234567890)</p>
+          <p id="invoiceRecipientAddress" class="text-zinc-500 dark:text-zinc-400">Jl. Jendral Sudirman, Jakarta</p>
+        </div>
+
+        <!-- Items Table -->
+        <div class="border border-zinc-200 dark:border-zinc-800 rounded-2xl overflow-hidden">
+          <table class="w-full text-left text-xs">
+            <thead class="bg-zinc-100 dark:bg-zinc-800/80 text-zinc-600 dark:text-zinc-300 font-semibold">
+              <tr>
+                <th class="p-3">Produk & Varian</th>
+                <th class="p-3 text-center">Jumlah</th>
+                <th class="p-3 text-right">Harga Satuan</th>
+                <th class="p-3 text-right">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody id="invoiceItemsTableBody" class="divide-y divide-zinc-100 dark:divide-zinc-800">
+              <!-- Rendered items -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Calculations Breakdown -->
+        <div class="space-y-1.5 text-xs max-w-xs ml-auto">
+          <div class="flex justify-between text-zinc-500">
+            <span>Subtotal Barang:</span>
+            <span id="invoiceSubtotal" class="font-mono text-zinc-800 dark:text-zinc-200">Rp 0</span>
+          </div>
+          <div id="invoiceDiscountRow" class="hidden flex justify-between text-emerald-600 font-semibold">
+            <span>Diskon Promo:</span>
+            <span id="invoiceDiscount" class="font-mono">- Rp 0</span>
+          </div>
+          <div class="flex justify-between text-zinc-500">
+            <span>Pajak PPN 11%:</span>
+            <span id="invoiceTax" class="font-mono text-zinc-800 dark:text-zinc-200">Rp 0</span>
+          </div>
+          <div class="flex justify-between text-zinc-500">
+            <span>Ongkir Pengiriman:</span>
+            <span id="invoiceShipping" class="font-mono text-zinc-800 dark:text-zinc-200">Rp 0</span>
+          </div>
+          <div class="border-t border-zinc-200 dark:border-zinc-800 pt-2 flex justify-between font-bold text-sm text-zinc-900 dark:text-white">
+            <span>Total Bayar:</span>
+            <span id="invoiceGrandTotal" class="font-mono text-zinc-900 dark:text-white text-base font-black">Rp 0</span>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Action Buttons (No Print) -->
+      <div class="mt-8 pt-5 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row gap-3 no-print">
+        <button 
+          id="printInvoiceBtn" 
+          class="flex-1 py-3 rounded-xl bg-zinc-900 hover:bg-black text-white font-semibold text-xs flex items-center justify-center gap-2 transition"
+        >
+          <i class="fa-solid fa-print"></i>
+          <span>Cetak Struk / Simpan PDF</span>
+        </button>
+        <button 
+          id="closeInvoiceBtn" 
+          class="flex-1 py-3 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs flex items-center justify-center gap-2 transition shadow-sm"
+        >
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span>Selesai & Belanja Lagi</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       TOAST NOTIFICATION CONTAINER
+       ============================================================ -->
+  <div 
+    id="toastContainer" 
+    class="fixed top-5 right-5 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none"
+  >
+    <!-- Dynamic Toasts injected here -->
+  </div>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer id="bantuan" class="bg-zinc-950 text-zinc-400 border-t border-zinc-800 mt-auto text-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        
+        <!-- Company Info -->
+        <div class="space-y-3">
+          <div class="flex items-center gap-2.5">
+            <div class="w-8 h-8 rounded-xl bg-emerald-500 flex items-center justify-center text-zinc-950 font-bold">
+              <i class="fa-solid fa-gamepad text-sm"></i>
+            </div>
+            <span class="text-base font-black tracking-tight text-white">NEXUS GEAR</span>
+          </div>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Platform resmi penyedia perlengkapan gaming esports kompetitif, periferal akurasi tinggi, dan komponen rakit PC bergaransi resmi distributor Indonesia.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="space-y-2">
+          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Kategori Gaming</h4>
+          <ul class="space-y-1.5">
+            <li><a href="#katalog" class="hover:text-emerald-400 transition">Komponen Rakit PC</a></li>
+            <li><a href="#katalog" class="hover:text-emerald-400 transition">PC & Konsol Gaming</a></li>
+            <li><a href="#katalog" class="hover:text-emerald-400 transition">Keyboard & Mouse Gaming</a></li>
+            <li><a href="#katalog" class="hover:text-emerald-400 transition">Audio & Headset Gaming</a></li>
+            <li><a href="#katalog" class="hover:text-emerald-400 transition">Monitor & Setup Gaming</a></li>
+            <li><a href="#katalog" class="hover:text-emerald-400 transition">Kursi & Meja Gaming</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div class="space-y-2">
+          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Layanan Pelanggan</h4>
+          <ul class="space-y-1.5">
+            <li><a href="#" class="hover:text-emerald-400 transition">Klaim Garansi Distributor</a></li>
+            <li><a href="#" class="hover:text-emerald-400 transition">Kebijakan Zero Dead Pixel</a></li>
+            <li><a href="#" class="hover:text-emerald-400 transition">Lacak Pengiriman Packing Kayu</a></li>
+            <li><a href="#" class="hover:text-emerald-400 transition">Konsultasi Setup Battlestation</a></li>
+          </ul>
+        </div>
+
+        <!-- Payment & Security Partners -->
+        <div class="space-y-3">
+          <h4 class="font-bold text-white uppercase tracking-wider text-[11px]">Mitra Pembayaran Resmi</h4>
+          <div class="flex flex-wrap gap-2 text-zinc-300">
+            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-bold font-mono">QRIS</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-bold font-mono">BCA VA</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-bold font-mono">MANDIRI</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-bold font-mono">GOPAY</span>
+            <span class="px-2.5 py-1 rounded bg-zinc-900 border border-zinc-800 text-xs font-bold font-mono">COD</span>
+          </div>
+          <p class="text-[11px] text-zinc-500">
+            Transaksi terenkripsi aman SSL 256-Bit dan bergaransi resmi.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-6 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500">
+        <p>&copy; 2026 NEXUS GEAR. Seluruh Hak Cipta Dilindungi Undang-Undang.</p>
+        <p class="flex items-center gap-1.5">
+          <span>Official Esports Gaming Gear & Hardware Retailer</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

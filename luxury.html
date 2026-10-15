@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAISON VENDÔME | Haute Horlogerie, Haute Joaillerie & Objets d'Art</title>
+  
+  <!-- Google Fonts: Cormorant Garamond (Elegance Serif), Cinzel (Roman Capitals), Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            cinzel: ['"Cinzel"', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            obsidian: '#07080a',
+            champagne: '#d4af37',
+            goldLight: '#f5e6b8',
+            goldDeep: '#997a15',
+            alabaster: '#faf9f5'
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Custom Luxury Stylesheet -->
+  <link rel="stylesheet" href="css/luxury.css">
+</head>
+<body class="bg-[#07080a] text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-[#d4af37]/30 selection:text-white relative">
+
+  <!-- ============================================================
+       AMBIENT LIQUID GLASS ORBS (ORGANIC BACKGROUND REFRACTION)
+       ============================================================ -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute -top-40 left-1/4 w-[550px] h-[550px] rounded-full bg-[#d4af37]/[0.07] blur-[120px] animate-liquid-1"></div>
+    <div class="absolute top-1/3 -right-40 w-[650px] h-[650px] rounded-full bg-[#aa8418]/[0.05] blur-[140px] animate-liquid-2"></div>
+    <div class="absolute -bottom-40 left-1/3 w-[600px] h-[600px] rounded-full bg-[#f5e6b8]/[0.04] blur-[130px] animate-liquid-3"></div>
+  </div>
+
+  <!-- ============================================================
+       DISCREET TOP ANNOUNCEMENT BAR & EDITION SWITCHER
+       ============================================================ -->
+  <aside class="relative z-50 bg-[#0a0c10] border-b border-white/[0.08] text-[11px] py-2 px-4 text-center font-cinzel text-zinc-400">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="hidden sm:flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse"></span>
+        <span class="tracking-widest uppercase">Place Vendôme, Paris • Vallée de Joux, Suisse</span>
+      </div>
+
+      <span class="mx-auto sm:mx-0 tracking-[0.2em] text-[#f5e6b8] uppercase font-medium">
+        ✦ Complimentary White-Glove Armored Hand Delivery Worldwide ✦
+      </span>
+
+      <!-- Switcher to Gaming / Esports Edition -->
+      <div class="hidden md:flex items-center gap-3">
+        <a href="gaming.html" class="px-2.5 py-0.5 rounded-full liquid-glass text-zinc-300 hover:text-[#d4af37] text-[10px] tracking-wider transition flex items-center gap-1.5">
+          <i class="fa-solid fa-gamepad text-xs text-[#d4af37]"></i>
+          <span>Switch to Esports Edition</span>
+        </a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       STICKY LIQUID GLASS NAVIGATION BAR
+       ============================================================ -->
+  <header class="sticky top-0 z-40 liquid-glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Brand Monogram & Hallmarks -->
+        <a href="#" class="flex items-center gap-3 group shrink-0">
+          <div class="w-10 h-10 rounded-full wax-seal flex items-center justify-center text-[#07080a] shadow-lg group-hover:scale-105 transition-transform duration-300">
+            <i class="fa-solid fa-crown text-base"></i>
+          </div>
+          <div>
+            <span class="text-xl sm:text-2xl font-cinzel font-black tracking-[0.25em] text-[#f5e6b8] block">MAISON VENDÔME</span>
+            <span class="text-[9px] uppercase font-cinzel tracking-[0.3em] text-[#d4af37] block -mt-0.5">Haute Horlogerie & Joaillerie</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <nav class="hidden lg:flex items-center gap-8 text-xs font-cinzel tracking-[0.18em] uppercase text-zinc-300">
+          <a href="#collections" class="hover:text-[#f5e6b8] transition-colors py-1">Collections</a>
+          <a href="#heritage" class="hover:text-[#f5e6b8] transition-colors py-1">L'Héritage</a>
+          <a href="#alchemy" class="hover:text-[#f5e6b8] transition-colors py-1">Alchimie</a>
+          <a href="#values" class="hover:text-[#f5e6b8] transition-colors py-1">Valeurs</a>
+          <a href="#membership" class="hover:text-[#f5e6b8] transition-colors py-1 text-[#d4af37]">Le Cercle Privé</a>
+        </nav>
+
+        <!-- Right Utilities: Currency Selector, Private Salon Wishlist, Bag -->
+        <div class="flex items-center gap-3">
+          
+          <!-- Currency Selector Pill -->
+          <div class="relative hidden sm:block">
+            <select 
+              id="currencySelector" 
+              class="liquid-glass text-xs text-[#f5e6b8] font-cinzel px-3 py-1.5 rounded-full border border-white/10 focus:outline-none focus:border-[#d4af37] cursor-pointer appearance-none pr-7 tracking-wider"
+              title="Devise / Currency"
+            >
+              <option value="USD" class="bg-[#0a0c12] text-white">USD ($)</option>
+              <option value="EUR" class="bg-[#0a0c12] text-white">EUR (€)</option>
+              <option value="IDR" class="bg-[#0a0c12] text-white">IDR (Rp)</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-2.5 top-3 text-[9px] text-[#d4af37] pointer-events-none"></i>
+          </div>
+
+          <!-- Private Viewing Salon Wishlist Button -->
+          <button 
+            id="navWishlistBtn" 
+            class="relative w-10 h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#d4af37] flex items-center justify-center transition border border-white/10 hover:border-[#d4af37]/40 cursor-pointer"
+            title="Salon Privé / Private Viewings"
+          >
+            <i class="fa-regular fa-heart text-sm"></i>
+            <span 
+              id="navWishlistBadge" 
+              class="hidden absolute -top-1 -right-1 bg-[#d4af37] text-[#07080a] text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center font-mono shadow-md"
+            >
+              0
+            </span>
+          </button>
+
+          <!-- Acquisition Bag Button -->
+          <button 
+            id="navCartBtn" 
+            class="relative flex items-center gap-2.5 h-10 px-4 rounded-full btn-luxury-gold cursor-pointer"
+            title="Acquisition Bag"
+          >
+            <i class="fa-solid fa-bag-shopping text-xs"></i>
+            <span class="hidden sm:inline font-cinzel text-[11px] tracking-widest">BAG</span>
+            <span 
+              id="navCartBadge" 
+              class="hidden bg-[#07080a] text-[#f5e6b8] border border-[#d4af37]/50 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center font-mono"
+            >
+              0
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO SHOWCASE SECTION: "L'ART DE L'ÉTERNEL"
+       ============================================================ -->
+  <section class="relative z-10 py-16 sm:py-24 lg:py-28 overflow-hidden border-b border-white/[0.08]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left Column: Master Brand Storytelling -->
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          
+          <!-- Liquid Glass Status Pill -->
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass text-[11px] font-cinzel tracking-[0.2em] text-[#f5e6b8] uppercase border border-[#d4af37]/30 shadow-lg">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse"></span>
+            Héritage 1894 • Place Vendôme, Paris
+          </div>
+
+          <!-- Monumental Luxury Headline -->
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-serif font-light text-white leading-[1.08] tracking-tight">
+            L'Art de l'Éternel.<br>
+            <span class="italic font-normal text-gold-gradient">Where Time Transcends Form.</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-zinc-300 font-sans max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+            Handcrafted in our historic ateliers of Place Vendôme and the Vallée de Joux. Rare mechanical complications, Gibeon meteorite dials, and bespoke acquisitions reserved for connoisseurs of timeless permanence.
+          </p>
+
+          <!-- Dual Luxury Actions -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a 
+              href="#collections" 
+              class="w-full sm:w-auto btn-luxury-gold py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel shadow-xl cursor-pointer"
+            >
+              <i class="fa-solid fa-gem mr-1.5"></i>
+              Explore Private Collections
+            </a>
+            <button 
+              class="open-membership-trigger w-full sm:w-auto btn-luxury-outline py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel cursor-pointer"
+            >
+              <i class="fa-solid fa-phone-volume mr-1.5"></i>
+              Request Private Salon Viewing
+            </button>
+          </div>
+
+          <!-- Pillars Telemetry Strip -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="text-lg font-cinzel font-bold text-[#f5e6b8] text-gold-gradient">1894</p>
+              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Place Vendôme</p>
+            </div>
+            <div>
+              <p class="text-lg font-cinzel font-bold text-[#f5e6b8] text-gold-gradient">100%</p>
+              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Handcrafted Savoir-Faire</p>
+            </div>
+            <div>
+              <p class="text-lg font-cinzel font-bold text-[#f5e6b8] text-gold-gradient">Numbered</p>
+              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Geneva Registry</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Flagship Masterpiece Liquid Glass Showcase Card -->
+        <div class="lg:col-span-5 relative">
+          <div class="relative mx-auto max-w-md lg:max-w-none">
+            
+            <!-- Master Showcase Card with Liquid Glass Refraction -->
+            <div class="liquid-glass-card rounded-3xl p-7 border border-[#d4af37]/35 shadow-2xl relative group">
+              
+              <!-- Floating Rarity Badge -->
+              <div class="flex items-center justify-between mb-4">
+                <span class="px-3 py-1 rounded-full bg-gradient-to-r from-[#d4af37] to-[#aa8418] text-[#07080a] text-[10px] font-black uppercase tracking-widest font-cinzel shadow-lg">
+                  <i class="fa-solid fa-crown mr-1"></i> Flagship Piece
+                </span>
+                <span class="text-[11px] font-cinzel text-zinc-400 tracking-wider">No. 07 / 25 Globally</span>
+              </div>
+
+              <!-- Main Hero Timepiece Image -->
+              <div class="relative aspect-square rounded-2xl overflow-hidden bg-zinc-950/80 p-6 flex items-center justify-center luxury-image-frame cursor-pointer view-detail-trigger" data-id="HH-01">
+                <img 
+                  src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" 
+                  alt="The Celestial Tourbillon No. 07" 
+                  class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.9)] group-hover:scale-105 transition-transform duration-700"
+                >
+                <div class="absolute bottom-3 left-3 bg-[#07080a]/80 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] font-cinzel text-[#f5e6b8]">
+                  <i class="fa-solid fa-compass text-[#d4af37] mr-1 animate-tourbillon inline-block"></i> 60-Sec Flying Tourbillon
+                </div>
+              </div>
+
+              <!-- Timepiece Details -->
+              <div class="mt-5 space-y-2">
+                <span class="text-[10px] font-cinzel tracking-[0.25em] text-[#d4af37] uppercase block">Collection Constellation 2026</span>
+                <h3 class="text-2xl font-serif text-white font-medium">The Celestial Tourbillon No. 07</h3>
+                <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+                  950 Solid Platinum, genuine Gibeon meteorite dial with Widmanstätten crystalline structures, and twin-barrel 72-hour power reserve.
+                </p>
+
+                <!-- Valuation & Action -->
+                <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                  <div>
+                    <span class="text-[10px] text-zinc-500 font-cinzel uppercase block">Acquisition Valuation</span>
+                    <span class="text-xl font-bold font-cinzel text-gold-gradient">$145,000 USD</span>
+                  </div>
+                  <button 
+                    data-acquire-id="HH-01" 
+                    class="acquire-btn btn-luxury-gold py-2.5 px-5 text-[11px] font-cinzel tracking-wider cursor-pointer"
+                  >
+                    Acquire Creation
+                  </button>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STORYTELLING CHAPTER I: "L'HÉRITAGE CENTENAIRE"
+       ============================================================ -->
+  <section id="heritage" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#090b10]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        
+        <!-- Left: Atelier Photography & Liquid Frame -->
+        <div class="lg:col-span-6 relative">
+          <div class="grid grid-cols-2 gap-4">
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden liquid-glass-card p-2 luxury-image-frame">
+              <img 
+                src="https://images.unsplash.com/photo-1509114397022-ed747cca3f65?q=80&w=1200&auto=format&fit=crop" 
+                alt="Watchmaker Atelier Hand Chamfering" 
+                class="w-full h-full object-cover rounded-xl"
+              >
+            </div>
+            <div class="aspect-[3/4] rounded-2xl overflow-hidden liquid-glass-card p-2 luxury-image-frame mt-8">
+              <img 
+                src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1200&auto=format&fit=crop" 
+                alt="Master Goldsmith Setting Gemstones" 
+                class="w-full h-full object-cover rounded-xl"
+              >
+            </div>
+          </div>
+
+          <!-- Floating Storyteller Seal -->
+          <div class="absolute -bottom-6 right-6 p-4 rounded-2xl liquid-glass-gold max-w-[240px] border border-[#d4af37]/40 shadow-2xl">
+            <span class="text-[9px] font-cinzel tracking-widest text-[#f5e6b8] uppercase block">Archival Register</span>
+            <p class="text-xs font-serif italic text-white mt-1">"Every bevel chamfered by hand with Gentian wood pegs."</p>
+          </div>
+        </div>
+
+        <!-- Right: The Narrative -->
+        <div class="lg:col-span-6 space-y-6">
+          <div class="space-y-2">
+            <span class="text-xs font-cinzel tracking-[0.25em] text-[#d4af37] uppercase">Chapitre I • Les Origines</span>
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-white leading-tight">
+              A Legacy Forged in the Quiet Sanctuaries of Place Vendôme.
+            </h2>
+          </div>
+
+          <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
+            Founded in the winter of 1894 by master horologer Henri de Vendôme, our Maison was born from an unyielding philosophy: that true luxury is not an ornament of vanity, but a quiet manifestation of absolute mastery.
+          </p>
+
+          <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
+            Across four generations, our artisans have remained untouched by the compromises of industrial mass production. In our workshops nestled high in the Swiss Jura mountains and behind the carved stone portals of Place Vendôme, time is our only currency. A single complication watch may demand over six hundred hours of meticulous hand-finishing before receiving its official Poinçon seal.
+          </p>
+
+          <div class="pt-4 border-t border-white/10 flex items-center gap-6">
+            <div>
+              <span class="text-2xl font-serif text-[#f5e6b8] block">130+</span>
+              <span class="text-[10px] uppercase font-cinzel tracking-wider text-zinc-400">Years of Ancestral Craft</span>
+            </div>
+            <div class="w-px h-10 bg-white/10"></div>
+            <div>
+              <span class="text-2xl font-serif text-[#f5e6b8] block">Vallée de Joux</span>
+              <span class="text-[10px] uppercase font-cinzel tracking-wider text-zinc-400">Swiss Manufacture Sanctuary</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STORYTELLING CHAPTER II: "L'ALCHIMIE DES MATIÈRES"
+       ============================================================ -->
+  <section id="alchemy" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-cinzel tracking-[0.25em] text-[#d4af37] uppercase">Chapitre II • L'Alchimie</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-white">
+          The Alchemy of Rare Earth & Cosmic Materials.
+        </h2>
+        <p class="text-xs sm:text-sm text-zinc-400 font-sans leading-relaxed font-light">
+          We traverse the far corners of the earth—and beyond—to procure elements of unmatched rarity, transformed through heat, pressure, and human reverence.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Alchemy Card 1: Fairmined Gold -->
+        <div class="liquid-glass-card rounded-3xl p-6 space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-[#d4af37]/15 text-[#f5e6b8] border border-[#d4af37]/30 flex items-center justify-center text-xl shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-coins"></i>
+          </div>
+          <span class="text-[10px] font-cinzel tracking-widest text-[#d4af37] uppercase block">Provenance Éthique</span>
+          <h3 class="text-lg font-serif font-medium text-white">Fairmined 18K Ethical Gold</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Responsibly extracted from certified artisanal mines that uphold strict environmental restoration, zero child labor, and fair wages for local miners.
+          </p>
+        </div>
+
+        <!-- Alchemy Card 2: Gibeon Meteorite -->
+        <div class="liquid-glass-card rounded-3xl p-6 space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-[#d4af37]/15 text-[#f5e6b8] border border-[#d4af37]/30 flex items-center justify-center text-xl shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-meteor"></i>
+          </div>
+          <span class="text-[10px] font-cinzel tracking-widest text-[#d4af37] uppercase block">Cosmic Origins</span>
+          <h3 class="text-lg font-serif font-medium text-white">Gibeon Meteorite Dials</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Forged in deep space over billions of years. When sliced and acid-etched, each dial reveals an irreproducible, geometric Widmanstätten lattice.
+          </p>
+        </div>
+
+        <!-- Alchemy Card 3: Muzo Emeralds -->
+        <div class="liquid-glass-card rounded-3xl p-6 space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-[#d4af37]/15 text-[#f5e6b8] border border-[#d4af37]/30 flex items-center justify-center text-xl shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-gem"></i>
+          </div>
+          <span class="text-[10px] font-cinzel tracking-widest text-[#d4af37] uppercase block">Botanical Fire</span>
+          <h3 class="text-lg font-serif font-medium text-white">Untreated Muzo Emeralds</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Unearthed in the historic Boyacá mountains of Colombia. Renowned for their incomparable velvety saturation and organic "jardin" inclusions.
+          </p>
+        </div>
+
+        <!-- Alchemy Card 4: Grand Feu Enamel -->
+        <div class="liquid-glass-card rounded-3xl p-6 space-y-4 group">
+          <div class="w-12 h-12 rounded-2xl bg-[#d4af37]/15 text-[#f5e6b8] border border-[#d4af37]/30 flex items-center justify-center text-xl shadow-lg group-hover:scale-105 transition-transform">
+            <i class="fa-solid fa-fire-flame-curved"></i>
+          </div>
+          <span class="text-[10px] font-cinzel tracking-widest text-[#d4af37] uppercase block">Ancestral Alchemy</span>
+          <h3 class="text-lg font-serif font-medium text-white">Grand Feu Enameling</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Silica powders painted under microscope and kiln-fired repeatedly at 800°C. An art where a single microscopic crack ruins days of labor.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HIGH-END MASTERPIECE SHOWCASE: "LA GALERIE PRIVÉE"
+       ============================================================ -->
+  <section id="collections" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#08090e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="space-y-2">
+          <span class="text-xs font-cinzel tracking-[0.25em] text-[#d4af37] uppercase">La Galerie Privée</span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-white">
+            Curated Creations & Bespoke Allocations.
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-400 font-sans max-w-xl font-light">
+            Every creation is individually numbered and accompanied by an official deed of provenance recorded in our Geneva vaults.
+          </p>
+        </div>
+
+        <div class="text-xs font-cinzel text-zinc-400 tracking-wider">
+          Displaying <span class="text-[#f5e6b8] font-bold">12 Masterpieces</span> in Permanent Collection
+        </div>
+      </div>
+
+      <!-- Liquid Glass Filter Pills Bar -->
+      <div class="mb-10 flex items-center gap-3 overflow-x-auto pb-3 scrollbar-none" id="luxuryCategoryPills">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Product Showcase Cards Grid -->
+      <div id="luxuryProductsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STORYTELLING CHAPTER III: THE MASTER ARTISAN'S MANIFESTO
+       ============================================================ -->
+  <section class="py-24 relative z-10 border-b border-white/[0.08] overflow-hidden">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="liquid-glass-gold rounded-3xl p-8 sm:p-14 border border-[#d4af37]/40 shadow-2xl relative">
+        
+        <div class="w-14 h-14 mx-auto mb-6 wax-seal flex items-center justify-center text-xl text-[#07080a] shadow-xl">
+          <i class="fa-solid fa-quote-left"></i>
+        </div>
+
+        <blockquote class="text-xl sm:text-3xl lg:text-4xl font-serif italic text-[#f5e6b8] leading-relaxed font-light">
+          "True luxury is not defined by excess or loud display, but by the quiet perfection of details invisible to the untrained eye."
+        </blockquote>
+
+        <div class="mt-8 pt-6 border-t border-[#d4af37]/30 flex flex-col items-center">
+          <span class="font-serif italic text-lg text-white">Antoine de Vendôme</span>
+          <span class="text-[10px] font-cinzel tracking-[0.25em] text-[#d4af37] uppercase mt-0.5">Maître Horloger & Gardien des Traditions</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PREMIUM BRAND VALUES: "LES PILIERS DE LA MAISON"
+       ============================================================ -->
+  <section id="values" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#090a10]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-cinzel tracking-[0.25em] text-[#d4af37] uppercase">Excellence & Distinction</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-white">
+          The Four Pillars of Absolute Luxury.
+        </h2>
+        <p class="text-xs sm:text-sm text-zinc-400 font-sans font-light">
+          Our unyielding covenant with collectors across six continents.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Pillar 1 -->
+        <div class="p-6 rounded-2xl liquid-glass space-y-3">
+          <div class="text-[#d4af37] text-2xl font-cinzel font-black">I.</div>
+          <h3 class="text-base font-serif font-medium text-white">Numbered Rarity & Geneva Registry</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Strictly limited allocations. Each creation is inscribed with its unique provenance and entered into our permanent underground archive in Vaud.
+          </p>
+        </div>
+
+        <!-- Pillar 2 -->
+        <div class="p-6 rounded-2xl liquid-glass space-y-3">
+          <div class="text-[#d4af37] text-2xl font-cinzel font-black">II.</div>
+          <h3 class="text-base font-serif font-medium text-white">Lifetime Archival Provenance</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            We preserve original spare components, drawings, and tools for every timepiece and jewel in perpetuity, ensuring seamless restoration for generations.
+          </p>
+        </div>
+
+        <!-- Pillar 3 -->
+        <div class="p-6 rounded-2xl liquid-glass space-y-3">
+          <div class="text-[#d4af37] text-2xl font-cinzel font-black">III.</div>
+          <h3 class="text-base font-serif font-medium text-white">Armored White-Glove Hand Delivery</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Dispatched via private security couriers directly to your private residence, yacht, or diplomatic suite with full insurance indemnification.
+          </p>
+        </div>
+
+        <!-- Pillar 4 -->
+        <div class="p-6 rounded-2xl liquid-glass space-y-3">
+          <div class="text-[#d4af37] text-2xl font-cinzel font-black">IV.</div>
+          <h3 class="text-base font-serif font-medium text-white">Certified Ethical Stewardship</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            100% conflict-free diamonds adhering to Kimberley Process Plus and certified Fairmined ethical gold from carbon-neutral ateliers.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXCLUSIVE MEMBERSHIP CTA: "LE CERCLE PRIVÉ"
+       ============================================================ -->
+  <section id="membership" class="py-24 lg:py-32 relative z-10 border-b border-white/[0.08] overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="liquid-glass-gold rounded-3xl p-8 sm:p-14 border border-[#d4af37]/50 shadow-2xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left: Invitation Copy -->
+          <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#d4af37]/20 border border-[#d4af37]/40 text-[#f5e6b8] text-[10px] font-cinzel tracking-[0.2em] uppercase">
+              <i class="fa-solid fa-crown text-[9px]"></i> By Private Invitation Only
+            </div>
+
+            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-serif font-light text-white leading-tight">
+              Enter Le Cercle Privé.<br>
+              <span class="italic font-normal text-gold-gradient">The Connoisseur's Sanctuary.</span>
+            </h2>
+
+            <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
+              Members of Le Cercle Privé enjoy private salon viewings in Paris, Geneva, New York, and Tokyo; first-right allocations for Pièce Unique commissions; and direct 24/7 access to our Executive Concierge Officers.
+            </p>
+
+            <div class="space-y-2 pt-2 text-xs text-zinc-300 font-sans">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-[#d4af37] text-xs"></i>
+                <span>Priority Access to Annual Secret Vault Acquisitions</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-[#d4af37] text-xs"></i>
+                <span>Complimentary Bespoke Hand-Engraving & Monogramming</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-[#d4af37] text-xs"></i>
+                <span>Private Invitations to the Biennial Place Vendôme Gala</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Membership Application Form -->
+          <div class="lg:col-span-5">
+            <div class="bg-[#07080a]/90 backdrop-blur-2xl p-6 sm:p-8 rounded-2xl border border-[#d4af37]/35 shadow-2xl space-y-4">
+              <div class="text-center pb-2 border-b border-white/10">
+                <h3 class="text-base font-cinzel font-bold text-[#f5e6b8] tracking-wider uppercase">Dossier d'Adhésion</h3>
+                <p class="text-[10px] text-zinc-400 font-sans mt-0.5">Discreet collector credential verification</p>
+              </div>
+
+              <form id="membershipApplicationForm" class="space-y-3.5">
+                <div>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Title & Full Legal Name *</label>
+                  <input 
+                    type="text" 
+                    id="memberNameInput" 
+                    placeholder="e.g. Lord Alexander Vance" 
+                    required 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+                  >
+                </div>
+
+                <div>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Private Correspondence Email *</label>
+                  <input 
+                    type="email" 
+                    id="memberEmailInput" 
+                    placeholder="alexander@vance-holdings.com" 
+                    required 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+                  >
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5">
+                  <div>
+                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Telephone / Signal</label>
+                    <input 
+                      type="text" 
+                      id="memberPhoneInput" 
+                      placeholder="+44 20 7946 0991" 
+                      class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+                    >
+                  </div>
+                  <div>
+                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Primary Residence City</label>
+                    <input 
+                      type="text" 
+                      id="memberCityInput" 
+                      placeholder="London / Geneva" 
+                      class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Collector Interests</label>
+                  <input 
+                    type="text" 
+                    id="membershipInterestsInput" 
+                    placeholder="Haute Horlogerie Complications, Muzo Emeralds" 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+                  >
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <label class="text-[10px] font-cinzel uppercase text-zinc-400">Invitation Code</label>
+                    <button type="button" id="prefillVipCodeBtn" class="text-[9px] font-cinzel text-[#d4af37] hover:underline">Apply VIP Code</button>
+                  </div>
+                  <input 
+                    type="text" 
+                    id="memberInvitationCodeInput" 
+                    placeholder="e.g. VENDOME-VIP-2026" 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-[#f5e6b8] font-cinzel uppercase tracking-wider focus:outline-none focus:border-[#d4af37]"
+                  >
+                </div>
+
+                <button 
+                  type="submit" 
+                  class="w-full btn-luxury-gold py-3 text-xs tracking-widest uppercase font-cinzel shadow-xl mt-2 cursor-pointer"
+                >
+                  <i class="fa-solid fa-crown mr-1"></i>
+                  Submit Collector Credentials
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE-OVER CONCIERGE ACQUISITION DRAWER (CART)
+       ============================================================ -->
+  <div id="acquisitionDrawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300">
+    <div id="acquisitionBackdrop" class="fixed inset-0 bg-[#07080a]/80 backdrop-blur-md opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+
+    <div id="acquisitionPanel" class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[480px] bg-[#0c0e14] border-l border-white/10 shadow-2xl flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300 ease-out z-10">
+      
+      <!-- Drawer Header -->
+      <div class="p-6 border-b border-white/10 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full wax-seal flex items-center justify-center text-[#07080a] text-xs">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <div>
+            <h3 class="text-base font-cinzel font-bold text-[#f5e6b8] tracking-wider uppercase">Acquisition Bag</h3>
+            <p class="text-[11px] text-zinc-400 font-sans">Private concierge reservations</p>
+          </div>
+        </div>
+        <button id="closeAcquisitionDrawerBtn" class="text-zinc-400 hover:text-white text-base transition p-2 cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Items Container -->
+      <div id="acquisitionCartItems" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <!-- Injected dynamically by JavaScript -->
+      </div>
+
+      <!-- Empty State Notice -->
+      <div id="cartEmptyNotice" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center space-y-4">
+        <div class="w-16 h-16 rounded-full liquid-glass flex items-center justify-center text-2xl text-[#d4af37]">
+          <i class="fa-solid fa-gem"></i>
+        </div>
+        <h4 class="text-base font-serif text-white font-medium">Your Acquisition Bag is Empty</h4>
+        <p class="text-xs text-zinc-400 font-sans max-w-xs">
+          Explore our permanent collections of Haute Horlogerie and Haute Joaillerie to reserve creations.
+        </p>
+      </div>
+
+      <!-- Drawer Footer & Actions -->
+      <div id="cartFooterActions" class="p-6 bg-[#08090d] border-t border-white/10 space-y-4">
+        <div class="space-y-2 text-xs font-sans">
+          <div class="flex justify-between text-zinc-400">
+            <span>Estimated Subtotal</span>
+            <span id="acquisitionSubtotal" class="text-white font-cinzel font-bold">$0</span>
+          </div>
+          <div class="flex justify-between text-zinc-400">
+            <span>White-Glove Armored Hand Delivery</span>
+            <span class="text-[#d4af37] font-cinzel font-bold">COMPLIMENTARY</span>
+          </div>
+          <div class="flex justify-between text-zinc-400">
+            <span>Geneva Provenance Registry & Insurance</span>
+            <span class="text-[#d4af37] font-cinzel font-bold">INCLUDED</span>
+          </div>
+          <div class="pt-2 border-t border-white/10 flex justify-between items-baseline font-cinzel">
+            <span class="text-xs text-zinc-300 uppercase tracking-wider">Total Valuation:</span>
+            <span id="acquisitionTotal" class="text-xl font-bold text-gold-gradient">$0</span>
+          </div>
+        </div>
+
+        <button 
+          id="proceedAcquisitionCheckoutBtn" 
+          class="w-full btn-luxury-gold py-3.5 text-xs font-cinzel tracking-widest uppercase shadow-xl cursor-pointer"
+        >
+          Proceed to Private Acquisition
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRODUCT DOSSIER QUICK VIEW MODAL
+       ============================================================ -->
+  <div id="productDossierModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="productDossierBackdrop" class="fixed inset-0 bg-[#07080a]/85 backdrop-blur-md"></div>
+    <div class="relative liquid-glass-card bg-[#0b0d14] rounded-3xl p-6 sm:p-8 max-w-4xl w-full max-h-[92vh] overflow-y-auto z-10 border border-[#d4af37]/35 shadow-2xl">
+      <button id="closeProductDossierBtn" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-lg transition p-2 cursor-pointer z-20">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div id="productDossierContent">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ACQUISITION CHECKOUT MODAL
+       ============================================================ -->
+  <div id="acquisitionCheckoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="checkoutModalBackdrop" class="fixed inset-0 bg-[#07080a]/85 backdrop-blur-md cursor-pointer"></div>
+    <div class="relative liquid-glass-card bg-[#0b0d14] rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[92vh] overflow-y-auto z-10 border border-[#d4af37]/35 shadow-2xl">
+      <button id="closeCheckoutModalBtn" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-lg transition p-2 cursor-pointer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="space-y-6">
+        <div class="text-center border-b border-white/10 pb-4">
+          <div class="w-12 h-12 rounded-full wax-seal flex items-center justify-center text-[#07080a] mx-auto mb-2 text-sm">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="text-xl font-cinzel font-bold text-[#f5e6b8] uppercase tracking-wider">Secured Acquisition Protocol</h3>
+          <p class="text-xs text-zinc-400 font-sans mt-0.5">White-Glove Courier Escort & Registry Documentation</p>
+        </div>
+
+        <form id="acquisitionCheckoutForm" class="space-y-4">
+          <div class="p-4 rounded-xl liquid-glass space-y-2">
+            <h4 class="text-xs font-cinzel uppercase tracking-wider text-[#d4af37] font-bold">Acquisition Summary</h4>
+            <div id="checkoutItemsSummary" class="space-y-1"></div>
+            <div class="pt-2 border-t border-white/10 flex justify-between font-cinzel text-xs">
+              <span class="text-zinc-400">Total Valuation:</span>
+              <span id="checkoutSummaryTotal" class="text-gold-gradient font-bold text-sm">$0</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Recipient Legal Title & Name *</label>
+              <input 
+                type="text" 
+                id="checkoutClientName" 
+                placeholder="Lord Alexander Vance" 
+                required 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+              >
+            </div>
+            <div>
+              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Destination City & Country *</label>
+              <input 
+                type="text" 
+                id="checkoutDeliveryCity" 
+                placeholder="Geneva, Switzerland" 
+                required 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+              >
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Secured Delivery Address / Private Suite *</label>
+            <input 
+              type="text" 
+              id="checkoutDeliveryAddress" 
+              placeholder="Villa des Cyprès, Chemin de Bel-Air 14, 1208 Genève" 
+              required 
+              class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans"
+            >
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Special Security or Diplomatic Instructions</label>
+            <textarea 
+              id="checkoutSpecialInstructions" 
+              rows="2" 
+              placeholder="e.g. Notify private security team 24 hours prior to vault transfer."
+              class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#d4af37] font-sans resize-none"
+            ></textarea>
+          </div>
+
+          <div class="pt-2 flex items-center gap-3">
+            <button 
+              type="submit" 
+              class="w-full btn-luxury-gold py-3.5 text-xs font-cinzel tracking-widest uppercase shadow-xl cursor-pointer"
+            >
+              <i class="fa-solid fa-signature mr-1.5"></i>
+              Confirm Sovereign Acquisition
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       DEED OF PROVENANCE & AUTHENTICITY MODAL (PRINTABLE RECEIPT)
+       ============================================================ -->
+  <div id="deedOfProvenanceModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="deedOfProvenanceBackdrop" class="fixed inset-0 bg-[#07080a]/90 backdrop-blur-md cursor-pointer"></div>
+    <div class="relative max-w-3xl w-full max-h-[94vh] overflow-y-auto z-10 space-y-4">
+      
+      <!-- Printable Deed Component -->
+      <div id="printableDeed">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Action Buttons (No Print) -->
+      <div class="flex items-center gap-4 no-print justify-end">
+        <button 
+          id="printDeedBtn" 
+          class="btn-luxury-outline py-2.5 px-6 text-xs font-cinzel tracking-wider cursor-pointer"
+        >
+          <i class="fa-solid fa-print mr-1.5"></i>
+          Print Official Deed (PDF)
+        </button>
+        <button 
+          id="closeDeedModalBtn" 
+          class="btn-luxury-gold py-2.5 px-6 text-xs font-cinzel tracking-wider cursor-pointer"
+        >
+          Close & Return to Salon
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       LE CERCLE PRIVÉ MEMBERSHIP SUCCESS MODAL
+       ============================================================ -->
+  <div id="membershipSuccessModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="membershipSuccessBackdrop" class="fixed inset-0 bg-[#07080a]/85 backdrop-blur-md cursor-pointer"></div>
+    <div class="relative liquid-glass-card bg-[#0b0d14] rounded-3xl p-8 max-w-lg w-full z-10 border border-[#d4af37]/40 shadow-2xl">
+      <div id="membershipSuccessContent">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING LUXURY TOAST NOTIFICATIONS
+       ============================================================ -->
+  <div id="luxuryToastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none">
+    <!-- Dynamic Toasts injected here -->
+  </div>
+
+  <!-- ============================================================
+       FOOTER: "LA MAISON VENDÔME"
+       ============================================================ -->
+  <footer class="relative z-10 bg-[#050608] border-t border-white/10 text-zinc-400 text-xs py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        
+        <!-- Maison Heritage -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-8 h-8 rounded-full wax-seal flex items-center justify-center text-[#07080a] text-xs font-bold">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <span class="font-cinzel text-lg font-bold tracking-[0.2em] text-[#f5e6b8]">MAISON VENDÔME</span>
+          </div>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed max-w-sm font-light">
+            Perpetuating ancestral French haute joaillerie and Swiss mechanical complications since 1894. All creations are certified Fairmined gold and recorded in our permanent Geneva archives.
+          </p>
+          <div class="text-[11px] font-cinzel text-[#d4af37] space-y-1">
+            <p><i class="fa-solid fa-location-dot mr-1.5"></i> 26, Place Vendôme, 75001 Paris, France</p>
+            <p><i class="fa-solid fa-mountain mr-1.5"></i> Manufacture Vallée de Joux, Canton de Vaud, Suisse</p>
+          </div>
+        </div>
+
+        <!-- Collections -->
+        <div class="space-y-3 font-cinzel">
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest text-[#f5e6b8]">Collections</h4>
+          <ul class="space-y-2 text-[11px] text-zinc-400">
+            <li><a href="#collections" class="hover:text-[#d4af37] transition">Haute Horlogerie</a></li>
+            <li><a href="#collections" class="hover:text-[#d4af37] transition">Haute Joaillerie</a></li>
+            <li><a href="#collections" class="hover:text-[#d4af37] transition">Maroquinerie d'Art</a></li>
+            <li><a href="#collections" class="hover:text-[#d4af37] transition">Haute Parfumerie & Objets</a></li>
+            <li><a href="#collections" class="hover:text-[#d4af37] transition">Pièces Uniques Allocations</a></li>
+          </ul>
+        </div>
+
+        <!-- Private Salons -->
+        <div class="space-y-3 font-cinzel">
+          <h4 class="text-white text-xs font-bold uppercase tracking-widest text-[#f5e6b8]">Boutiques & Salons</h4>
+          <ul class="space-y-2 text-[11px] text-zinc-400 font-sans">
+            <li>Place Vendôme, Paris</li>
+            <li>Rue du Rhône, Genève</li>
+            <li>Bond Street, London</li>
+            <li>Madison Avenue, New York</li>
+            <li>Ginza District, Tokyo</li>
+            <li>Dubai Opera District, UAE</li>
+          </ul>
+        </div>
+
+        <!-- Le Cercle Privé -->
+        <div class="space-y-3">
+          <h4 class="text-white text-xs font-cinzel font-bold uppercase tracking-widest text-[#f5e6b8]">Client Care</h4>
+          <ul class="space-y-2 text-[11px] font-sans">
+            <li><a href="#membership" class="hover:text-[#d4af37] transition font-cinzel">Le Cercle Privé Membership</a></li>
+            <li><a href="#" class="hover:text-[#d4af37] transition">Geneva Vault Certificate Lookup</a></li>
+            <li><a href="#" class="hover:text-[#d4af37] transition">Restoration & Archival Care</a></li>
+            <li><a href="#" class="hover:text-[#d4af37] transition">White-Glove Courier Logistics</a></li>
+            <li><a href="gaming.html" class="text-[#d4af37] hover:underline transition font-cinzel">Esports Edition Prototype</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Copyright & Hallmark Bar -->
+      <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10px] font-cinzel text-zinc-500">
+        <p>&copy; 2026 MAISON VENDÔME & AURA S.A. ALL RIGHTS RESERVED. POINÇON DE GENÈVE HALLMARK.</p>
+        <p class="flex items-center gap-2">
+          <span>HAUTE HORLOGERIE SUISSE & PARIS ÉDITION</span>
+          <span>•</span>
+          <span class="text-[#d4af37]">FAIRMINED ETHICAL CERTIFIED</span>
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/luxury-data.js"></script>
+  <script src="js/luxury-app.js"></script>
+</body>
+</html>

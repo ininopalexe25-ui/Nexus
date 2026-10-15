@@ -1,0 +1,1395 @@
+<!DOCTYPE html>
+<html lang="id" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NEXUS APEX // BATTLESTATION ATELIER | High-End Esports Hardware & Custom Silicon</title>
+  
+  <!-- Google Fonts: Orbitron (Futuristic Display), Rajdhani (Cybernetic Technical), Chakra Petch, JetBrains Mono, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=JetBrains+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Orbitron:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome 6 Pro CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            orbitron: ['"Orbitron"', 'sans-serif'],
+            heading: ['"Orbitron"', 'sans-serif'],
+            serif: ['"Orbitron"', 'sans-serif'],
+            tech: ['"Rajdhani"', 'sans-serif'],
+            cinzel: ['"Rajdhani"', 'sans-serif'],
+            chakra: ['"Chakra Petch"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            apex: {
+              obsidian: '#07080a',
+              noir: '#0c0e14',
+              surface: '#11141c',
+              neon: '#00ff87',
+              emerald: '#10b981',
+              cyan: '#00f0ff',
+              magenta: '#ff007f',
+              gold: '#d4af37',
+              champagne: '#f5e6b8'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Luxury Liquid Glass & Retro-Futuristic Stylesheet -->
+  <link rel="stylesheet" href="css/luxury.css">
+</head>
+<body class="bg-[#07080a] text-zinc-100 min-h-screen flex flex-col font-sans selection:bg-[#00ff87]/30 selection:text-white relative overflow-x-hidden">
+
+  <!-- ============================================================
+       RETRO-FUTURISTIC SCANLINES & 3D CYBER GRID PERSPECTIVE
+       ============================================================ -->
+  <div class="scanlines-overlay pointer-events-none"></div>
+  <div class="cyber-grid-perspective pointer-events-none"></div>
+
+  <!-- ============================================================
+       ORGANIC FLUID LIGHT REFRACTION ORBS (LIQUID GLASS BACKDROP)
+       ============================================================ -->
+  <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+    <!-- Emerald Liquid Orb -->
+    <div class="absolute -top-32 -left-32 w-[600px] h-[600px] rounded-full bg-gradient-to-br from-[#00ff87]/15 to-transparent blur-[130px] animate-liquid-1"></div>
+    <!-- Electric Cyan Liquid Orb -->
+    <div class="absolute top-[35%] -right-40 w-[650px] h-[650px] rounded-full bg-gradient-to-bl from-[#00f0ff]/12 to-transparent blur-[150px] animate-liquid-2"></div>
+    <!-- Cyber Magenta Liquid Orb -->
+    <div class="absolute top-[65%] -left-32 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-[#ff007f]/10 to-transparent blur-[140px] animate-liquid-3"></div>
+    <!-- Deep Champagne / Ultraviolet Liquid Orb -->
+    <div class="absolute -bottom-40 left-[25%] w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-[#a855f7]/10 via-[#d4af37]/8 to-transparent blur-[160px] animate-liquid-3"></div>
+  </div>
+
+  <!-- ============================================================
+       TOP TELEMETRY & CROSS-NAVIGATION TICKER
+       ============================================================ -->
+  <aside class="relative z-50 bg-[#090b10]/90 backdrop-blur-md text-zinc-300 text-[11px] font-cinzel py-2 px-4 border-b border-white/[0.08] tracking-widest uppercase">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
+      <div class="flex items-center gap-3">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] font-bold text-[9px] tracking-[0.2em]">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#00ff87] animate-pulse"></span>
+          HAUTE BATTLESTATION ATELIER
+        </span>
+        <span class="hidden md:inline text-zinc-400 font-sans tracking-normal text-xs">
+          Top 1% ASIC Binned Silicon • Zero-Vibration Vault Escort • 540Hz QD-OLED Calibrated
+        </span>
+      </div>
+
+      <div class="flex items-center gap-4 text-xs font-mono">
+        <a href="gaming.html" class="px-2.5 py-0.5 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] text-[10px] tracking-wider transition flex items-center gap-1.5">
+          <i class="fa-solid fa-gamepad text-[10px] text-[#00ff87]"></i>
+          <span>Katalog Standard (140+ Gear)</span>
+          <i class="fa-solid fa-arrow-right text-[8px]"></i>
+        </a>
+        <span class="text-zinc-600 hidden sm:inline">•</span>
+        <span class="text-[#f5e6b8] hidden sm:inline font-mono">140 Authentic Creations</span>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ============================================================
+       LIQUID GLASS STICKY NAVIGATION BAR
+       ============================================================ -->
+  <header class="sticky top-0 z-40 liquid-glass-nav transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- Brand Insignia -->
+        <a href="#hero" class="flex items-center gap-3 group">
+          <div class="relative w-11 h-11 rounded-2xl liquid-glass border border-[#00ff87]/40 flex items-center justify-center text-[#00ff87] shadow-[0_0_20px_rgba(0,255,135,0.25)] group-hover:shadow-[0_0_25px_rgba(0,255,135,0.45)] transition-all duration-300">
+            <i class="fa-solid fa-crown text-base group-hover:scale-110 transition-transform"></i>
+            <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#00ff87] rounded-full animate-ping opacity-75"></span>
+          </div>
+          <div>
+            <div class="flex items-center gap-2">
+              <span class="font-cinzel text-xl sm:text-2xl font-black tracking-[0.25em] text-white">NEXUS</span>
+              <span class="text-[10px] font-cinzel font-black tracking-[0.3em] px-1.5 py-0.5 rounded bg-gradient-to-r from-[#00ff87] to-[#00f0ff] text-[#07080a] uppercase shadow-sm">
+                APEX
+              </span>
+            </div>
+            <span class="text-[9px] uppercase tracking-[0.3em] text-[#00ff87] font-cinzel block -mt-1 font-semibold">
+              Battlestation Atelier
+            </span>
+          </div>
+        </a>
+
+        <!-- Haute Navigation Links -->
+        <nav class="hidden xl:flex items-center gap-6 text-xs font-cinzel tracking-[0.2em] uppercase text-zinc-300">
+          <a href="#alchemy" class="hover:text-[#00ff87] transition">L'Alchimie</a>
+          <a href="#showcase" class="hover:text-[#00ff87] transition">3D Vault</a>
+          <a href="#community" class="hover:text-[#00f0ff] transition">Syndicate</a>
+          <a href="#download-app" class="hover:text-[#ff007f] transition">Apex Suite</a>
+          <a href="#collections" class="hover:text-[#00ff87] transition">Hardware Catalog</a>
+          <a href="#values" class="hover:text-[#00ff87] transition">Atelier Pillars</a>
+          <a href="#membership" class="hover:text-[#00ff87] transition">Cercle Privé</a>
+        </nav>
+
+        <!-- Right Controls: Currency, Wishlist, Bag -->
+        <div class="flex items-center gap-2.5 sm:gap-3.5">
+          
+          <!-- Tri-Currency Devise Switcher -->
+          <div class="relative">
+            <select 
+              id="currencySelector" 
+              class="liquid-glass text-xs text-[#00ff87] font-cinzel px-3 py-1.5 rounded-full border border-white/10 focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-7 tracking-wider"
+              title="Devise / Currency"
+            >
+              <option value="IDR" class="bg-[#0a0c12] text-white">IDR (Rp)</option>
+              <option value="USD" class="bg-[#0a0c12] text-white">USD ($)</option>
+              <option value="EUR" class="bg-[#0a0c12] text-white">EUR (€)</option>
+            </select>
+            <i class="fa-solid fa-chevron-down absolute right-2.5 top-3 text-[9px] text-[#00ff87] pointer-events-none"></i>
+          </div>
+
+          <!-- Private Viewing Salon Wishlist Button -->
+          <button 
+            id="navWishlistBtn" 
+            class="relative w-10 h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#f43f5e] flex items-center justify-center transition border border-white/10 hover:border-[#f43f5e]/40 cursor-pointer"
+            title="Salon Privé / Private Viewings"
+          >
+            <i class="fa-regular fa-heart text-sm"></i>
+            <span 
+              id="navWishlistBadge" 
+              class="hidden absolute -top-1 -right-1 bg-[#f43f5e] text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center font-mono shadow-md"
+            >
+              0
+            </span>
+          </button>
+
+          <!-- Acquisition Bag Button -->
+          <button 
+            id="navCartBtn" 
+            class="relative flex items-center gap-2.5 h-10 px-4 rounded-full btn-luxury-emerald cursor-pointer"
+            title="Acquisition Bag"
+          >
+            <i class="fa-solid fa-bag-shopping text-xs"></i>
+            <span class="hidden sm:inline font-cinzel text-[11px] tracking-widest font-black">BAG</span>
+            <span 
+              id="navCartBadge" 
+              class="hidden bg-[#07080a] text-[#00ff87] border border-[#00ff87]/60 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center font-mono"
+            >
+              0
+            </span>
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       HERO: L'ART DU SILICIUM (WHERE POWER TRANSCENDS SPEED)
+       ============================================================ -->
+  <section id="hero" class="relative z-10 pt-16 pb-24 lg:pt-24 lg:pb-32 border-b border-white/[0.08] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        
+        <!-- Left: Monumental Narrative & Editorial Headline -->
+        <div class="lg:col-span-7 space-y-7 text-center lg:text-left">
+          
+          <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass border border-[#00ff87]/35 text-[#00ff87] text-[11px] font-cinzel tracking-[0.25em] uppercase">
+            <span class="w-2 h-2 rounded-full bg-[#00ff87] shadow-[0_0_10px_#00ff87]"></span>
+            L'Élite du Silicium • Battlestation Atelier 2026
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-orbitron font-black text-white leading-[1.12] tracking-tight uppercase">
+            L'Art du Silicium.<br>
+            <span class="text-emerald-gradient">Where Power Transcends Speed.</span>
+          </h1>
+
+          <p class="text-sm sm:text-base text-zinc-300 font-sans max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+            Hand-selected top 1% binned ASICs, bespoke aerospace-grade CNC aluminum chassis, and zero-vibration liquid cooling loops. Engineered for esports world champions, competitive institutions, and sovereign connoisseurs.
+          </p>
+
+          <!-- Dual Luxury Actions -->
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
+            <a 
+              href="#collections" 
+              class="w-full sm:w-auto btn-luxury-emerald py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel shadow-xl cursor-pointer"
+            >
+              <i class="fa-solid fa-gem mr-1.5"></i>
+              Explore 140 Hardware Masterpieces
+            </a>
+            <a 
+              href="#showcase" 
+              class="w-full sm:w-auto btn-luxury-outline py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel cursor-pointer text-center"
+            >
+              <i class="fa-solid fa-cube mr-1.5 text-[#00f0ff]"></i>
+              Enter 3D Spatial Vault
+            </a>
+          </div>
+
+          <!-- Pillars Telemetry Strip -->
+          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <p class="text-lg font-cinzel font-bold text-emerald-gradient">140+</p>
+              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Official Creations</p>
+            </div>
+            <div>
+              <p class="text-lg font-cinzel font-bold text-emerald-gradient">TOP 1%</p>
+              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">ASIC Binned Silicon</p>
+            </div>
+            <div>
+              <p class="text-lg font-cinzel font-bold text-emerald-gradient">100%</p>
+              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Factory Provenance</p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right: 3D Interactive Halo Masterpiece Spotlight Card -->
+        <div class="lg:col-span-5 relative perspective-1000">
+          
+          <div class="card-3d-tilt relative liquid-glass-card rounded-3xl p-7 border border-[#00ff87]/30 shadow-2xl group">
+            
+            <!-- Floating Hallmark Pill -->
+            <div class="flex items-center justify-between pb-4 border-b border-white/10 depth-layer-2">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-cinzel font-bold tracking-widest uppercase">
+                <i class="fa-solid fa-crown mr-1"></i> Halo Masterpiece
+              </span>
+              <span class="text-[11px] font-mono text-zinc-400 tracking-wider">GPU-001 • AD102 Silicon</span>
+            </div>
+
+            <!-- Halo Timepiece Image with 3D Depth -->
+            <div class="relative aspect-square rounded-2xl overflow-hidden bg-zinc-950/80 p-6 flex items-center justify-center luxury-image-frame cursor-pointer view-detail-trigger my-5 depth-layer-3" data-id="GPU-001">
+              <img 
+                src="https://commons.wikimedia.org/wiki/Special:FilePath/ASUS%20ROG%20Strix%20GeForce%20RTX%204090.jpg?width=800" 
+                alt="ASUS ROG Strix GeForce RTX 4090 24GB GDDR6X OC Edition" 
+                onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop';"
+                class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.95)] group-hover:scale-105 transition-transform duration-700 pointer-events-none"
+              >
+              <div class="absolute bottom-3 left-3 bg-[#07080a]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] font-cinzel text-[#00ff87]">
+                <i class="fa-solid fa-fan text-[#00ff87] mr-1 inline-block animate-spin"></i> Integrated Vapor Chamber
+              </div>
+            </div>
+
+            <!-- Hardware Spec Summary -->
+            <div class="space-y-2 depth-layer-1">
+              <span class="text-[10px] font-cinzel tracking-[0.25em] text-[#00ff87] uppercase block">Komponen Rakit PC • Flagship AD102</span>
+              <h3 class="text-xl sm:text-2xl font-serif text-white font-medium">ASUS ROG Strix GeForce RTX 4090 24GB OC</h3>
+              <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+                AD102 GPU with 16,384 CUDA Cores, 24GB GDDR6X 384-bit memory, axial-tech vapor chamber cooling, and patented diecast shroud.
+              </p>
+
+              <!-- Valuation & Action -->
+              <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+                <div>
+                  <span class="text-[10px] text-zinc-500 font-cinzel uppercase block">Valuation</span>
+                  <span class="text-xl font-bold font-cinzel text-emerald-gradient">Rp 36.999.000</span>
+                </div>
+                <button 
+                  data-acquire-id="GPU-001" 
+                  class="acquire-btn btn-luxury-emerald py-2.5 px-5 text-[11px] font-cinzel tracking-wider cursor-pointer"
+                >
+                  Acquire Creation
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STORYTELLING NARRATIVE: 3 CHAPTERS OF ATELIER EXCELLENCE
+       ============================================================ -->
+  <section id="alchemy" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#080a0f]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold">Les Chroniques de l'Excellence</span>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">Three Chapters of Engineering Alchemy</h2>
+        <p class="text-xs sm:text-sm text-zinc-400 font-sans leading-relaxed">
+          From the nanoscale purity of TSMC 4nm silicon wafers to hand-polished hardline acrylic battlestations.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Chapter 1 -->
+        <div class="liquid-glass-card rounded-3xl p-8 space-y-5 border border-white/10">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-serif text-[#00ff87] italic">I</span>
+            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400">Silicon Purity</span>
+          </div>
+          <h3 class="text-xl font-serif text-white">L'Alchimie du Silicium</h3>
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light">
+            We reject 99 out of 100 raw silicon dies. Only chips demonstrating zero voltage leakage, extreme thermal stability, and maximum IPC headroom under sub-ambient cooling enter the Apex assembly roster.
+          </p>
+          <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] font-mono text-[#00ff87]">
+            <i class="fa-solid fa-microchip"></i>
+            <span>Top 1% ASIC Binning Provenance</span>
+          </div>
+        </div>
+
+        <!-- Chapter 2 -->
+        <div class="liquid-glass-card rounded-3xl p-8 space-y-5 border border-white/10">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-serif text-[#00f0ff] italic">II</span>
+            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400">Thermal Mastery</span>
+          </div>
+          <h3 class="text-xl font-serif text-white">L'Atelier Battlestation</h3>
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light">
+            Hand-machined 6000-series aerospace alloy, custom vapor chambers with sintered copper powder, and hand-sleeved Kevlar power cabling. Silent 0dB acoustic resonance during sustained 4K tournament warfare.
+          </p>
+          <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] font-mono text-[#00f0ff]">
+            <i class="fa-solid fa-snowflake"></i>
+            <span>Zero-Decibel Acoustic Chamber Tuning</span>
+          </div>
+        </div>
+
+        <!-- Chapter 3 -->
+        <div class="liquid-glass-card rounded-3xl p-8 space-y-5 border border-white/10">
+          <div class="flex items-center justify-between">
+            <span class="text-3xl font-serif text-[#f5e6b8] italic">III</span>
+            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400">Tournament Sanctuary</span>
+          </div>
+          <h3 class="text-xl font-serif text-white">Le Sanctuaire du Champion</h3>
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light">
+            Ergonomic biomechanical precision crafted in partnership with Herman Miller, 540Hz QD-OLED response times, and sub-millisecond magnetic Hall-Effect actuation. Equipment that behaves as a biological extension.
+          </p>
+          <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] font-mono text-[#f5e6b8]">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Guaranteed Perpetual Official Warranty</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SOVEREIGN VAULT: INTERACTIVE 3D HARDWARE SHOWCASE CAROUSEL
+       ============================================================ -->
+  <section id="showcase" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
+        <div>
+          <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold block mb-2">
+            <i class="fa-solid fa-cube mr-1 text-[#00f0ff]"></i> The Sovereign 3D Vault
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">
+            Halo Showcase Carousel
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans leading-relaxed">
+          The pinnacle tier of gaming engineering in spatial 3D perspective. Navigate the 6 apex masterpieces curated for world championship dominance.
+        </p>
+      </div>
+
+      <!-- 3D Carousel Stage Container -->
+      <div class="carousel-3d-container relative">
+        <div id="carousel3DTrack" class="carousel-3d-track">
+          <!-- Dynamic 3D Carousel Slides injected by js/apex-app.js -->
+        </div>
+      </div>
+
+      <!-- Carousel Navigation Controls & Indicators -->
+      <div class="flex items-center justify-between max-w-md mx-auto mt-8 px-4">
+        <button 
+          id="carouselPrevBtn" 
+          class="w-12 h-12 rounded-full liquid-glass border border-white/20 text-white hover:text-[#00ff87] hover:border-[#00ff87]/60 flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer"
+          title="Previous Halo Masterpiece"
+        >
+          <i class="fa-solid fa-chevron-left text-sm"></i>
+        </button>
+
+        <div id="carouselIndicators" class="flex items-center gap-2">
+          <!-- Dynamic Indicators injected by js/apex-app.js -->
+        </div>
+
+        <button 
+          id="carouselNextBtn" 
+          class="w-12 h-12 rounded-full liquid-glass border border-white/20 text-white hover:text-[#00ff87] hover:border-[#00ff87]/60 flex items-center justify-center transition-all duration-300 shadow-lg cursor-pointer"
+          title="Next Halo Masterpiece"
+        >
+          <i class="fa-solid fa-chevron-right text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Active Item Valuation & Quick Action Summary -->
+      <div id="carouselActiveDetails" class="max-w-4xl mx-auto mt-8">
+        <!-- Dynamic Summary Card injected by js/apex-app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMMUNITY FEATURES: ESPORTS SYNDICATE, BENCHMARKS & DISCORD
+       ============================================================ -->
+  <section id="community" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#090b12]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <div>
+          <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00f0ff] font-semibold block mb-2">
+            <i class="fa-solid fa-users mr-1"></i> The Apex Syndicate
+          </span>
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">
+            Competitive Community & Pro Telemetry
+          </h2>
+        </div>
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans leading-relaxed">
+          Battle-tested in ESL Pro League and VALORANT Champions Tour. Access verified pro athlete loadouts, 4K ray-tracing metrics, and our private engineering squad.
+        </p>
+      </div>
+
+      <!-- Top Row: Pro Player Loadout Cards -->
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        
+        <!-- Loadout 1: CS2 Majors Spec -->
+        <div class="liquid-glass-card rounded-3xl p-7 border border-white/10 space-y-5">
+          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 flex items-center justify-center text-[#00ff87] font-orbitron font-bold text-sm">
+                S1
+              </div>
+              <div>
+                <h4 class="font-orbitron text-base text-white font-bold">Major Champion Setup</h4>
+                <p class="text-[10px] font-mono text-[#00ff87] uppercase tracking-wider">Tactical FPS Tournament Loadout</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
+              540Hz Calibrated
+            </span>
+          </div>
+
+          <div class="space-y-3 text-xs font-sans">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">GPU:</span>
+              <span class="text-white font-medium">ASUS ROG Strix RTX 4090 24GB OC (AD102)</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">Keyboard:</span>
+              <span class="text-white font-medium">Wooting 60HE+ Rapid Trigger Analog</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">Mouse:</span>
+              <span class="text-white font-medium">Logitech G PRO X Superlight 2 (4000Hz)</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">Audio:</span>
+              <span class="text-white font-medium">SteelSeries Arctis Nova Pro Wireless</span>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-zinc-400">Total Loadout: <strong class="text-emerald-gradient font-orbitron font-bold">Rp 71.748.000</strong></span>
+            <button data-acquire-id="GPU-001" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer">
+              Acquire Core GPU
+            </button>
+          </div>
+        </div>
+
+        <!-- Loadout 2: VCT Immortal Spec -->
+        <div class="liquid-glass-card rounded-3xl p-7 border border-white/10 space-y-5">
+          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-full bg-[#00f0ff]/15 border border-[#00f0ff]/40 flex items-center justify-center text-[#00f0ff] font-orbitron font-bold text-sm">
+                TZ
+              </div>
+              <div>
+                <h4 class="font-orbitron text-base text-white font-bold">VCT Champions Config</h4>
+                <p class="text-[10px] font-mono text-[#00f0ff] uppercase tracking-wider">Sub-Millisecond Reflex Rig</p>
+              </div>
+            </div>
+            <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
+              0.125ms Input
+            </span>
+          </div>
+
+          <div class="space-y-3 text-xs font-sans">
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">CPU:</span>
+              <span class="text-white font-medium">AMD Ryzen 7 7800X3D 3D V-Cache</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">Mouse:</span>
+              <span class="text-white font-medium">Finalmouse UltralightX Lion Carbon (29g)</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">Display:</span>
+              <span class="text-white font-medium">ASUS ROG Swift PG27AQDM OLED 240Hz</span>
+            </div>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
+              <span class="text-zinc-400 font-mono">Throne:</span>
+              <span class="text-white font-medium">Herman Miller x Logitech G Embody</span>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+            <span class="text-xs font-mono text-zinc-400">Total Loadout: <strong class="text-emerald-gradient font-orbitron font-bold">Rp 56.499.000</strong></span>
+            <button data-acquire-id="CHR-007" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer">
+              Acquire Throne
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Middle: 4K Ray-Tracing Telemetry Benchmarks -->
+      <div class="liquid-glass rounded-3xl p-8 border border-white/10 mb-12">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-4">
+          <div>
+            <span class="text-[10px] font-mono text-[#00ff87] uppercase tracking-widest block mb-1">
+              <i class="fa-solid fa-chart-line mr-1"></i> Verified Silicon Telemetry
+            </span>
+            <h3 class="font-orbitron text-xl text-white font-bold">4K Ultra Ray-Tracing Benchmark Suite</h3>
+          </div>
+          <span class="text-xs font-mono text-zinc-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
+            Hardware: RTX 4090 OC • i9-14900K • 64GB DDR5-6400
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+          
+          <div class="p-5 rounded-2xl bg-[#06080d]/80 border border-white/5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-orbitron text-sm font-bold text-white">Cyberpunk 2077</span>
+              <span class="text-[10px] font-mono text-[#ff007f] font-bold">4K Overdrive RT</span>
+            </div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-orbitron font-black text-[#00ff87]">148</span>
+              <span class="text-xs font-mono text-zinc-400">FPS AVG</span>
+            </div>
+            <div class="w-full bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+              <div class="bg-gradient-to-r from-[#00ff87] to-[#00f0ff] h-full rounded-full" style="width: 92%"></div>
+            </div>
+            <p class="text-[10px] font-mono text-zinc-400">1% Low: 112 FPS • DLSS 3.5 Frame Gen Active</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#06080d]/80 border border-white/5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-orbitron text-sm font-bold text-white">Black Myth: Wukong</span>
+              <span class="text-[10px] font-mono text-[#00f0ff] font-bold">4K Very High RT</span>
+            </div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-orbitron font-black text-[#00f0ff]">122</span>
+              <span class="text-xs font-mono text-zinc-400">FPS AVG</span>
+            </div>
+            <div class="w-full bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+              <div class="bg-gradient-to-r from-[#00f0ff] to-[#a855f7] h-full rounded-full" style="width: 78%"></div>
+            </div>
+            <p class="text-[10px] font-mono text-zinc-400">1% Low: 94 FPS • TSR 100% Super-Res</p>
+          </div>
+
+          <div class="p-5 rounded-2xl bg-[#06080d]/80 border border-white/5 space-y-3">
+            <div class="flex items-center justify-between">
+              <span class="font-orbitron text-sm font-bold text-white">Counter-Strike 2</span>
+              <span class="text-[10px] font-mono text-[#f5e6b8] font-bold">540Hz Native</span>
+            </div>
+            <div class="flex items-baseline gap-2">
+              <span class="text-3xl font-orbitron font-black text-[#f5e6b8]">720+</span>
+              <span class="text-xs font-mono text-zinc-400">FPS AVG</span>
+            </div>
+            <div class="w-full bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+              <div class="bg-gradient-to-r from-[#f5e6b8] to-[#00ff87] h-full rounded-full" style="width: 98%"></div>
+            </div>
+            <p class="text-[10px] font-mono text-zinc-400">1% Low: 560 FPS • Zero Input Stutter</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Bottom Row: Discord Lounge Squad CTA & Athlete Reviews -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        
+        <!-- Discord Card -->
+        <div class="lg:col-span-5 liquid-glass-magenta rounded-3xl p-8 border border-[#ff007f]/40 space-y-5">
+          <div class="flex items-center gap-2">
+            <span class="w-2.5 h-2.5 rounded-full bg-[#00ff87] animate-pulse"></span>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-[#00ff87] font-bold">4,820 Operatives Online</span>
+          </div>
+
+          <h3 class="font-orbitron text-2xl font-black text-white uppercase tracking-wider">
+            Join Nexus Apex Squad Discord Lounge
+          </h3>
+
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed">
+            Connect directly with verified hardware overclockers, competitive esports captains, and our silicon engineering team. Access exclusive drop allocations, custom BIOS profiles, and zero-latency technical triage.
+          </p>
+
+          <button 
+            id="joinDiscordBtn" 
+            class="btn-luxury-magenta py-3.5 px-6 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
+          >
+            <i class="fa-brands fa-discord text-base"></i>
+            <span>Enter Discord Lounge</span>
+          </button>
+        </div>
+
+        <!-- Verified Reviews Carousel / Grid -->
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          
+          <div class="liquid-glass-card rounded-2xl p-5 border border-white/10 space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-[#00ff87] text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[9px] font-mono text-zinc-400">Verified Client</span>
+            </div>
+            <p class="text-xs text-zinc-300 font-sans italic leading-relaxed">
+              "The AD102 binning is authentic. My RTX 4090 holds 2,940MHz sustained without dropping a frame, and the wooden crating delivery was immaculate."
+            </p>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-zinc-400">
+              <span class="text-white font-bold">Marcus V.</span>
+              <span>Esports Org Director</span>
+            </div>
+          </div>
+
+          <div class="liquid-glass-card rounded-2xl p-5 border border-white/10 space-y-3">
+            <div class="flex items-center justify-between">
+              <div class="flex text-[#00ff87] text-xs gap-1">
+                <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+              </div>
+              <span class="text-[9px] font-mono text-zinc-400">Verified Client</span>
+            </div>
+            <p class="text-xs text-zinc-300 font-sans italic leading-relaxed">
+              "Pairing the Herman Miller Embody with the Odyssey Neo G9 changed my posture and endurance in 12-hour tournament scrims. Unrivaled atelier quality."
+            </p>
+            <div class="pt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-zinc-400">
+              <span class="text-white font-bold">Helena S.</span>
+              <span>Pro Valorant Athlete</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       DOWNLOAD COMPANION SUITE CTA: NEXUS APEX CONTROL CENTER
+       ============================================================ -->
+  <section id="download-app" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#07090e] overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="liquid-glass rounded-3xl p-8 sm:p-14 border border-[#00f0ff]/30 shadow-2xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left: Suite Description & Download Buttons -->
+          <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00f0ff]/15 border border-[#00f0ff]/40 text-[#00f0ff] text-[10px] font-mono tracking-[0.2em] uppercase font-bold">
+              <i class="fa-solid fa-download text-[9px]"></i> Nexus Apex Control Center v4.8.2
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white leading-tight uppercase tracking-wider">
+              Unleash Low-Level Silicon.<br>
+              <span class="text-emerald-gradient">Zero-Latency Hardware Engine.</span>
+            </h2>
+
+            <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
+              Calibrate your entire battlestation from a single unified application. Real-time ASIC boost curves, sub-ambient vapor loop pump speeds, per-key 0.1mm analog actuation, and zero background CPU overhead (&lt;0.1%).
+            </p>
+
+            <!-- Feature Checkpoints -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300 font-sans pt-1">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-microchip text-[#00ff87]"></i>
+                <span>Direct GPU/CPU Voltage Curve Editor</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-sliders text-[#00f0ff]"></i>
+                <span>Wooting Rapid Trigger 0.1mm Tuning</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-fan text-[#ff007f]"></i>
+                <span>0dB Acoustic Vapor Chamber Profiles</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-bolt text-[#f5e6b8]"></i>
+                <span>8000Hz USB Polling Rate Lock</span>
+              </div>
+            </div>
+
+            <!-- Download Action Buttons -->
+            <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
+              <button 
+                id="downloadEngineBtn" 
+                class="w-full sm:w-auto btn-luxury-emerald py-4 px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 shadow-xl cursor-pointer"
+              >
+                <i class="fa-brands fa-windows text-base"></i>
+                <span>Download for Windows (x64)</span>
+              </button>
+
+              <button 
+                id="downloadEngineMacBtn" 
+                class="w-full sm:w-auto btn-luxury-outline py-4 px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 cursor-pointer"
+              >
+                <i class="fa-brands fa-apple text-base"></i>
+                <span>macOS Apple Silicon</span>
+              </button>
+            </div>
+
+            <div class="text-[11px] font-mono text-zinc-500 pt-2 flex items-center justify-center lg:justify-start gap-4">
+              <span>SHA-256 Verified Release</span>
+              <span>•</span>
+              <span>84 MB Installer</span>
+              <span>•</span>
+              <span>Windows 11 / 10 64-bit</span>
+            </div>
+          </div>
+
+          <!-- Right: Futuristic HUD Console Preview Mockup -->
+          <div class="lg:col-span-5">
+            <div class="bg-[#05070c]/90 rounded-2xl p-6 border border-[#00f0ff]/40 shadow-2xl font-mono text-xs space-y-4">
+              
+              <div class="flex items-center justify-between pb-3 border-b border-white/10 text-[10px]">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-[#00ff87] animate-pulse"></span>
+                  <span class="text-[#00ff87] font-bold">ENGINE ONLINE</span>
+                </div>
+                <span class="text-zinc-500">POLLING: 8000Hz • 0.125ms</span>
+              </div>
+
+              <!-- Telemetry Meters -->
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1">
+                    <span class="text-zinc-400">GPU Core Clock:</span>
+                    <span class="text-[#00ff87] font-bold">2,820 MHz (OC Boost)</span>
+                  </div>
+                  <div class="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-gradient-to-r from-[#00ff87] to-[#00f0ff] h-full rounded-full" style="width: 88%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1">
+                    <span class="text-zinc-400">Vapor Chamber Temp:</span>
+                    <span class="text-[#00f0ff] font-bold">58°C (Optimal)</span>
+                  </div>
+                  <div class="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-[#00f0ff] h-full rounded-full" style="width: 48%"></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex justify-between text-[11px] mb-1">
+                    <span class="text-zinc-400">Rapid Trigger Deadzone:</span>
+                    <span class="text-[#ff007f] font-bold">0.15 mm (Instant)</span>
+                  </div>
+                  <div class="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden">
+                    <div class="bg-[#ff007f] h-full rounded-full" style="width: 15%"></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Quick Toggles -->
+              <div class="pt-3 border-t border-white/10 grid grid-cols-2 gap-2 text-[10px]">
+                <div class="p-2 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
+                  <span class="text-zinc-300">0dB Fan Mode</span>
+                  <span class="text-[#00ff87] font-bold">ACTIVE</span>
+                </div>
+                <div class="p-2 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
+                  <span class="text-zinc-300">RGB Sync</span>
+                  <span class="text-[#00f0ff] font-bold">AURORA</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       COMPLETE ATELIER CATALOG: ALL 140 MASTERPIECES FROM INITIAL_PRODUCTS
+       ============================================================ -->
+  <section id="collections" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#08090e]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Catalog Header & Search Controls -->
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-8 gap-6">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <span class="w-2 h-2 rounded-full bg-[#00ff87]"></span>
+            <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold">Le Grand Catalogue</span>
+          </div>
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">The Complete Hardware Vault</h2>
+          <p id="catalogResultsCount" class="text-xs text-zinc-400 font-mono mt-2">Loading all hardware creations...</p>
+        </div>
+
+        <!-- Search & Sort Controls -->
+        <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full lg:w-auto">
+          <!-- Live Search Input -->
+          <div class="relative flex-1 sm:w-72">
+            <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-3 text-xs text-zinc-500"></i>
+            <input 
+              type="text" 
+              id="catalogSearchInput" 
+              placeholder="Search GPU, CPU, brand, specs..."
+              class="w-full pl-9 pr-4 py-2 text-xs rounded-full liquid-glass border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-[#00ff87] font-sans"
+            >
+          </div>
+
+          <!-- Sort Select -->
+          <div class="relative sm:w-48">
+            <select 
+              id="catalogSortSelect"
+              class="w-full px-4 py-2 text-xs rounded-full liquid-glass border border-white/10 text-white font-cinzel focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-8 tracking-wider"
+            >
+              <option value="relevance" class="bg-[#0a0c12]">Featured / Relevance</option>
+              <option value="price-high" class="bg-[#0a0c12]">Highest Valuation</option>
+              <option value="price-low" class="bg-[#0a0c12]">Lowest Valuation</option>
+              <option value="rating" class="bg-[#0a0c12]">Collector Rating</option>
+              <option value="alpha" class="bg-[#0a0c12]">Alphabetical</option>
+            </select>
+            <i class="fa-solid fa-arrow-down-wide-short absolute right-3.5 top-3 text-[10px] text-[#00ff87] pointer-events-none"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Pills with Counts -->
+      <div class="mb-10 flex items-center gap-2.5 overflow-x-auto pb-3 scrollbar-none" id="luxuryCategoryPills">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Products Grid -->
+      <div id="luxuryProductsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Pagination Container -->
+      <div id="luxuryPaginationContainer" class="mt-8">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       ATELIER PILLARS: 4 PROVENANCE VALUES
+       ============================================================ -->
+  <section id="values" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#090a10]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+        <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold">Les Valeurs Souveraines</span>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">The Four Atelier Pillars</h2>
+        <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+          The uncompromising code of honor governing every hardware acquisition at Nexus Apex.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <div class="liquid-glass-card rounded-3xl p-7 space-y-4 border border-white/10 text-center">
+          <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00ff87] mx-auto text-lg">
+            <i class="fa-solid fa-certificate"></i>
+          </div>
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">Zero-Defect Provenance</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            100% brand-new, factory-sealed hardware backed by official authorized distributor guarantees. Zero gray-market allocations.
+          </p>
+        </div>
+
+        <div class="liquid-glass-card rounded-3xl p-7 space-y-4 border border-white/10 text-center">
+          <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00f0ff] mx-auto text-lg">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">Top 1% Silicon Binning</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Every halo GPU and CPU undergoes continuous 72-hour thermal stress testing to guarantee peak boost clocks without degradation.
+          </p>
+        </div>
+
+        <div class="liquid-glass-card rounded-3xl p-7 space-y-4 border border-white/10 text-center">
+          <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#f5e6b8] mx-auto text-lg">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+          </div>
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">White-Glove Vault Transit</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Secured transport in custom wooden chassis crating with calibrated zero-vibration shock absorbers and private courier escort.
+          </p>
+        </div>
+
+        <div class="liquid-glass-card rounded-3xl p-7 space-y-4 border border-white/10 text-center">
+          <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#a855f7] mx-auto text-lg">
+            <i class="fa-solid fa-crown"></i>
+          </div>
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">Perpetual Calibration</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+            Direct 24/7 access to our hardware architects for custom BIOS tuning, sub-ambient overclocking profiles, and driver updates.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       EXCLUSIVE MEMBERSHIP CTA: "LE CERCLE APEX"
+       ============================================================ -->
+  <section id="membership" class="py-24 lg:py-32 relative z-10 border-b border-white/[0.08] overflow-hidden">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="liquid-glass-emerald rounded-3xl p-8 sm:p-14 border border-[#00ff87]/40 shadow-2xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left: Invitation Copy -->
+          <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00ff87]/20 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-cinzel tracking-[0.2em] uppercase font-bold">
+              <i class="fa-solid fa-crown text-[9px]"></i> By Private Invitation Only
+            </div>
+
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white leading-tight uppercase tracking-wider">
+              Enter Le Cercle Apex.<br>
+              <span class="text-emerald-gradient">The Founders' Silicon Sanctuary.</span>
+            </h2>
+
+            <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
+              Members of Le Cercle Apex enjoy first-right allocations for limited halo silicon releases, bespoke hardline liquid battlestation commissions, and direct access to our master hardware engineers.
+            </p>
+
+            <div class="space-y-2 pt-2 text-xs text-zinc-300 font-sans">
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-[#00ff87] text-xs"></i>
+                <span>Priority Allocation for Flagship GPU & CPU Releases</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-[#00ff87] text-xs"></i>
+                <span>Complimentary Bespoke Bios Tuning & Overclock Calibration</span>
+              </div>
+              <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-check text-[#00ff87] text-xs"></i>
+                <span>VIP Invitations to Apex Hardware Lab Private Keynotes</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Membership Application Form -->
+          <div class="lg:col-span-5">
+            <div class="bg-[#07080a]/90 backdrop-blur-2xl p-6 sm:p-8 rounded-2xl border border-[#00ff87]/35 shadow-2xl space-y-4">
+              <div class="text-center pb-2 border-b border-white/10">
+                <h3 class="text-base font-cinzel font-bold text-[#f5e6b8] tracking-wider uppercase">Dossier d'Adhésion</h3>
+                <p class="text-[10px] text-zinc-400 font-sans mt-0.5">Discreet collector credential verification</p>
+              </div>
+
+              <form id="membershipApplicationForm" class="space-y-3.5">
+                <div>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Title & Full Legal Name *</label>
+                  <input 
+                    type="text" 
+                    id="memberNameInput" 
+                    placeholder="e.g. Commander Julian Vance" 
+                    required 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+                  >
+                </div>
+
+                <div>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Private Correspondence Email *</label>
+                  <input 
+                    type="email" 
+                    id="memberEmailInput" 
+                    placeholder="julian@vance-holdings.com" 
+                    required 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+                  >
+                </div>
+
+                <div class="grid grid-cols-2 gap-2.5">
+                  <div>
+                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Telephone / Signal</label>
+                    <input 
+                      type="text" 
+                      id="memberPhoneInput" 
+                      placeholder="+62 811 999 888" 
+                      class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+                    >
+                  </div>
+                  <div>
+                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Primary Residence City</label>
+                    <input 
+                      type="text" 
+                      id="memberCityInput" 
+                      placeholder="Jakarta / Singapore" 
+                      class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+                    >
+                  </div>
+                </div>
+
+                <div>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Hardware Interests</label>
+                  <input 
+                    type="text" 
+                    id="membershipInterestsInput" 
+                    placeholder="AD102 Flagship, Custom Hardline Loop, OLED" 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+                  >
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-1">
+                    <label class="text-[10px] font-cinzel uppercase text-zinc-400">Invitation Code</label>
+                    <button type="button" id="prefillVipCodeBtn" class="text-[9px] font-cinzel text-[#00ff87] hover:underline cursor-pointer">Apply VIP Code</button>
+                  </div>
+                  <input 
+                    type="text" 
+                    id="memberInvitationCodeInput" 
+                    placeholder="e.g. APEX-VIP-2026" 
+                    class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-[#00ff87] font-mono uppercase tracking-wider focus:outline-none focus:border-[#00ff87]"
+                  >
+                </div>
+
+                <button 
+                  type="submit" 
+                  class="w-full btn-luxury-emerald py-3 text-xs tracking-widest uppercase font-cinzel shadow-xl mt-2 cursor-pointer"
+                >
+                  <i class="fa-solid fa-crown mr-1"></i>
+                  Submit Collector Credentials
+                </button>
+              </form>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SLIDE-OVER CONCIERGE ACQUISITION DRAWER (CART)
+       ============================================================ -->
+  <div id="acquisitionDrawer" class="fixed inset-0 z-50 pointer-events-none transition-opacity duration-300">
+    <div id="acquisitionBackdrop" class="fixed inset-0 bg-[#07080a]/80 backdrop-blur-md opacity-0 transition-opacity duration-300 pointer-events-auto"></div>
+
+    <div id="acquisitionPanel" class="fixed inset-y-0 right-0 max-w-full w-full sm:w-[480px] bg-[#0c0e14] border-l border-white/10 shadow-2xl flex flex-col pointer-events-auto transform translate-x-full transition-transform duration-300 ease-out z-10">
+      
+      <!-- Drawer Header -->
+      <div class="p-6 border-b border-white/10 flex items-center justify-between bg-[#08090d]">
+        <div>
+          <span class="text-[10px] font-cinzel uppercase text-[#00ff87] tracking-[0.25em] block">Le Cercle des Acquisitions</span>
+          <h3 class="text-xl font-serif text-white">Your Collection Bag</h3>
+        </div>
+        <button id="closeAcquisitionDrawerBtn" class="text-zinc-400 hover:text-white text-base transition p-2 cursor-pointer">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Drawer Body: Cart Items -->
+      <div id="acquisitionCartItems" class="flex-1 overflow-y-auto p-6 space-y-4">
+        <!-- Dynamic Items rendered by JS -->
+      </div>
+
+      <!-- Drawer Empty State -->
+      <div id="cartEmptyNotice" class="hidden flex-1 flex flex-col items-center justify-center p-8 text-center space-y-4">
+        <div class="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-500 text-2xl">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </div>
+        <h4 class="font-serif text-xl text-white">Your Acquisition Bag is Unpopulated</h4>
+        <p class="text-xs text-zinc-400 max-w-xs font-sans">
+          Select from our 140 official hardware creations to begin your bespoke battlestation curation.
+        </p>
+      </div>
+
+      <!-- Drawer Footer: Subtotal, Promo & Proceed -->
+      <div id="cartFooterActions" class="p-6 bg-[#08090d] border-t border-white/10 space-y-4">
+        
+        <!-- Promo Code Box -->
+        <div class="flex gap-2">
+          <input 
+            type="text" 
+            id="cartPromoInput" 
+            placeholder="Code: HEMAT10 or GRATISONGKIR" 
+            class="flex-1 px-3 py-1.5 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white font-mono uppercase focus:outline-none focus:border-[#00ff87]"
+          >
+          <button 
+            id="applyCartPromoBtn" 
+            class="px-4 py-1.5 rounded-xl liquid-glass text-xs font-cinzel text-[#00ff87] hover:text-white transition cursor-pointer"
+          >
+            Apply
+          </button>
+        </div>
+
+        <div class="space-y-1.5 text-xs font-sans">
+          <div class="flex justify-between text-zinc-400">
+            <span>Subtotal:</span>
+            <span id="acquisitionSubtotal" class="text-white font-cinzel font-bold">Rp 0</span>
+          </div>
+          <div class="hidden flex justify-between text-[#00ff87]">
+            <span>Privilege Rebate:</span>
+            <span id="acquisitionDiscountAmount" class="font-cinzel font-bold">-Rp 0</span>
+          </div>
+          <div class="flex justify-between text-base font-cinzel pt-2 border-t border-white/10">
+            <span class="text-white uppercase tracking-wider">Total Valuation:</span>
+            <span id="acquisitionTotal" class="text-xl font-bold text-emerald-gradient">Rp 0</span>
+          </div>
+        </div>
+
+        <button 
+          id="proceedAcquisitionCheckoutBtn" 
+          class="w-full btn-luxury-emerald py-3.5 text-xs tracking-widest uppercase font-cinzel shadow-2xl cursor-pointer"
+        >
+          <i class="fa-solid fa-shield-halved mr-1.5"></i>
+          Proceed to Secured Protocol
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PRODUCT DOSSIER MODAL (TECHNICAL QUICK VIEW)
+       ============================================================ -->
+  <div id="productDossierModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="productDossierBackdrop" class="fixed inset-0 bg-[#07080a]/85 backdrop-blur-md cursor-pointer"></div>
+
+    <div class="relative liquid-glass-card bg-[#0b0d14] rounded-3xl p-6 sm:p-10 max-w-4xl w-full max-h-[92vh] overflow-y-auto z-10 border border-white/15 shadow-2xl">
+      <button id="closeProductDossierBtn" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-lg transition p-2 cursor-pointer z-20">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div id="productDossierContent">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       ACQUISITION CHECKOUT MODAL
+       ============================================================ -->
+  <div id="acquisitionCheckoutModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="checkoutModalBackdrop" class="fixed inset-0 bg-[#07080a]/85 backdrop-blur-md cursor-pointer"></div>
+    <div class="relative liquid-glass-card bg-[#0b0d14] rounded-3xl p-6 sm:p-8 max-w-2xl w-full max-h-[92vh] overflow-y-auto z-10 border border-[#00ff87]/35 shadow-2xl">
+      <button id="closeCheckoutModalBtn" class="absolute top-5 right-5 text-zinc-400 hover:text-white text-lg transition p-2 cursor-pointer">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="space-y-6">
+        <div class="text-center border-b border-white/10 pb-4">
+          <div class="w-12 h-12 rounded-full wax-seal flex items-center justify-center text-[#07080a] mx-auto mb-2 text-sm">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3 class="text-xl font-cinzel font-bold text-[#00ff87] uppercase tracking-wider">Secured Acquisition Protocol</h3>
+          <p class="text-xs text-zinc-400 font-sans mt-0.5">White-Glove Courier Escort & Registry Documentation</p>
+        </div>
+
+        <form id="acquisitionCheckoutForm" class="space-y-4">
+          <div class="p-4 rounded-xl liquid-glass space-y-2">
+            <h4 class="text-xs font-cinzel uppercase tracking-wider text-[#00ff87] font-bold">Acquisition Summary</h4>
+            <div id="checkoutItemsSummary" class="space-y-1"></div>
+            <div class="pt-2 border-t border-white/10 flex justify-between font-cinzel text-xs">
+              <span class="text-zinc-400">Total Valuation:</span>
+              <span id="checkoutSummaryTotal" class="text-emerald-gradient font-bold text-sm">Rp 0</span>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Recipient Legal Title & Name *</label>
+              <input 
+                type="text" 
+                id="checkoutClientName" 
+                placeholder="Commander Julian Vance" 
+                required 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+              >
+            </div>
+            <div>
+              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Destination City & Country *</label>
+              <input 
+                type="text" 
+                id="checkoutDeliveryCity" 
+                placeholder="Jakarta Selatan, Indonesia" 
+                required 
+                class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+              >
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Secured Delivery Address / Private Battlestation Suite *</label>
+            <input 
+              type="text" 
+              id="checkoutDeliveryAddress" 
+              placeholder="Penthouse A, Treasury Tower SCBD, Jl. Jend. Sudirman Kav. 52-53" 
+              required 
+              class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+            >
+          </div>
+
+          <div>
+            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Special Security or Overclocking Instructions</label>
+            <textarea 
+              id="checkoutSpecialInstructions" 
+              rows="2" 
+              placeholder="e.g. Please bench-test memory profile at 6400 MT/s CL32 prior to dispatch."
+              class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans resize-none"
+            ></textarea>
+          </div>
+
+          <div class="pt-2 flex items-center gap-3">
+            <button 
+              type="submit" 
+              class="w-full btn-luxury-emerald py-3.5 text-xs font-cinzel tracking-widest uppercase shadow-xl cursor-pointer"
+            >
+              <i class="fa-solid fa-signature mr-1.5"></i>
+              Confirm Sovereign Acquisition
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       DEED OF PROVENANCE & AUTHENTICITY MODAL (PRINTABLE RECEIPT)
+       ============================================================ -->
+  <div id="deedOfProvenanceModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="deedOfProvenanceBackdrop" class="fixed inset-0 bg-[#07080a]/90 backdrop-blur-md cursor-pointer"></div>
+    <div class="relative max-w-3xl w-full max-h-[94vh] overflow-y-auto z-10 space-y-4">
+      
+      <!-- Printable Deed Component -->
+      <div id="printableDeed">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+
+      <!-- Action Buttons (No Print) -->
+      <div class="flex items-center gap-4 no-print justify-end">
+        <button 
+          id="printDeedBtn" 
+          class="btn-luxury-outline py-2.5 px-6 text-xs font-cinzel tracking-wider cursor-pointer"
+        >
+          <i class="fa-solid fa-print mr-1.5"></i>
+          Print Official Deed (PDF)
+        </button>
+        <button 
+          id="closeDeedModalBtn" 
+          class="btn-luxury-emerald py-2.5 px-6 text-xs font-cinzel tracking-wider cursor-pointer"
+        >
+          Close & Return to Atelier
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
+       LE CERCLE APEX MEMBERSHIP SUCCESS MODAL
+       ============================================================ -->
+  <div id="membershipSuccessModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 sm:p-6 overflow-y-auto">
+    <div id="membershipSuccessBackdrop" class="fixed inset-0 bg-[#07080a]/85 backdrop-blur-md cursor-pointer"></div>
+    <div class="relative liquid-glass-card bg-[#0b0d14] rounded-3xl p-8 max-w-lg w-full z-10 border border-[#00ff87]/40 shadow-2xl">
+      <div id="membershipSuccessContent">
+        <!-- Rendered dynamically by JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       FLOATING LUXURY TOAST NOTIFICATIONS
+       ============================================================ -->
+  <div id="luxuryToastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none">
+    <!-- Dynamic Toasts injected here -->
+  </div>
+
+  <!-- ============================================================
+       FOOTER: "NEXUS APEX // BATTLESTATION ATELIER"
+       ============================================================ -->
+  <footer class="relative z-10 bg-[#06070a] border-t border-white/10 pt-16 pb-12 text-zinc-400 text-xs font-sans">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
+        
+        <!-- Brand Summary -->
+        <div class="lg:col-span-2 space-y-4">
+          <div class="flex items-center gap-2.5">
+            <span class="w-8 h-8 rounded-xl liquid-glass border border-[#00ff87]/50 flex items-center justify-center text-[#00ff87] text-xs">
+              <i class="fa-solid fa-crown"></i>
+            </span>
+            <span class="font-cinzel text-lg font-bold tracking-[0.2em] text-white">NEXUS APEX</span>
+          </div>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed max-w-sm">
+            The sovereign atelier for ultra-enthusiast PC architecture and esports tournament hardware. Binned silicon, aerospace materials, and white-glove vault transit.
+          </p>
+          <div class="flex items-center gap-3 pt-2">
+            <span class="px-2.5 py-1 rounded-full liquid-glass text-[10px] font-mono text-[#00ff87]">140 Official Products</span>
+            <span class="px-2.5 py-1 rounded-full liquid-glass text-[10px] font-mono text-[#00f0ff]">Zero-Defect Seals</span>
+          </div>
+        </div>
+
+        <!-- Collections -->
+        <div class="space-y-3 font-cinzel text-xs">
+          <h4 class="text-white uppercase tracking-widest font-bold">Categories</h4>
+          <ul class="space-y-2 text-zinc-400">
+            <li><a href="#collections" class="hover:text-[#00ff87] transition">Komponen Rakit PC</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition">PC & Konsol Gaming</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition">Keyboard & Mouse</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition">Audio & Headset</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition">Monitor & Setup</a></li>
+          </ul>
+        </div>
+
+        <!-- Ateliers & Chapters -->
+        <div class="space-y-3 font-cinzel text-xs">
+          <h4 class="text-white uppercase tracking-widest font-bold">Atelier Chapters</h4>
+          <ul class="space-y-2 text-zinc-400">
+            <li><a href="#alchemy" class="hover:text-[#00ff87] transition">L'Alchimie du Silicium</a></li>
+            <li><a href="#showcase" class="hover:text-[#00ff87] transition">3D Spatial Vault</a></li>
+            <li><a href="#community" class="hover:text-[#00f0ff] transition">Esports Syndicate</a></li>
+            <li><a href="#download-app" class="hover:text-[#ff007f] transition">Control Suite v4.8</a></li>
+            <li><a href="#values" class="hover:text-[#00ff87] transition">Four Provenance Pillars</a></li>
+            <li><a href="#membership" class="hover:text-[#00ff87] transition">Le Cercle Privé</a></li>
+          </ul>
+        </div>
+
+        <!-- Alternate Editions -->
+        <div class="space-y-3 font-cinzel text-xs">
+          <h4 class="text-white uppercase tracking-widest font-bold">Alternate Views</h4>
+          <ul class="space-y-2 text-zinc-400">
+            <li><a href="gaming.html" class="text-[#00ff87] hover:underline transition font-cinzel">Classic Esports Store (140+ Gear) &rarr;</a></li>
+            <li><a href="luxury.html" class="text-[#f5e6b8] hover:underline transition font-cinzel">Maison Vendôme Jewelry View &rarr;</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-cinzel">
+        <p>&copy; 2026 NEXUS APEX // BATTLESTATION ATELIER. All Rights Reserved.</p>
+        <div class="flex items-center gap-6">
+          <a href="#hero" class="hover:text-zinc-300 transition">Return to Zenith &uarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Hardware Data Source: 140 Authentic Products -->
+  <script src="js/data.js"></script>
+  <!-- Apex SPA Core Application Engine -->
+  <script src="js/apex-app.js"></script>
+</body>
+</html>
