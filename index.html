@@ -81,9 +81,9 @@
       <div class="flex items-center gap-2 sm:gap-3 shrink-0">
         <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] font-bold text-[9px] tracking-[0.2em] whitespace-nowrap">
           <span class="w-1.5 h-1.5 rounded-full bg-[#00ff87] animate-pulse"></span>
-          HAUTE BATTLESTATION ATELIER
+          <span data-i18n="ticker_badge">HAUTE BATTLESTATION ATELIER</span>
         </span>
-        <span class="hidden md:inline text-zinc-400 font-sans tracking-normal text-xs">
+        <span class="hidden md:inline text-zinc-400 font-sans tracking-normal text-xs" data-i18n="ticker_sub">
           Top 1% ASIC Binned Silicon • Zero-Vibration Vault Escort • 540Hz QD-OLED Calibrated
         </span>
       </div>
@@ -91,11 +91,11 @@
       <div class="flex items-center gap-2 sm:gap-4 text-xs font-mono shrink-0">
         <a href="gaming.html" class="px-2.5 py-0.5 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] text-[10px] tracking-wider transition flex items-center gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-gamepad text-[10px] text-[#00ff87]"></i>
-          <span><span class="hidden sm:inline">Katalog Standard </span>(140+ Gear)</span>
+          <span data-i18n="ticker_classic_btn"><span class="hidden sm:inline">Katalog Standard </span>(140+ Gear)</span>
           <i class="fa-solid fa-arrow-right text-[8px]"></i>
         </a>
         <span class="text-zinc-600 hidden sm:inline">•</span>
-        <span class="text-[#f5e6b8] hidden sm:inline font-mono">140 Authentic Creations</span>
+        <span class="text-[#f5e6b8] hidden sm:inline font-mono" data-i18n="ticker_count">140 Authentic Creations</span>
       </div>
     </div>
   </aside>
@@ -120,7 +120,7 @@
                 APEX
               </span>
             </div>
-            <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#00ff87] font-cinzel block -mt-0.5 sm:-mt-1 font-semibold">
+            <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#00ff87] font-cinzel block -mt-0.5 sm:-mt-1 font-semibold" data-i18n="brand_subtitle">
               Battlestation Atelier
             </span>
           </div>
@@ -128,36 +128,59 @@
 
         <!-- Haute Navigation Links -->
         <nav class="hidden xl:flex items-center gap-6 text-xs font-cinzel tracking-[0.2em] uppercase text-zinc-300">
-          <a href="#alchemy" class="hover:text-[#00ff87] transition">L'Alchimie</a>
-          <a href="#showcase" class="hover:text-[#00ff87] transition">3D Vault</a>
-          <a href="#community" class="hover:text-[#00f0ff] transition">Syndicate</a>
-          <a href="#download-app" class="hover:text-[#ff007f] transition">Apex Suite</a>
-          <a href="#collections" class="hover:text-[#00ff87] transition">Hardware Catalog</a>
-          <a href="#values" class="hover:text-[#00ff87] transition">Atelier Pillars</a>
-          <a href="#membership" class="hover:text-[#00ff87] transition">Cercle Privé</a>
+          <a href="#alchemy" data-i18n="nav_alchemy" class="hover:text-[#00ff87] transition">L'Alchimie</a>
+          <a href="#showcase" data-i18n="nav_showcase" class="hover:text-[#00ff87] transition">3D Vault</a>
+          <a href="#community" data-i18n="nav_community" class="hover:text-[#00f0ff] transition">Syndicate</a>
+          <a href="#download-app" data-i18n="nav_app" class="hover:text-[#ff007f] transition">Apex Suite</a>
+          <a href="#collections" data-i18n="nav_collections" class="hover:text-[#00ff87] transition">Hardware Catalog</a>
+          <a href="#values" data-i18n="nav_values" class="hover:text-[#00ff87] transition">Atelier Pillars</a>
+          <a href="#membership" data-i18n="nav_membership" class="hover:text-[#00ff87] transition">Cercle Privé</a>
         </nav>
 
-        <!-- Right Controls: Currency, Wishlist, Bag, Mobile Menu Toggle -->
-        <div class="flex items-center gap-2 sm:gap-3.5 shrink-0">
+        <!-- Right Controls: Language, Theme Toggle, Currency, Wishlist, Bag, Mobile Menu Toggle -->
+        <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           
+          <!-- Language Selector ID / EN -->
+          <div class="relative">
+            <select 
+              id="languageSelector" 
+              class="liquid-glass text-[10px] sm:text-xs text-[#00ff87] font-cinzel px-2 sm:px-2.5 py-1.5 rounded-full border border-white/10 focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-5 sm:pr-6 tracking-wider font-bold"
+              title="Select Language / Pilih Bahasa"
+            >
+              <option value="id" class="bg-[#0a0c12] text-white">ID</option>
+              <option value="en" class="bg-[#0a0c12] text-white">EN</option>
+            </select>
+            <i class="fa-solid fa-globe absolute right-1.5 sm:right-2 top-2.5 sm:top-3 text-[8px] sm:text-[9px] text-[#00ff87] pointer-events-none"></i>
+          </div>
+
+          <!-- Dark / Light Theme Toggle Button -->
+          <button 
+            id="themeToggleBtn" 
+            class="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] flex items-center justify-center transition border border-white/10 hover:border-[#00ff87]/50 cursor-pointer"
+            title="Toggle Light / Dark Mode"
+            aria-label="Toggle Theme"
+          >
+            <i id="themeToggleIcon" class="fa-solid fa-sun text-xs sm:text-sm text-[#00ff87]"></i>
+          </button>
+
           <!-- Tri-Currency Devise Switcher -->
           <div class="relative">
             <select 
               id="currencySelector" 
-              class="liquid-glass text-[11px] sm:text-xs text-[#00ff87] font-cinzel px-2.5 sm:px-3 py-1.5 rounded-full border border-white/10 focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-6 sm:pr-7 tracking-wider"
+              class="liquid-glass text-[10px] sm:text-xs text-[#00ff87] font-cinzel px-2 sm:px-2.5 py-1.5 rounded-full border border-white/10 focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-5 sm:pr-6 tracking-wider font-bold"
               title="Devise / Currency"
             >
               <option value="IDR" class="bg-[#0a0c12] text-white">IDR</option>
               <option value="USD" class="bg-[#0a0c12] text-white">USD</option>
               <option value="EUR" class="bg-[#0a0c12] text-white">EUR</option>
             </select>
-            <i class="fa-solid fa-chevron-down absolute right-2 sm:right-2.5 top-2.5 sm:top-3 text-[8px] sm:text-[9px] text-[#00ff87] pointer-events-none"></i>
+            <i class="fa-solid fa-chevron-down absolute right-1.5 sm:right-2 top-2.5 sm:top-3 text-[8px] sm:text-[9px] text-[#00ff87] pointer-events-none"></i>
           </div>
 
           <!-- Private Viewing Salon Wishlist Button -->
           <button 
             id="navWishlistBtn" 
-            class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#f43f5e] flex items-center justify-center transition border border-white/10 hover:border-[#f43f5e]/40 cursor-pointer"
+            class="relative w-8 h-8 sm:w-10 sm:h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#f43f5e] flex items-center justify-center transition border border-white/10 hover:border-[#f43f5e]/40 cursor-pointer"
             title="Salon Privé / Private Viewings"
           >
             <i class="fa-regular fa-heart text-xs sm:text-sm"></i>
@@ -172,11 +195,11 @@
           <!-- Acquisition Bag Button -->
           <button 
             id="navCartBtn" 
-            class="relative flex items-center gap-1.5 sm:gap-2.5 h-9 sm:h-10 px-3 sm:px-4 rounded-full btn-luxury-emerald cursor-pointer"
+            class="relative flex items-center gap-1 sm:gap-2 h-8 sm:h-10 px-2.5 sm:px-4 rounded-full btn-luxury-emerald cursor-pointer"
             title="Acquisition Bag"
           >
             <i class="fa-solid fa-bag-shopping text-xs"></i>
-            <span class="hidden md:inline font-cinzel text-[11px] tracking-widest font-black">BAG</span>
+            <span class="hidden md:inline font-cinzel text-[11px] tracking-widest font-black" data-i18n="nav_bag">BAG</span>
             <span 
               id="navCartBadge" 
               class="hidden bg-[#07080a] text-[#00ff87] border border-[#00ff87]/60 text-[9px] sm:text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center font-mono"
@@ -188,7 +211,7 @@
           <!-- Mobile Hamburger Toggle Button -->
           <button 
             id="mobileMenuToggleBtn" 
-            class="xl:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] flex items-center justify-center transition border border-white/10 hover:border-[#00ff87]/50 cursor-pointer"
+            class="xl:hidden w-8 h-8 sm:w-10 sm:h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] flex items-center justify-center transition border border-white/10 hover:border-[#00ff87]/50 cursor-pointer"
             title="Open Navigation Menu"
             aria-label="Toggle navigation menu"
           >
@@ -204,42 +227,64 @@
         id="mobileNavMenu" 
         class="hidden xl:hidden border-t border-white/10 py-4 px-2 space-y-1 liquid-glass-card rounded-2xl my-2 shadow-2xl backdrop-blur-2xl bg-[#090b12]/95 transition-all duration-300"
       >
+        <!-- Mobile Controls: Language & Theme Switcher -->
+        <div class="grid grid-cols-2 gap-2 pb-3 mb-2 border-b border-white/10">
+          <!-- Mobile Language Switch -->
+          <div class="p-2 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
+            <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1">
+              <i class="fa-solid fa-globe text-[#00ff87]"></i> Lang
+            </span>
+            <div class="flex items-center gap-1 font-mono text-xs">
+              <button id="mobileLangIdBtn" class="px-2 py-0.5 rounded border border-[#00ff87] text-[#00ff87] font-bold bg-[#00ff87]/15">ID</button>
+              <button id="mobileLangEnBtn" class="px-2 py-0.5 rounded border border-white/10 text-zinc-400">EN</button>
+            </div>
+          </div>
+
+          <!-- Mobile Theme Switch -->
+          <button id="mobileThemeToggleBtn" class="p-2 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between text-xs cursor-pointer">
+            <span class="text-[10px] font-mono text-zinc-400 uppercase tracking-wider flex items-center gap-1">
+              <i id="mobileThemeStatusIcon" class="fa-solid fa-sun text-[#00ff87]"></i> Mode
+            </span>
+            <span id="mobileThemeLabel" class="text-xs font-mono font-bold text-white uppercase">Dark</span>
+          </button>
+        </div>
+
         <nav class="flex flex-col space-y-1 text-xs font-cinzel tracking-[0.2em] uppercase">
           <a href="#hero" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
-            <span>Zenith</span>
+            <span data-i18n="nav_zenith">Zenith</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <a href="#alchemy" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
-            <span>L'Alchimie</span>
+            <span data-i18n="nav_alchemy">L'Alchimie</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <a href="#showcase" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
-            <span>3D Spatial Vault</span>
+            <span data-i18n="nav_showcase">3D Spatial Vault</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <a href="#community" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00f0ff] flex items-center justify-between transition">
-            <span>The Syndicate</span>
+            <span data-i18n="nav_community">The Syndicate</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <a href="#download-app" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#ff007f] flex items-center justify-between transition">
-            <span>Apex Suite</span>
+            <span data-i18n="nav_app">Apex Suite</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <a href="#collections" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
-            <span>140 Hardware Catalog</span>
+            <span data-i18n="nav_collections">140 Hardware Catalog</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <a href="#values" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
-            <span>Atelier Pillars</span>
+            <span data-i18n="nav_values">Atelier Pillars</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <a href="#membership" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
-            <span>Cercle Privé</span>
+            <span data-i18n="nav_membership">Cercle Privé</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
           <div class="pt-2 border-t border-white/10 mt-1">
             <a href="gaming.html" class="px-4 py-2.5 rounded-xl bg-[#00ff87]/10 text-[#00ff87] flex items-center justify-between font-mono text-[11px] tracking-normal">
-              <span><i class="fa-solid fa-gamepad mr-2"></i>Katalog Standard (140+ Gear)</span>
+              <span><i class="fa-solid fa-gamepad mr-2"></i><span data-i18n="ticker_classic_btn">Katalog Standard (140+ Gear)</span></span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
           </div>
@@ -262,15 +307,15 @@
           
           <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full liquid-glass border border-[#00ff87]/35 text-[#00ff87] text-[11px] font-cinzel tracking-[0.25em] uppercase">
             <span class="w-2 h-2 rounded-full bg-[#00ff87] shadow-[0_0_10px_#00ff87]"></span>
-            L'Élite du Silicium • Battlestation Atelier 2026
+            <span data-i18n="hero_pill">L'Élite du Silicium • Battlestation Atelier 2026</span>
           </div>
 
-          <h1 class="text-2xl sm:text-5xl lg:text-6xl font-orbitron font-black text-white leading-[1.15] tracking-tight uppercase">
+          <h1 class="text-2xl sm:text-5xl lg:text-6xl font-orbitron font-black text-white leading-[1.15] tracking-tight uppercase" data-i18n="hero_title">
             L'Art du Silicium.<br>
             <span class="text-emerald-gradient">Where Power Transcends Speed.</span>
           </h1>
 
-          <p class="text-sm sm:text-base text-zinc-300 font-sans max-w-xl mx-auto lg:mx-0 leading-relaxed font-light">
+          <p class="text-sm sm:text-base text-zinc-300 font-sans max-w-xl mx-auto lg:mx-0 leading-relaxed font-light" data-i18n="hero_desc">
             Hand-selected top 1% binned ASICs, bespoke aerospace-grade CNC aluminum chassis, and zero-vibration liquid cooling loops. Engineered for esports world champions, competitive institutions, and sovereign connoisseurs.
           </p>
 
@@ -279,6 +324,7 @@
             <a 
               href="#collections" 
               class="w-full sm:w-auto btn-luxury-emerald py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel shadow-xl cursor-pointer text-center"
+              data-i18n="hero_cta_explore"
             >
               <i class="fa-solid fa-gem mr-1.5"></i>
               Explore 140 Hardware Masterpieces
@@ -286,6 +332,7 @@
             <a 
               href="#showcase" 
               class="w-full sm:w-auto btn-luxury-outline py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel cursor-pointer text-center"
+              data-i18n="hero_cta_vault"
             >
               <i class="fa-solid fa-cube mr-1.5 text-[#00f0ff]"></i>
               Enter 3D Spatial Vault
@@ -296,15 +343,15 @@
           <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-6 sm:pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0 text-center sm:text-left">
             <div>
               <p class="text-base sm:text-lg font-cinzel font-bold text-emerald-gradient">140+</p>
-              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Official Creations</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5" data-i18n="hero_stat_1">Official Creations</p>
             </div>
             <div>
               <p class="text-base sm:text-lg font-cinzel font-bold text-emerald-gradient">TOP 1%</p>
-              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">ASIC Binned Silicon</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5" data-i18n="hero_stat_2">ASIC Binned Silicon</p>
             </div>
             <div>
               <p class="text-base sm:text-lg font-cinzel font-bold text-emerald-gradient">100%</p>
-              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Factory Provenance</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5" data-i18n="hero_stat_3">Factory Provenance</p>
             </div>
           </div>
 
@@ -317,7 +364,7 @@
             
             <!-- Floating Hallmark Pill -->
             <div class="flex items-center justify-between pb-4 border-b border-white/10 depth-layer-2">
-              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-cinzel font-bold tracking-widest uppercase">
+              <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-cinzel font-bold tracking-widest uppercase" data-i18n="hero_halo_badge">
                 <i class="fa-solid fa-crown mr-1"></i> Halo Masterpiece
               </span>
               <span class="text-[10px] sm:text-[11px] font-mono text-zinc-400 tracking-wider">GPU-001 • AD102</span>
@@ -331,28 +378,29 @@
                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop';"
                 class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.95)] group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               >
-              <div class="absolute bottom-3 left-3 bg-[#07080a]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[9px] sm:text-[10px] font-cinzel text-[#00ff87]">
+              <div class="absolute bottom-3 left-3 bg-[#07080a]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[9px] sm:text-[10px] font-cinzel text-[#00ff87]" data-i18n="hero_vapor_tag">
                 <i class="fa-solid fa-fan text-[#00ff87] mr-1 inline-block animate-spin"></i> Integrated Vapor Chamber
               </div>
             </div>
 
             <!-- Hardware Spec Summary -->
             <div class="space-y-2 depth-layer-1">
-              <span class="text-[10px] font-cinzel tracking-[0.25em] text-[#00ff87] uppercase block">Komponen Rakit PC • Flagship AD102</span>
+              <span class="text-[10px] font-cinzel tracking-[0.25em] text-[#00ff87] uppercase block" data-i18n="hero_spotlight_cat">Komponen Rakit PC • Flagship AD102</span>
               <h3 class="text-lg sm:text-2xl font-serif text-white font-medium">ASUS ROG Strix GeForce RTX 4090 24GB OC</h3>
-              <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+              <p class="text-xs text-zinc-400 font-sans leading-relaxed" data-i18n="hero_spotlight_desc">
                 AD102 GPU with 16,384 CUDA Cores, 24GB GDDR6X 384-bit memory, axial-tech vapor chamber cooling, and patented diecast shroud.
               </p>
 
               <!-- Valuation & Action -->
               <div class="pt-4 border-t border-white/10 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-3">
                 <div>
-                  <span class="text-[9px] sm:text-[10px] text-zinc-500 font-cinzel uppercase block">Valuation</span>
+                  <span class="text-[9px] sm:text-[10px] text-zinc-500 font-cinzel uppercase block" data-i18n="valuation_label">Valuation</span>
                   <span class="text-xl font-bold font-cinzel text-emerald-gradient">Rp 36.999.000</span>
                 </div>
                 <button 
                   data-acquire-id="GPU-001" 
                   class="acquire-btn btn-luxury-emerald py-2.5 px-5 text-[11px] font-cinzel tracking-wider cursor-pointer w-full xs:w-auto text-center"
+                  data-i18n="hero_acquire_btn"
                 >
                   Acquire Creation
                 </button>
@@ -375,9 +423,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold">Les Chroniques de l'Excellence</span>
-        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">Three Chapters of Engineering Alchemy</h2>
-        <p class="text-xs sm:text-sm text-zinc-400 font-sans leading-relaxed">
+        <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold" data-i18n="alchemy_tag">Les Chroniques de l'Excellence</span>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider" data-i18n="alchemy_title">Three Chapters of Engineering Alchemy</h2>
+        <p class="text-xs sm:text-sm text-zinc-400 font-sans leading-relaxed" data-i18n="alchemy_sub">
           From the nanoscale purity of TSMC 4nm silicon wafers to hand-polished hardline acrylic battlestations.
         </p>
       </div>
@@ -388,15 +436,15 @@
         <div class="liquid-glass-card rounded-3xl p-8 space-y-5 border border-white/10">
           <div class="flex items-center justify-between">
             <span class="text-3xl font-serif text-[#00ff87] italic">I</span>
-            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400">Silicon Purity</span>
+            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400" data-i18n="alchemy_ch1_tag">Silicon Purity</span>
           </div>
-          <h3 class="text-xl font-serif text-white">L'Alchimie du Silicium</h3>
-          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light">
+          <h3 class="text-xl font-serif text-white" data-i18n="alchemy_ch1_title">L'Alchimie du Silicium</h3>
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light" data-i18n="alchemy_ch1_desc">
             We reject 99 out of 100 raw silicon dies. Only chips demonstrating zero voltage leakage, extreme thermal stability, and maximum IPC headroom under sub-ambient cooling enter the Apex assembly roster.
           </p>
           <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] font-mono text-[#00ff87]">
             <i class="fa-solid fa-microchip"></i>
-            <span>Top 1% ASIC Binning Provenance</span>
+            <span data-i18n="alchemy_ch1_badge">Top 1% ASIC Binning Provenance</span>
           </div>
         </div>
 
@@ -404,15 +452,15 @@
         <div class="liquid-glass-card rounded-3xl p-8 space-y-5 border border-white/10">
           <div class="flex items-center justify-between">
             <span class="text-3xl font-serif text-[#00f0ff] italic">II</span>
-            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400">Thermal Mastery</span>
+            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400" data-i18n="alchemy_ch2_tag">Thermal Mastery</span>
           </div>
-          <h3 class="text-xl font-serif text-white">L'Atelier Battlestation</h3>
-          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light">
+          <h3 class="text-xl font-serif text-white" data-i18n="alchemy_ch2_title">L'Atelier Battlestation</h3>
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light" data-i18n="alchemy_ch2_desc">
             Hand-machined 6000-series aerospace alloy, custom vapor chambers with sintered copper powder, and hand-sleeved Kevlar power cabling. Silent 0dB acoustic resonance during sustained 4K tournament warfare.
           </p>
           <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] font-mono text-[#00f0ff]">
             <i class="fa-solid fa-snowflake"></i>
-            <span>Zero-Decibel Acoustic Chamber Tuning</span>
+            <span data-i18n="alchemy_ch2_badge">Zero-Decibel Acoustic Chamber Tuning</span>
           </div>
         </div>
 
@@ -420,15 +468,15 @@
         <div class="liquid-glass-card rounded-3xl p-8 space-y-5 border border-white/10">
           <div class="flex items-center justify-between">
             <span class="text-3xl font-serif text-[#f5e6b8] italic">III</span>
-            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400">Tournament Sanctuary</span>
+            <span class="text-[10px] font-cinzel uppercase tracking-widest text-zinc-400" data-i18n="alchemy_ch3_tag">Tournament Sanctuary</span>
           </div>
-          <h3 class="text-xl font-serif text-white">Le Sanctuaire du Champion</h3>
-          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light">
+          <h3 class="text-xl font-serif text-white" data-i18n="alchemy_ch3_title">Le Sanctuaire du Champion</h3>
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed font-light" data-i18n="alchemy_ch3_desc">
             Ergonomic biomechanical precision crafted in partnership with Herman Miller, 540Hz QD-OLED response times, and sub-millisecond magnetic Hall-Effect actuation. Equipment that behaves as a biological extension.
           </p>
           <div class="pt-4 border-t border-white/10 flex items-center gap-2 text-[10px] font-mono text-[#f5e6b8]">
             <i class="fa-solid fa-shield-halved"></i>
-            <span>Guaranteed Perpetual Official Warranty</span>
+            <span data-i18n="alchemy_ch3_badge">Guaranteed Perpetual Official Warranty</span>
           </div>
         </div>
 
@@ -445,14 +493,14 @@
       
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-          <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold block mb-2">
+          <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold block mb-2" data-i18n="showcase_tag">
             <i class="fa-solid fa-cube mr-1 text-[#00f0ff]"></i> The Sovereign 3D Vault
           </span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider" data-i18n="showcase_title">
             Halo Showcase Carousel
           </h2>
         </div>
-        <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans leading-relaxed">
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans leading-relaxed" data-i18n="showcase_sub">
           The pinnacle tier of gaming engineering in spatial 3D perspective. Navigate the 6 apex masterpieces curated for world championship dominance.
         </p>
       </div>
@@ -504,13 +552,13 @@
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
           <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00f0ff] font-semibold block mb-2">
-            <i class="fa-solid fa-users mr-1"></i> The Apex Syndicate
+            <i class="fa-solid fa-users mr-1"></i> <span data-i18n="comm_tag">The Apex Syndicate</span>
           </span>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">
+          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider" data-i18n="comm_title">
             Competitive Community & Pro Telemetry
           </h2>
         </div>
-        <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans leading-relaxed">
+        <p class="text-xs sm:text-sm text-zinc-400 max-w-md font-sans leading-relaxed" data-i18n="comm_sub">
           Battle-tested in ESL Pro League and VALORANT Champions Tour. Access verified pro athlete loadouts, 4K ray-tracing metrics, and our private engineering squad.
         </p>
       </div>
@@ -526,11 +574,11 @@
                 S1
               </div>
               <div>
-                <h4 class="font-orbitron text-base text-white font-bold">Major Champion Setup</h4>
-                <p class="text-[10px] font-mono text-[#00ff87] uppercase tracking-wider">Tactical FPS Tournament Loadout</p>
+                <h4 class="font-orbitron text-base text-white font-bold" data-i18n="comm_l1_title">Major Champion Setup</h4>
+                <p class="text-[10px] font-mono text-[#00ff87] uppercase tracking-wider" data-i18n="comm_l1_sub">Tactical FPS Tournament Loadout</p>
               </div>
             </div>
-            <span class="self-start xs:self-auto px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
+            <span class="self-start xs:self-auto px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300" data-i18n="comm_l1_badge">
               540Hz Calibrated
             </span>
           </div>
@@ -555,8 +603,8 @@
           </div>
 
           <div class="pt-3 border-t border-white/10 flex flex-col xs:flex-row xs:items-center justify-between gap-3">
-            <span class="text-xs font-mono text-zinc-400">Total Loadout: <strong class="text-emerald-gradient font-orbitron font-bold">Rp 71.748.000</strong></span>
-            <button data-acquire-id="GPU-001" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer w-full xs:w-auto text-center">
+            <span class="text-xs font-mono text-zinc-400"><span data-i18n="comm_l1_total">Total Loadout:</span> <strong class="text-emerald-gradient font-orbitron font-bold">Rp 71.748.000</strong></span>
+            <button data-acquire-id="GPU-001" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer w-full xs:w-auto text-center" data-i18n="comm_l1_btn">
               Acquire Core GPU
             </button>
           </div>
@@ -570,11 +618,11 @@
                 TZ
               </div>
               <div>
-                <h4 class="font-orbitron text-base text-white font-bold">VCT Champions Config</h4>
-                <p class="text-[10px] font-mono text-[#00f0ff] uppercase tracking-wider">Sub-Millisecond Reflex Rig</p>
+                <h4 class="font-orbitron text-base text-white font-bold" data-i18n="comm_l2_title">VCT Champions Config</h4>
+                <p class="text-[10px] font-mono text-[#00f0ff] uppercase tracking-wider" data-i18n="comm_l2_sub">Sub-Millisecond Reflex Rig</p>
               </div>
             </div>
-            <span class="self-start xs:self-auto px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
+            <span class="self-start xs:self-auto px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300" data-i18n="comm_l2_badge">
               0.125ms Input
             </span>
           </div>
@@ -599,8 +647,8 @@
           </div>
 
           <div class="pt-3 border-t border-white/10 flex flex-col xs:flex-row xs:items-center justify-between gap-3">
-            <span class="text-xs font-mono text-zinc-400">Total Loadout: <strong class="text-emerald-gradient font-orbitron font-bold">Rp 56.499.000</strong></span>
-            <button data-acquire-id="CHR-007" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer w-full xs:w-auto text-center">
+            <span class="text-xs font-mono text-zinc-400"><span data-i18n="comm_l2_total">Total Loadout:</span> <strong class="text-emerald-gradient font-orbitron font-bold">Rp 56.499.000</strong></span>
+            <button data-acquire-id="CHR-007" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer w-full xs:w-auto text-center" data-i18n="comm_l2_btn">
               Acquire Throne
             </button>
           </div>
@@ -613,11 +661,11 @@
         <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-3">
           <div>
             <span class="text-[10px] font-mono text-[#00ff87] uppercase tracking-widest block mb-1">
-              <i class="fa-solid fa-chart-line mr-1"></i> Verified Silicon Telemetry
+              <i class="fa-solid fa-chart-line mr-1"></i> <span data-i18n="comm_bench_tag">Verified Silicon Telemetry</span>
             </span>
-            <h3 class="font-orbitron text-lg sm:text-xl text-white font-bold">4K Ultra Ray-Tracing Benchmark Suite</h3>
+            <h3 class="font-orbitron text-lg sm:text-xl text-white font-bold" data-i18n="comm_bench_title">4K Ultra Ray-Tracing Benchmark Suite</h3>
           </div>
-          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/10 self-start sm:self-auto">
+          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/10 self-start sm:self-auto" data-i18n="comm_bench_spec">
             RTX 4090 OC • i9-14900K • 64GB DDR5
           </span>
         </div>
@@ -679,14 +727,14 @@
         <div class="lg:col-span-5 liquid-glass-magenta rounded-3xl p-8 border border-[#ff007f]/40 space-y-5">
           <div class="flex items-center gap-2">
             <span class="w-2.5 h-2.5 rounded-full bg-[#00ff87] animate-pulse"></span>
-            <span class="text-[10px] font-mono uppercase tracking-widest text-[#00ff87] font-bold">4,820 Operatives Online</span>
+            <span class="text-[10px] font-mono uppercase tracking-widest text-[#00ff87] font-bold" data-i18n="comm_discord_online">4,820 Operatives Online</span>
           </div>
 
-          <h3 class="font-orbitron text-2xl font-black text-white uppercase tracking-wider">
+          <h3 class="font-orbitron text-2xl font-black text-white uppercase tracking-wider" data-i18n="comm_discord_title">
             Join Nexus Apex Squad Discord Lounge
           </h3>
 
-          <p class="text-xs text-zinc-300 font-sans leading-relaxed">
+          <p class="text-xs text-zinc-300 font-sans leading-relaxed" data-i18n="comm_discord_desc">
             Connect directly with verified hardware overclockers, competitive esports captains, and our silicon engineering team. Access exclusive drop allocations, custom BIOS profiles, and zero-latency technical triage.
           </p>
 
@@ -695,7 +743,7 @@
             class="btn-luxury-magenta py-3.5 px-6 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-2 cursor-pointer w-full sm:w-auto"
           >
             <i class="fa-brands fa-discord text-base"></i>
-            <span>Enter Discord Lounge</span>
+            <span data-i18n="comm_discord_btn">Enter Discord Lounge</span>
           </button>
         </div>
 
@@ -707,14 +755,14 @@
               <div class="flex text-[#00ff87] text-xs gap-1">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="text-[9px] font-mono text-zinc-400">Verified Client</span>
+              <span class="text-[9px] font-mono text-zinc-400" data-i18n="comm_verified_client">Verified Client</span>
             </div>
-            <p class="text-xs text-zinc-300 font-sans italic leading-relaxed">
+            <p class="text-xs text-zinc-300 font-sans italic leading-relaxed" data-i18n="comm_rev1_quote">
               "The AD102 binning is authentic. My RTX 4090 holds 2,940MHz sustained without dropping a frame, and the wooden crating delivery was immaculate."
             </p>
             <div class="pt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-zinc-400">
-              <span class="text-white font-bold">Marcus V.</span>
-              <span>Esports Org Director</span>
+              <span class="text-white font-bold" data-i18n="comm_rev1_author">Marcus V.</span>
+              <span data-i18n="comm_rev1_role">Esports Org Director</span>
             </div>
           </div>
 
@@ -723,14 +771,14 @@
               <div class="flex text-[#00ff87] text-xs gap-1">
                 <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
               </div>
-              <span class="text-[9px] font-mono text-zinc-400">Verified Client</span>
+              <span class="text-[9px] font-mono text-zinc-400" data-i18n="comm_verified_client">Verified Client</span>
             </div>
-            <p class="text-xs text-zinc-300 font-sans italic leading-relaxed">
+            <p class="text-xs text-zinc-300 font-sans italic leading-relaxed" data-i18n="comm_rev2_quote">
               "Pairing the Herman Miller Embody with the Odyssey Neo G9 changed my posture and endurance in 12-hour tournament scrims. Unrivaled atelier quality."
             </p>
             <div class="pt-2 border-t border-white/5 flex items-center justify-between text-[10px] font-mono text-zinc-400">
-              <span class="text-white font-bold">Helena S.</span>
-              <span>Pro Valorant Athlete</span>
+              <span class="text-white font-bold" data-i18n="comm_rev2_author">Helena S.</span>
+              <span data-i18n="comm_rev2_role">Pro Valorant Athlete</span>
             </div>
           </div>
 
@@ -753,15 +801,15 @@
           <!-- Left: Suite Description & Download Buttons -->
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00f0ff]/15 border border-[#00f0ff]/40 text-[#00f0ff] text-[10px] font-mono tracking-[0.2em] uppercase font-bold">
-              <i class="fa-solid fa-download text-[9px]"></i> Nexus Apex Control Center v4.8.2
+              <i class="fa-solid fa-download text-[9px]"></i> <span data-i18n="app_tag">Nexus Apex Control Center v4.8.2</span>
             </div>
 
-            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white leading-tight uppercase tracking-wider">
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white leading-tight uppercase tracking-wider" data-i18n="app_title">
               Unleash Low-Level Silicon.<br>
               <span class="text-emerald-gradient">Zero-Latency Hardware Engine.</span>
             </h2>
 
-            <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
+            <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light" data-i18n="app_desc">
               Calibrate your entire battlestation from a single unified application. Real-time ASIC boost curves, sub-ambient vapor loop pump speeds, per-key 0.1mm analog actuation, and zero background CPU overhead (&lt;0.1%).
             </p>
 
@@ -769,19 +817,19 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300 font-sans pt-1 text-left">
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-microchip text-[#00ff87]"></i>
-                <span>Direct GPU/CPU Voltage Curve Editor</span>
+                <span data-i18n="app_feat_1">Direct GPU/CPU Voltage Curve Editor</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-sliders text-[#00f0ff]"></i>
-                <span>Wooting Rapid Trigger 0.1mm Tuning</span>
+                <span data-i18n="app_feat_2">Wooting Rapid Trigger 0.1mm Tuning</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-fan text-[#ff007f]"></i>
-                <span>0dB Acoustic Vapor Chamber Profiles</span>
+                <span data-i18n="app_feat_3">0dB Acoustic Vapor Chamber Profiles</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-bolt text-[#f5e6b8]"></i>
-                <span>8000Hz USB Polling Rate Lock</span>
+                <span data-i18n="app_feat_4">8000Hz USB Polling Rate Lock</span>
               </div>
             </div>
 
@@ -792,7 +840,7 @@
                 class="w-full sm:w-auto btn-luxury-emerald py-3.5 sm:py-4 px-6 sm:px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 shadow-xl cursor-pointer text-center"
               >
                 <i class="fa-brands fa-windows text-base"></i>
-                <span>Download for Windows (x64)</span>
+                <span data-i18n="app_btn_win">Download for Windows (x64)</span>
               </button>
 
               <button 
@@ -800,16 +848,16 @@
                 class="w-full sm:w-auto btn-luxury-outline py-3.5 sm:py-4 px-6 sm:px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 cursor-pointer text-center"
               >
                 <i class="fa-brands fa-apple text-base"></i>
-                <span>macOS Apple Silicon</span>
+                <span data-i18n="app_btn_mac">macOS Apple Silicon</span>
               </button>
             </div>
 
             <div class="text-[10px] sm:text-[11px] font-mono text-zinc-500 pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-4">
-              <span>SHA-256 Verified Release</span>
+              <span data-i18n="app_verified">SHA-256 Verified Release</span>
               <span>•</span>
-              <span>84 MB Installer</span>
+              <span data-i18n="app_size">84 MB Installer</span>
               <span>•</span>
-              <span>Windows 11 / 10 64-bit</span>
+              <span data-i18n="app_os">Windows 11 / 10 64-bit</span>
             </div>
           </div>
 
@@ -820,16 +868,16 @@
               <div class="flex items-center justify-between pb-3 border-b border-white/10 text-[10px]">
                 <div class="flex items-center gap-2">
                   <span class="w-2 h-2 rounded-full bg-[#00ff87] animate-pulse"></span>
-                  <span class="text-[#00ff87] font-bold">ENGINE ONLINE</span>
+                  <span class="text-[#00ff87] font-bold" data-i18n="app_hud_online">ENGINE ONLINE</span>
                 </div>
-                <span class="text-zinc-500">POLLING: 8000Hz • 0.125ms</span>
+                <span class="text-zinc-500" data-i18n="app_hud_polling">POLLING: 8000Hz • 0.125ms</span>
               </div>
 
               <!-- Telemetry Meters -->
               <div class="space-y-3">
                 <div>
                   <div class="flex justify-between text-[11px] mb-1">
-                    <span class="text-zinc-400">GPU Core Clock:</span>
+                    <span class="text-zinc-400" data-i18n="app_hud_clock">GPU Core Clock:</span>
                     <span class="text-[#00ff87] font-bold">2,820 MHz (OC Boost)</span>
                   </div>
                   <div class="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden">
@@ -839,7 +887,7 @@
 
                 <div>
                   <div class="flex justify-between text-[11px] mb-1">
-                    <span class="text-zinc-400">Vapor Chamber Temp:</span>
+                    <span class="text-zinc-400" data-i18n="app_hud_temp">Vapor Chamber Temp:</span>
                     <span class="text-[#00f0ff] font-bold">58°C (Optimal)</span>
                   </div>
                   <div class="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden">
@@ -849,7 +897,7 @@
 
                 <div>
                   <div class="flex justify-between text-[11px] mb-1">
-                    <span class="text-zinc-400">Rapid Trigger Deadzone:</span>
+                    <span class="text-zinc-400" data-i18n="app_hud_deadzone">Rapid Trigger Deadzone:</span>
                     <span class="text-[#ff007f] font-bold">0.15 mm (Instant)</span>
                   </div>
                   <div class="w-full bg-zinc-900 rounded-full h-1.5 overflow-hidden">
@@ -861,12 +909,12 @@
               <!-- Quick Toggles -->
               <div class="pt-3 border-t border-white/10 grid grid-cols-2 gap-2 text-[10px]">
                 <div class="p-2 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-                  <span class="text-zinc-300">0dB Fan Mode</span>
-                  <span class="text-[#00ff87] font-bold">ACTIVE</span>
+                  <span class="text-zinc-300" data-i18n="app_hud_fan">0dB Fan Mode</span>
+                  <span class="text-[#00ff87] font-bold" data-i18n="app_hud_fan_val">ACTIVE</span>
                 </div>
                 <div class="p-2 rounded-xl bg-white/5 border border-white/5 flex items-center justify-between">
-                  <span class="text-zinc-300">RGB Sync</span>
-                  <span class="text-[#00f0ff] font-bold">AURORA</span>
+                  <span class="text-zinc-300" data-i18n="app_hud_rgb">RGB Sync</span>
+                  <span class="text-[#00f0ff] font-bold" data-i18n="app_hud_rgb_val">AURORA</span>
                 </div>
               </div>
 
@@ -890,9 +938,9 @@
         <div>
           <div class="flex items-center gap-2 mb-2">
             <span class="w-2 h-2 rounded-full bg-[#00ff87]"></span>
-            <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold">Le Grand Catalogue</span>
+            <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold" data-i18n="cat_tag">Le Grand Catalogue</span>
           </div>
-          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">The Complete Hardware Vault</h2>
+          <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider" data-i18n="cat_title">The Complete Hardware Vault</h2>
           <p id="catalogResultsCount" class="text-xs text-zinc-400 font-mono mt-2">Loading all hardware creations...</p>
         </div>
 
@@ -905,6 +953,7 @@
               type="text" 
               id="catalogSearchInput" 
               placeholder="Search GPU, CPU, brand, specs..."
+              data-i18n-placeholder="cat_search_ph"
               class="w-full pl-9 pr-4 py-2 text-xs rounded-full liquid-glass border border-white/10 text-white placeholder-zinc-500 focus:outline-none focus:border-[#00ff87] font-sans"
             >
           </div>
@@ -915,11 +964,11 @@
               id="catalogSortSelect"
               class="w-full px-4 py-2 text-xs rounded-full liquid-glass border border-white/10 text-white font-cinzel focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-8 tracking-wider"
             >
-              <option value="relevance" class="bg-[#0a0c12]">Featured / Relevance</option>
-              <option value="price-high" class="bg-[#0a0c12]">Highest Valuation</option>
-              <option value="price-low" class="bg-[#0a0c12]">Lowest Valuation</option>
-              <option value="rating" class="bg-[#0a0c12]">Collector Rating</option>
-              <option value="alpha" class="bg-[#0a0c12]">Alphabetical</option>
+              <option value="relevance" class="bg-[#0a0c12]" data-i18n="sort_relevance">Featured / Relevance</option>
+              <option value="price-high" class="bg-[#0a0c12]" data-i18n="sort_price_high">Highest Valuation</option>
+              <option value="price-low" class="bg-[#0a0c12]" data-i18n="sort_price_low">Lowest Valuation</option>
+              <option value="rating" class="bg-[#0a0c12]" data-i18n="sort_rating">Collector Rating</option>
+              <option value="alpha" class="bg-[#0a0c12]" data-i18n="sort_alpha">Alphabetical</option>
             </select>
             <i class="fa-solid fa-arrow-down-wide-short absolute right-3.5 top-3 text-[10px] text-[#00ff87] pointer-events-none"></i>
           </div>
@@ -951,9 +1000,9 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
-        <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold">Les Valeurs Souveraines</span>
-        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider">The Four Atelier Pillars</h2>
-        <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+        <span class="text-xs font-cinzel uppercase tracking-[0.3em] text-[#00ff87] font-semibold" data-i18n="val_tag">Les Valeurs Souveraines</span>
+        <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white uppercase tracking-wider" data-i18n="val_title">The Four Atelier Pillars</h2>
+        <p class="text-xs text-zinc-400 font-sans leading-relaxed" data-i18n="val_sub">
           The uncompromising code of honor governing every hardware acquisition at Nexus Apex.
         </p>
       </div>
@@ -964,8 +1013,8 @@
           <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00ff87] mx-auto text-lg">
             <i class="fa-solid fa-certificate"></i>
           </div>
-          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">Zero-Defect Provenance</h3>
-          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider" data-i18n="val_p1_title">Zero-Defect Provenance</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed" data-i18n="val_p1_desc">
             100% brand-new, factory-sealed hardware backed by official authorized distributor guarantees. Zero gray-market allocations.
           </p>
         </div>
@@ -974,8 +1023,8 @@
           <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#00f0ff] mx-auto text-lg">
             <i class="fa-solid fa-microchip"></i>
           </div>
-          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">Top 1% Silicon Binning</h3>
-          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider" data-i18n="val_p2_title">Top 1% Silicon Binning</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed" data-i18n="val_p2_desc">
             Every halo GPU and CPU undergoes continuous 72-hour thermal stress testing to guarantee peak boost clocks without degradation.
           </p>
         </div>
@@ -984,8 +1033,8 @@
           <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#f5e6b8] mx-auto text-lg">
             <i class="fa-solid fa-truck-ramp-box"></i>
           </div>
-          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">White-Glove Vault Transit</h3>
-          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider" data-i18n="val_p3_title">White-Glove Vault Transit</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed" data-i18n="val_p3_desc">
             Secured transport in custom wooden chassis crating with calibrated zero-vibration shock absorbers and private courier escort.
           </p>
         </div>
@@ -994,8 +1043,8 @@
           <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#a855f7] mx-auto text-lg">
             <i class="fa-solid fa-crown"></i>
           </div>
-          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider">Perpetual Calibration</h3>
-          <p class="text-xs text-zinc-400 font-sans leading-relaxed">
+          <h3 class="text-base font-cinzel font-bold text-white uppercase tracking-wider" data-i18n="val_p4_title">Perpetual Calibration</h3>
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed" data-i18n="val_p4_desc">
             Direct 24/7 access to our hardware architects for custom BIOS tuning, sub-ambient overclocking profiles, and driver updates.
           </p>
         </div>
@@ -1017,30 +1066,30 @@
           <!-- Left: Invitation Copy -->
           <div class="lg:col-span-7 space-y-5 text-center lg:text-left">
             <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-[#00ff87]/20 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-cinzel tracking-[0.2em] uppercase font-bold">
-              <i class="fa-solid fa-crown text-[9px]"></i> By Private Invitation Only
+              <i class="fa-solid fa-crown text-[9px]"></i> <span data-i18n="mem_tag">By Private Invitation Only</span>
             </div>
 
-            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white leading-tight uppercase tracking-wider">
+            <h2 class="text-2xl sm:text-4xl lg:text-5xl font-orbitron font-extrabold text-white leading-tight uppercase tracking-wider" data-i18n="mem_title">
               Enter Le Cercle Apex.<br>
               <span class="text-emerald-gradient">The Founders' Silicon Sanctuary.</span>
             </h2>
 
-            <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
+            <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light" data-i18n="mem_desc">
               Members of Le Cercle Apex enjoy first-right allocations for limited halo silicon releases, bespoke hardline liquid battlestation commissions, and direct access to our master hardware engineers.
             </p>
 
             <div class="space-y-2 pt-2 text-xs text-zinc-300 font-sans">
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-check text-[#00ff87] text-xs"></i>
-                <span>Priority Allocation for Flagship GPU & CPU Releases</span>
+                <span data-i18n="mem_perk_1">Priority Allocation for Flagship GPU & CPU Releases</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-check text-[#00ff87] text-xs"></i>
-                <span>Complimentary Bespoke Bios Tuning & Overclock Calibration</span>
+                <span data-i18n="mem_perk_2">Complimentary Bespoke Bios Tuning & Overclock Calibration</span>
               </div>
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-check text-[#00ff87] text-xs"></i>
-                <span>VIP Invitations to Apex Hardware Lab Private Keynotes</span>
+                <span data-i18n="mem_perk_3">VIP Invitations to Apex Hardware Lab Private Keynotes</span>
               </div>
             </div>
           </div>
@@ -1049,28 +1098,30 @@
           <div class="lg:col-span-5">
             <div class="bg-[#07080a]/90 backdrop-blur-2xl p-6 sm:p-8 rounded-2xl border border-[#00ff87]/35 shadow-2xl space-y-4">
               <div class="text-center pb-2 border-b border-white/10">
-                <h3 class="text-base font-cinzel font-bold text-[#f5e6b8] tracking-wider uppercase">Dossier d'Adhésion</h3>
-                <p class="text-[10px] text-zinc-400 font-sans mt-0.5">Discreet collector credential verification</p>
+                <h3 class="text-base font-cinzel font-bold text-[#f5e6b8] tracking-wider uppercase" data-i18n="mem_form_title">Dossier d'Adhésion</h3>
+                <p class="text-[10px] text-zinc-400 font-sans mt-0.5" data-i18n="mem_form_sub">Discreet collector credential verification</p>
               </div>
 
               <form id="membershipApplicationForm" class="space-y-3.5">
                 <div>
-                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Title & Full Legal Name *</label>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="mem_name_label">Title & Full Legal Name *</label>
                   <input 
                     type="text" 
                     id="memberNameInput" 
                     placeholder="e.g. Commander Julian Vance" 
+                    data-i18n-placeholder="mem_name_ph"
                     required 
                     class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
                   >
                 </div>
 
                 <div>
-                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Private Correspondence Email *</label>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="mem_email_label">Private Correspondence Email *</label>
                   <input 
                     type="email" 
                     id="memberEmailInput" 
                     placeholder="julian@vance-holdings.com" 
+                    data-i18n-placeholder="mem_email_ph"
                     required 
                     class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
                   >
@@ -1078,44 +1129,48 @@
 
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <div>
-                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Telephone / Signal</label>
+                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="mem_phone_label">Telephone / Signal</label>
                     <input 
-                      type="text" 
+                       type="text" 
                       id="memberPhoneInput" 
                       placeholder="+62 811 999 888" 
+                      data-i18n-placeholder="mem_phone_ph"
                       class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
                     >
                   </div>
                   <div>
-                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Primary Residence City</label>
+                    <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="mem_city_label">Primary Residence City</label>
                     <input 
                       type="text" 
                       id="memberCityInput" 
                       placeholder="Jakarta / Singapore" 
+                      data-i18n-placeholder="mem_city_ph"
                       class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
                     >
                   </div>
                 </div>
 
                 <div>
-                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Hardware Interests</label>
+                  <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="mem_interest_label">Hardware Interests</label>
                   <input 
                     type="text" 
                     id="membershipInterestsInput" 
                     placeholder="AD102 Flagship, Custom Hardline Loop, OLED" 
+                    data-i18n-placeholder="mem_interest_ph"
                     class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans"
                   >
                 </div>
 
                 <div>
                   <div class="flex items-center justify-between mb-1">
-                    <label class="text-[10px] font-cinzel uppercase text-zinc-400">Invitation Code</label>
-                    <button type="button" id="prefillVipCodeBtn" class="text-[9px] font-cinzel text-[#00ff87] hover:underline cursor-pointer">Apply VIP Code</button>
+                    <label class="text-[10px] font-cinzel uppercase text-zinc-400" data-i18n="mem_code_label">Invitation Code</label>
+                    <button type="button" id="prefillVipCodeBtn" class="text-[9px] font-cinzel text-[#00ff87] hover:underline cursor-pointer" data-i18n="mem_vip_code_btn">Apply VIP Code</button>
                   </div>
                   <input 
                     type="text" 
                     id="memberInvitationCodeInput" 
                     placeholder="e.g. APEX-VIP-2026" 
+                    data-i18n-placeholder="mem_code_ph"
                     class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900/90 border border-white/10 text-[#00ff87] font-mono uppercase tracking-wider focus:outline-none focus:border-[#00ff87]"
                   >
                 </div>
@@ -1125,7 +1180,7 @@
                   class="w-full btn-luxury-emerald py-3 text-xs tracking-widest uppercase font-cinzel shadow-xl mt-2 cursor-pointer"
                 >
                   <i class="fa-solid fa-crown mr-1"></i>
-                  Submit Collector Credentials
+                  <span data-i18n="mem_submit_btn">Submit Collector Credentials</span>
                 </button>
               </form>
             </div>
@@ -1148,8 +1203,8 @@
       <!-- Drawer Header -->
       <div class="p-6 border-b border-white/10 flex items-center justify-between bg-[#08090d]">
         <div>
-          <span class="text-[10px] font-cinzel uppercase text-[#00ff87] tracking-[0.25em] block">Le Cercle des Acquisitions</span>
-          <h3 class="text-xl font-serif text-white">Your Collection Bag</h3>
+          <span class="text-[10px] font-cinzel uppercase text-[#00ff87] tracking-[0.25em] block" data-i18n="cart_heading">Le Cercle des Acquisitions</span>
+          <h3 class="text-xl font-serif text-white" data-i18n="cart_title">Your Collection Bag</h3>
         </div>
         <button id="closeAcquisitionDrawerBtn" class="text-zinc-400 hover:text-white text-base transition p-2 cursor-pointer">
           <i class="fa-solid fa-xmark"></i>
@@ -1166,8 +1221,8 @@
         <div class="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-500 text-2xl">
           <i class="fa-solid fa-bag-shopping"></i>
         </div>
-        <h4 class="font-serif text-xl text-white">Your Acquisition Bag is Unpopulated</h4>
-        <p class="text-xs text-zinc-400 max-w-xs font-sans">
+        <h4 class="font-serif text-xl text-white" data-i18n="cart_empty_title">Your Acquisition Bag is Unpopulated</h4>
+        <p class="text-xs text-zinc-400 max-w-xs font-sans" data-i18n="cart_empty_sub">
           Select from our 140 official hardware creations to begin your bespoke battlestation curation.
         </p>
       </div>
@@ -1181,11 +1236,13 @@
             type="text" 
             id="cartPromoInput" 
             placeholder="Code: HEMAT10 or GRATISONGKIR" 
+            data-i18n-placeholder="cart_promo_ph"
             class="flex-1 px-3 py-1.5 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white font-mono uppercase focus:outline-none focus:border-[#00ff87]"
           >
           <button 
             id="applyCartPromoBtn" 
             class="px-4 py-1.5 rounded-xl liquid-glass text-xs font-cinzel text-[#00ff87] hover:text-white transition cursor-pointer"
+            data-i18n="cart_apply_btn"
           >
             Apply
           </button>
@@ -1193,15 +1250,15 @@
 
         <div class="space-y-1.5 text-xs font-sans">
           <div class="flex justify-between text-zinc-400">
-            <span>Subtotal:</span>
+            <span data-i18n="cart_subtotal">Subtotal:</span>
             <span id="acquisitionSubtotal" class="text-white font-cinzel font-bold">Rp 0</span>
           </div>
           <div class="hidden flex justify-between text-[#00ff87]">
-            <span>Privilege Rebate:</span>
+            <span data-i18n="cart_discount">Privilege Rebate:</span>
             <span id="acquisitionDiscountAmount" class="font-cinzel font-bold">-Rp 0</span>
           </div>
           <div class="flex justify-between text-base font-cinzel pt-2 border-t border-white/10">
-            <span class="text-white uppercase tracking-wider">Total Valuation:</span>
+            <span class="text-white uppercase tracking-wider" data-i18n="cart_total">Total Valuation:</span>
             <span id="acquisitionTotal" class="text-xl font-bold text-emerald-gradient">Rp 0</span>
           </div>
         </div>
@@ -1211,7 +1268,7 @@
           class="w-full btn-luxury-emerald py-3.5 text-xs tracking-widest uppercase font-cinzel shadow-2xl cursor-pointer"
         >
           <i class="fa-solid fa-shield-halved mr-1.5"></i>
-          Proceed to Secured Protocol
+          <span data-i18n="cart_checkout_btn">Proceed to Secured Protocol</span>
         </button>
       </div>
 
@@ -1250,23 +1307,23 @@
           <div class="w-12 h-12 rounded-full wax-seal flex items-center justify-center text-[#07080a] mx-auto mb-2 text-sm">
             <i class="fa-solid fa-shield-halved"></i>
           </div>
-          <h3 class="text-xl font-cinzel font-bold text-[#00ff87] uppercase tracking-wider">Secured Acquisition Protocol</h3>
-          <p class="text-xs text-zinc-400 font-sans mt-0.5">White-Glove Courier Escort & Registry Documentation</p>
+          <h3 class="text-xl font-cinzel font-bold text-[#00ff87] uppercase tracking-wider" data-i18n="checkout_title">Secured Acquisition Protocol</h3>
+          <p class="text-xs text-zinc-400 font-sans mt-0.5" data-i18n="checkout_sub">White-Glove Courier Escort & Registry Documentation</p>
         </div>
 
         <form id="acquisitionCheckoutForm" class="space-y-4">
           <div class="p-4 rounded-xl liquid-glass space-y-2">
-            <h4 class="text-xs font-cinzel uppercase tracking-wider text-[#00ff87] font-bold">Acquisition Summary</h4>
+            <h4 class="text-xs font-cinzel uppercase tracking-wider text-[#00ff87] font-bold" data-i18n="checkout_summary_title">Acquisition Summary</h4>
             <div id="checkoutItemsSummary" class="space-y-1"></div>
             <div class="pt-2 border-t border-white/10 flex justify-between font-cinzel text-xs">
-              <span class="text-zinc-400">Total Valuation:</span>
+              <span class="text-zinc-400" data-i18n="cart_total">Total Valuation:</span>
               <span id="checkoutSummaryTotal" class="text-emerald-gradient font-bold text-sm">Rp 0</span>
             </div>
           </div>
 
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
-              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Recipient Legal Title & Name *</label>
+              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="checkout_name_label">Recipient Legal Title & Name *</label>
               <input 
                 type="text" 
                 id="checkoutClientName" 
@@ -1276,7 +1333,7 @@
               >
             </div>
             <div>
-              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Destination City & Country *</label>
+              <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="checkout_city_label">Destination City & Country *</label>
               <input 
                 type="text" 
                 id="checkoutDeliveryCity" 
@@ -1288,7 +1345,7 @@
           </div>
 
           <div>
-            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Secured Delivery Address / Private Battlestation Suite *</label>
+            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="checkout_address_label">Secured Delivery Address / Private Battlestation Suite *</label>
             <input 
               type="text" 
               id="checkoutDeliveryAddress" 
@@ -1299,11 +1356,12 @@
           </div>
 
           <div>
-            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Special Security or Overclocking Instructions</label>
+            <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1" data-i18n="checkout_notes_label">Special Security or Overclocking Instructions</label>
             <textarea 
               id="checkoutSpecialInstructions" 
               rows="2" 
               placeholder="e.g. Please bench-test memory profile at 6400 MT/s CL32 prior to dispatch."
+              data-i18n-placeholder="checkout_notes_ph"
               class="w-full px-3.5 py-2 text-xs rounded-xl bg-zinc-900 border border-white/10 text-white focus:outline-none focus:border-[#00ff87] font-sans resize-none"
             ></textarea>
           </div>
@@ -1314,7 +1372,7 @@
               class="w-full btn-luxury-emerald py-3.5 text-xs font-cinzel tracking-widest uppercase shadow-xl cursor-pointer"
             >
               <i class="fa-solid fa-signature mr-1.5"></i>
-              Confirm Sovereign Acquisition
+              <span data-i18n="checkout_confirm_btn">Confirm Sovereign Acquisition</span>
             </button>
           </div>
         </form>
@@ -1342,13 +1400,13 @@
           class="btn-luxury-outline py-2.5 px-6 text-xs font-cinzel tracking-wider cursor-pointer"
         >
           <i class="fa-solid fa-print mr-1.5"></i>
-          Print Official Deed (PDF)
+          <span data-i18n="deed_print_btn">Print Official Deed (PDF)</span>
         </button>
         <button 
           id="closeDeedModalBtn" 
           class="btn-luxury-emerald py-2.5 px-6 text-xs font-cinzel tracking-wider cursor-pointer"
         >
-          Close & Return to Atelier
+          <span data-i18n="deed_close_btn">Close & Return to Atelier</span>
         </button>
       </div>
 
@@ -1390,55 +1448,55 @@
             </span>
             <span class="font-cinzel text-lg font-bold tracking-[0.2em] text-white">NEXUS APEX</span>
           </div>
-          <p class="text-xs text-zinc-400 font-sans leading-relaxed max-w-sm">
+          <p class="text-xs text-zinc-400 font-sans leading-relaxed max-w-sm" data-i18n="footer_brand_desc">
             The sovereign atelier for ultra-enthusiast PC architecture and esports tournament hardware. Binned silicon, aerospace materials, and white-glove vault transit.
           </p>
           <div class="flex items-center gap-3 pt-2">
-            <span class="px-2.5 py-1 rounded-full liquid-glass text-[10px] font-mono text-[#00ff87]">140 Official Products</span>
-            <span class="px-2.5 py-1 rounded-full liquid-glass text-[10px] font-mono text-[#00f0ff]">Zero-Defect Seals</span>
+            <span class="px-2.5 py-1 rounded-full liquid-glass text-[10px] font-mono text-[#00ff87]" data-i18n="footer_stat_creations">140 Official Products</span>
+            <span class="px-2.5 py-1 rounded-full liquid-glass text-[10px] font-mono text-[#00f0ff]" data-i18n="footer_stat_seals">Zero-Defect Seals</span>
           </div>
         </div>
 
         <!-- Collections -->
         <div class="space-y-3 font-cinzel text-xs">
-          <h4 class="text-white uppercase tracking-widest font-bold">Categories</h4>
+          <h4 class="text-white uppercase tracking-widest font-bold" data-i18n="footer_cat_title">Categories</h4>
           <ul class="space-y-2 text-zinc-400">
-            <li><a href="#collections" class="hover:text-[#00ff87] transition">Komponen Rakit PC</a></li>
-            <li><a href="#collections" class="hover:text-[#00ff87] transition">PC & Konsol Gaming</a></li>
-            <li><a href="#collections" class="hover:text-[#00ff87] transition">Keyboard & Mouse</a></li>
-            <li><a href="#collections" class="hover:text-[#00ff87] transition">Audio & Headset</a></li>
-            <li><a href="#collections" class="hover:text-[#00ff87] transition">Monitor & Setup</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition" data-i18n="footer_cat_1">Komponen Rakit PC</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition" data-i18n="footer_cat_2">PC & Konsol Gaming</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition" data-i18n="footer_cat_3">Keyboard & Mouse</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition" data-i18n="footer_cat_4">Audio & Headset</a></li>
+            <li><a href="#collections" class="hover:text-[#00ff87] transition" data-i18n="footer_cat_5">Monitor & Setup</a></li>
           </ul>
         </div>
 
         <!-- Ateliers & Chapters -->
         <div class="space-y-3 font-cinzel text-xs">
-          <h4 class="text-white uppercase tracking-widest font-bold">Atelier Chapters</h4>
+          <h4 class="text-white uppercase tracking-widest font-bold" data-i18n="footer_atelier_title">Atelier Chapters</h4>
           <ul class="space-y-2 text-zinc-400">
-            <li><a href="#alchemy" class="hover:text-[#00ff87] transition">L'Alchimie du Silicium</a></li>
-            <li><a href="#showcase" class="hover:text-[#00ff87] transition">3D Spatial Vault</a></li>
-            <li><a href="#community" class="hover:text-[#00f0ff] transition">Esports Syndicate</a></li>
-            <li><a href="#download-app" class="hover:text-[#ff007f] transition">Control Suite v4.8</a></li>
-            <li><a href="#values" class="hover:text-[#00ff87] transition">Four Provenance Pillars</a></li>
-            <li><a href="#membership" class="hover:text-[#00ff87] transition">Le Cercle Privé</a></li>
+            <li><a href="#alchemy" class="hover:text-[#00ff87] transition" data-i18n="nav_alchemy">L'Alchimie du Silicium</a></li>
+            <li><a href="#showcase" class="hover:text-[#00ff87] transition" data-i18n="nav_showcase">3D Spatial Vault</a></li>
+            <li><a href="#community" class="hover:text-[#00f0ff] transition" data-i18n="nav_community">Esports Syndicate</a></li>
+            <li><a href="#download-app" class="hover:text-[#ff007f] transition" data-i18n="nav_app">Control Suite v4.8</a></li>
+            <li><a href="#values" class="hover:text-[#00ff87] transition" data-i18n="nav_values">Four Provenance Pillars</a></li>
+            <li><a href="#membership" class="hover:text-[#00ff87] transition" data-i18n="nav_membership">Le Cercle Privé</a></li>
           </ul>
         </div>
 
         <!-- Alternate Editions -->
         <div class="space-y-3 font-cinzel text-xs">
-          <h4 class="text-white uppercase tracking-widest font-bold">Alternate Views</h4>
+          <h4 class="text-white uppercase tracking-widest font-bold" data-i18n="footer_alt_title">Alternate Views</h4>
           <ul class="space-y-2 text-zinc-400">
-            <li><a href="gaming.html" class="text-[#00ff87] hover:underline transition font-cinzel">Classic Esports Store (140+ Gear) &rarr;</a></li>
-            <li><a href="luxury.html" class="text-[#f5e6b8] hover:underline transition font-cinzel">Maison Vendôme Jewelry View &rarr;</a></li>
+            <li><a href="gaming.html" class="text-[#00ff87] hover:underline transition font-cinzel" data-i18n="footer_alt_gaming">Classic Esports Store (140+ Gear) &rarr;</a></li>
+            <li><a href="luxury.html" class="text-[#f5e6b8] hover:underline transition font-cinzel" data-i18n="footer_alt_luxury">Maison Vendôme Jewelry View &rarr;</a></li>
           </ul>
         </div>
 
       </div>
 
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-cinzel">
-        <p>&copy; 2026 NEXUS APEX // BATTLESTATION ATELIER. All Rights Reserved.</p>
+        <p data-i18n="footer_rights">&copy; 2026 NEXUS APEX // BATTLESTATION ATELIER. All Rights Reserved.</p>
         <div class="flex items-center gap-6">
-          <a href="#hero" class="hover:text-zinc-300 transition">Return to Zenith &uarr;</a>
+          <a href="#hero" class="hover:text-zinc-300 transition" data-i18n="footer_top">Return to Zenith &uarr;</a>
         </div>
       </div>
 
@@ -1447,6 +1505,8 @@
 
   <!-- Hardware Data Source: 140 Authentic Products -->
   <script src="js/data.js"></script>
+  <!-- Internationalization (ID/EN) -->
+  <script src="js/translations.js"></script>
   <!-- Apex SPA Core Application Engine -->
   <script src="js/apex-app.js"></script>
 </body>

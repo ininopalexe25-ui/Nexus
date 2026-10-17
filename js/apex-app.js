@@ -16,7 +16,9 @@
     WISHLIST: 'nexus_apex_wishlist_v1',
     CURRENCY: 'nexus_apex_currency_v1',
     MEMBERSHIP: 'nexus_apex_membership_v1',
-    PROMO: 'nexus_apex_promo_v1'
+    PROMO: 'nexus_apex_promo_v1',
+    LANGUAGE: 'nexus_apex_language_v1',
+    THEME: 'nexus_apex_theme_v1'
   };
 
   // --- EXCHANGE RATES ---
@@ -59,6 +61,8 @@
     cart: [],
     wishlist: [],
     currency: 'IDR',
+    language: 'id',
+    theme: 'dark',
     activeCategory: 'all',
     searchQuery: '',
     sortBy: 'relevance',
@@ -72,6 +76,23 @@
       size: null,
       quantity: 1
     }
+  };
+
+  // --- I18N HELPER ---
+  const t = (key, fallback = '') => {
+    const lang = state.language || 'id';
+    if (typeof window !== 'undefined' && window.NEXUS_I18N) {
+      if (window.NEXUS_I18N[lang] && window.NEXUS_I18N[lang][key] !== undefined) {
+        return window.NEXUS_I18N[lang][key];
+      }
+      if (window.NEXUS_I18N.id && window.NEXUS_I18N.id[key] !== undefined) {
+        return window.NEXUS_I18N.id[key];
+      }
+      if (window.NEXUS_I18N.en && window.NEXUS_I18N.en[key] !== undefined) {
+        return window.NEXUS_I18N.en[key];
+      }
+    }
+    return fallback || key;
   };
 
   // --- INITIALIZE RAW PRODUCTS ---
@@ -125,8 +146,183 @@
       if (savedPromo && PROMO_CODES[savedPromo]) {
         state.activePromo = savedPromo;
       }
+
+      const savedLang = localStorage.getItem(STORAGE_KEYS.LANGUAGE);
+      if (savedLang && ['id', 'en'].includes(savedLang)) {
+        state.language = savedLang;
+      }
+
+      const savedTheme = localStorage.getItem(STORAGE_KEYS.THEME);
+      if (savedTheme && ['dark', 'light'].includes(savedTheme)) {
+        state.theme = savedTheme;
+      }
     } catch (e) {
       console.warn('LocalStorage error:', e);
+    }
+  };
+
+  // --- THEME ENGINE (DARK / LIGHT PRESERVING EMERALD NEON ACCENTS) ---
+  const updateThemeLabels = () => {
+    const isDark = state.theme === 'dark';
+    const desktopIcon = document.getElementById('themeToggleIcon');
+    const desktopBtn = document.getElementById('themeToggleBtn');
+    const mobileIcon = document.getElementById('mobileThemeStatusIcon');
+    const mobileLabel = document.getElementById('mobileThemeLabel');
+
+    if (desktopIcon) {
+      desktopIcon.className = isDark ? 'fa-solid fa-sun text-[#f5e6b8]' : 'fa-solid fa-moon text-emerald-600';
+    }
+    if (desktopBtn) {
+      desktopBtn.title = isDark 
+        ? (state.language === 'id' ? 'Ganti ke Mode Terang' : 'Switch to Light Mode') 
+        : (state.language === 'id' ? 'Ganti ke Mode Gelap' : 'Switch to Dark Mode');
+    }
+    if (mobileIcon) {
+      mobileIcon.className = isDark ? 'fa-solid fa-sun text-[#f5e6b8]' : 'fa-solid fa-moon text-emerald-600';
+    }
+    if (mobileLabel) {
+      mobileLabel.textContent = isDark 
+        ? t('nav_theme_label_dark', 'Mode Gelap') 
+        : t('nav_theme_label_light', 'Mode Terang');
+    }
+  };
+
+  const applyTheme = (theme) => {
+    if (!['dark', 'light'].includes(theme)) theme = 'dark';
+    state.theme = theme;
+    try {
+      localStorage.setItem(STORAGE_KEYS.THEME, theme);
+    } catch (e) {}
+
+    const htmlEl = document.documentElement;
+    const bodyEl = document.body;
+
+    if (theme === 'light') {
+      htmlEl.classList.remove('dark');
+      htmlEl.classList.add('light-mode');
+      bodyEl.classList.remove('dark');
+      bodyEl.classList.add('light-mode');
+    } else {
+      htmlEl.classList.add('dark');
+      htmlEl.classList.remove('light-mode');
+      bodyEl.classList.add('dark');
+      bodyEl.classList.remove('light-mode');
+    }
+
+    updateThemeLabels();
+  };
+
+  const setupThemeToggle = () => {
+    const desktopBtn = document.getElementById('themeToggleBtn');
+    const mobileBtn = document.getElementById('mobileThemeToggleBtn');
+
+    const toggle = () => {
+      const nextTheme = state.theme === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      const isId = state.language === 'id';
+      const msg = nextTheme === 'light' 
+        ? (isId ? 'Mode Terang Titanium diaktifkan dengan aksen hijau emerald.' : 'Titanium Light Mode activated with emerald green accents.')
+        : (isId ? 'Mode Gelap Cyber Noir diaktifkan.' : 'Cyber Noir Dark Mode activated.');
+      showLuxuryToast(isId ? 'Tema Diubah' : 'Theme Toggled', msg, 'info');
+    };
+
+    if (desktopBtn) desktopBtn.onclick = toggle;
+    if (mobileBtn) mobileBtn.onclick = toggle;
+  };
+
+  // --- LANGUAGE (ID / EN) INTERNATIONALIZATION CONTROLLER ---
+  const applyLanguage = (lang, shouldRender = true) => {
+    if (!['id', 'en'].includes(lang)) lang = 'id';
+    state.language = lang;
+    try {
+      localStorage.setItem(STORAGE_KEYS.LANGUAGE, lang);
+    } catch (e) {}
+
+    document.documentElement.lang = lang;
+
+    // Update Desktop language buttons
+    const langIdBtn = document.getElementById('langIdBtn');
+    const langEnBtn = document.getElementById('langEnBtn');
+    if (langIdBtn && langEnBtn) {
+      if (lang === 'id') {
+        langIdBtn.className = 'px-2 py-0.5 rounded text-[11px] font-orbitron font-bold bg-[#00ff87] text-[#07080a] shadow-[0_0_10px_rgba(0,255,135,0.4)] transition cursor-pointer';
+        langEnBtn.className = 'px-2 py-0.5 rounded text-[11px] font-orbitron font-medium text-zinc-400 hover:text-white transition cursor-pointer';
+      } else {
+        langEnBtn.className = 'px-2 py-0.5 rounded text-[11px] font-orbitron font-bold bg-[#00ff87] text-[#07080a] shadow-[0_0_10px_rgba(0,255,135,0.4)] transition cursor-pointer';
+        langIdBtn.className = 'px-2 py-0.5 rounded text-[11px] font-orbitron font-medium text-zinc-400 hover:text-white transition cursor-pointer';
+      }
+    }
+
+    // Update Mobile language buttons
+    const mobLangId = document.getElementById('mobileLangIdBtn');
+    const mobLangEn = document.getElementById('mobileLangEnBtn');
+    if (mobLangId && mobLangEn) {
+      if (lang === 'id') {
+        mobLangId.className = 'flex-1 py-2 rounded-xl text-xs font-orbitron font-bold bg-[#00ff87] text-[#07080a] shadow-md transition cursor-pointer text-center';
+        mobLangEn.className = 'flex-1 py-2 rounded-xl text-xs font-orbitron font-medium text-zinc-400 hover:text-white liquid-glass transition cursor-pointer text-center';
+      } else {
+        mobLangEn.className = 'flex-1 py-2 rounded-xl text-xs font-orbitron font-bold bg-[#00ff87] text-[#07080a] shadow-md transition cursor-pointer text-center';
+        mobLangId.className = 'flex-1 py-2 rounded-xl text-xs font-orbitron font-medium text-zinc-400 hover:text-white liquid-glass transition cursor-pointer text-center';
+      }
+    }
+
+    // Apply translations to static elements with data-i18n
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      const translation = t(key);
+      if (translation) {
+        el.innerHTML = translation;
+      }
+    });
+
+    // Apply translations to inputs with data-i18n-placeholder
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+      const key = el.getAttribute('data-i18n-placeholder');
+      const translation = t(key);
+      if (translation) {
+        el.setAttribute('placeholder', translation);
+      }
+    });
+
+    updateThemeLabels();
+
+    if (shouldRender) {
+      renderCategoryFilters();
+      renderProductGallery();
+      init3DShowcaseCarousel();
+      renderAcquisitionDrawer();
+    }
+  };
+
+  const setupLanguageSelector = () => {
+    const langIdBtn = document.getElementById('langIdBtn');
+    const langEnBtn = document.getElementById('langEnBtn');
+    const mobLangId = document.getElementById('mobileLangIdBtn');
+    const mobLangEn = document.getElementById('mobileLangEnBtn');
+
+    if (langIdBtn) {
+      langIdBtn.onclick = () => {
+        applyLanguage('id');
+        showLuxuryToast('Bahasa Diubah', 'Tampilan antarmuka dialihkan ke Bahasa Indonesia.');
+      };
+    }
+    if (langEnBtn) {
+      langEnBtn.onclick = () => {
+        applyLanguage('en');
+        showLuxuryToast('Language Switched', 'Interface switched to English.');
+      };
+    }
+    if (mobLangId) {
+      mobLangId.onclick = () => {
+        applyLanguage('id');
+        showLuxuryToast('Bahasa Diubah', 'Tampilan antarmuka dialihkan ke Bahasa Indonesia.');
+      };
+    }
+    if (mobLangEn) {
+      mobLangEn.onclick = () => {
+        applyLanguage('en');
+        showLuxuryToast('Language Switched', 'Interface switched to English.');
+      };
     }
   };
 
@@ -399,7 +595,7 @@
 
             <div class="flex flex-col sm:flex-row items-center justify-between w-full md:w-auto gap-3 sm:gap-4 shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-white/10">
               <div class="flex items-center justify-between w-full sm:w-auto sm:text-right gap-3">
-                <span class="text-[9px] font-mono text-zinc-400 uppercase tracking-widest block sm:hidden">Valuation:</span>
+                <span class="text-[9px] font-mono text-zinc-400 uppercase tracking-widest block sm:hidden">${t('valuation_label', 'Valuasi')}:</span>
                 <span class="text-xl sm:text-2xl font-bold font-orbitron text-emerald-gradient">${formatPrice(activeProd)}</span>
               </div>
               <div class="grid grid-cols-2 sm:flex items-center gap-2 w-full sm:w-auto">
@@ -407,13 +603,13 @@
                   id="carouselViewDossierBtn"
                   class="btn-luxury-outline py-2.5 sm:py-3 px-3 sm:px-5 text-xs font-orbitron tracking-wider uppercase cursor-pointer text-center"
                 >
-                  <i class="fa-solid fa-eye mr-1"></i> Dossier
+                  <i class="fa-solid fa-eye mr-1"></i> ${t('showcase_btn_dossier', 'Dossier')}
                 </button>
                 <button 
                   id="carouselAcquireBtn"
                   class="btn-luxury-emerald py-2.5 sm:py-3 px-3 sm:px-6 text-xs font-orbitron tracking-wider uppercase cursor-pointer text-center"
                 >
-                  <i class="fa-solid fa-bag-shopping mr-1"></i> Acquire
+                  <i class="fa-solid fa-bag-shopping mr-1"></i> ${t('showcase_btn_acquire', 'Dapatkan')}
                 </button>
               </div>
             </div>
@@ -561,13 +757,26 @@
   };
 
   // --- RENDER CATEGORY PILLS ---
+  // --- RENDER CATEGORY PILLS ---
+  const getLocalizedCategoryName = (cat) => {
+    if (cat.id === 'all') return t('cat_all_hardware', 'Semua Koleksi Hardware');
+    if (cat.id === 'Komponen Rakit PC') return t('cat_pc_components', 'Komponen Rakit PC');
+    if (cat.id === 'PC & Konsol Gaming') return t('cat_pc_gaming', 'PC & Konsol Gaming');
+    if (cat.id === 'Keyboard & Mouse Gaming') return t('cat_keyboard_mouse', 'Keyboard & Mouse');
+    if (cat.id === 'Audio & Headset Gaming') return t('cat_audio_headset', 'Audio & Headset');
+    if (cat.id === 'Monitor & Setup Gaming') return t('cat_monitor_setup', 'Monitor & Setup');
+    if (cat.id === 'Kursi & Meja Gaming') return state.language === 'en' ? 'Chairs & Desks' : 'Kursi & Meja';
+    if (cat.id === 'wishlist') return t('cat_wishlist_prive', 'Wishlist Salon Privé');
+    return cat.name;
+  };
+
   const renderCategoryFilters = () => {
     const container = document.getElementById('luxuryCategoryPills');
     if (!container) return;
 
     const categories = [...APEX_COLLECTIONS];
     if (state.activeCategory === 'wishlist') {
-      categories.push({ id: 'wishlist', name: `Salon Privé (${state.wishlist.length})`, french: 'Salon Privé' });
+      categories.push({ id: 'wishlist', name: `${t('cat_wishlist_prive', 'Salon Privé')} (${state.wishlist.length})`, french: 'Salon Privé' });
     }
 
     container.innerHTML = categories.map(cat => {
@@ -580,6 +789,8 @@
         count = state.products.filter(p => p.category === cat.id).length;
       }
 
+      const displayName = getLocalizedCategoryName(cat);
+
       return `
         <button 
           data-category-id="${cat.id}" 
@@ -589,7 +800,7 @@
               : 'liquid-glass text-zinc-300 hover:text-white hover:border-[#00ff87]/40'
           }"
         >
-          <span>${cat.name}</span>
+          <span>${displayName}</span>
           <span class="text-[10px] opacity-75 font-mono">(${count})</span>
         </button>
       `;
@@ -650,26 +861,30 @@
 
     const filtered = getFilteredProducts();
     if (resultsCountEl) {
-      resultsCountEl.textContent = `Showing ${filtered.length} hardware creations`;
+      resultsCountEl.textContent = t('showing_results', 'Menampilkan {count} kreasi hardware').replace('{count}', filtered.length);
     }
 
     if (filtered.length === 0) {
+      const emptyDesc = state.activeCategory === 'wishlist' 
+        ? (state.language === 'en' 
+            ? 'Your private salon curation is currently empty. Explore our halo creations and tap the heart icon to curate your personal vault.' 
+            : 'Koleksi salon pribadi Anda masih kosong. Telusuri kreasi kami dan klik ikon hati untuk menyimpan.')
+        : t('no_results_desc', 'Coba ubah kata kunci pencarian atau pilih kategori perangkat lain.');
+
       grid.innerHTML = `
         <div class="col-span-full py-20 text-center space-y-4 liquid-glass-card rounded-3xl p-8 border border-white/10">
           <div class="w-14 h-14 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-[#00ff87] mx-auto text-xl">
             <i class="fa-solid fa-magnifying-glass"></i>
           </div>
-          <h3 class="font-orbitron font-bold text-2xl text-white uppercase">No Masterpieces Matching Criteria</h3>
+          <h3 class="font-orbitron font-bold text-2xl text-white uppercase">${t('no_results_title', 'Tidak Ada Mahakarya yang Cocok')}</h3>
           <p class="text-xs text-zinc-400 font-sans max-w-md mx-auto">
-            ${state.activeCategory === 'wishlist' 
-              ? 'Your private salon curation is currently empty. Explore our halo creations and tap the heart icon to curate your personal vault.'
-              : 'Our ateliers found no hardware matching your search filter.'}
+            ${emptyDesc}
           </p>
           <button 
             id="resetCategoryFilterBtn"
             class="btn-luxury-emerald py-2.5 px-6 text-xs font-orbitron tracking-wider uppercase cursor-pointer"
           >
-            Reset Filters & View All
+            ${t('btn_reset_filters', 'Reset Semua Filter')}
           </button>
         </div>
       `;
@@ -728,7 +943,7 @@
             <button 
               data-wishlist-id="${product.id}" 
               class="wishlist-toggle-btn absolute top-3 right-3 w-8 h-8 rounded-full bg-zinc-900/80 hover:bg-[#00ff87]/20 backdrop-blur-md border border-white/10 hover:border-[#00ff87]/60 text-zinc-300 hover:text-[#00ff87] flex items-center justify-center transition shadow-md cursor-pointer"
-              title="Add to Salon Privé Wishlist"
+              title="${state.language === 'en' ? 'Add to Salon Privé Wishlist' : 'Tambah ke Wishlist Salon Privé'}"
             >
               <i class="${isWishlisted ? 'fa-solid fa-heart text-[#f43f5e]' : 'fa-regular fa-heart'} text-xs"></i>
             </button>
@@ -760,7 +975,7 @@
             <!-- Price & Action -->
             <div class="pt-3.5 border-t border-white/10 flex items-center justify-between gap-2 min-w-0">
               <div class="min-w-0 flex-1">
-                <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider block">Valuation</span>
+                <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider block">${t('valuation_label', 'Valuasi')}</span>
                 <span class="text-xs sm:text-sm font-bold font-orbitron text-emerald-gradient tracking-tight truncate block" title="${formattedPrice}">${formattedPrice}</span>
               </div>
 
@@ -768,7 +983,7 @@
                 <button 
                   data-id="${product.id}" 
                   class="view-detail-trigger w-8 h-8 rounded-full liquid-glass text-zinc-300 hover:text-white hover:border-[#00ff87]/50 flex items-center justify-center transition text-xs cursor-pointer"
-                  title="View Technical Dossier"
+                  title="${t('btn_dossier_tooltip', 'Lihat Dossier Teknis')}"
                 >
                   <i class="fa-solid fa-eye text-[11px]"></i>
                 </button>
@@ -776,7 +991,7 @@
                   data-acquire-id="${product.id}" 
                   class="acquire-btn btn-luxury-emerald py-1.5 sm:py-2 px-2.5 sm:px-3.5 text-[10px] tracking-wider uppercase cursor-pointer whitespace-nowrap"
                 >
-                  <i class="fa-solid fa-bag-shopping sm:mr-1"></i> <span class="hidden xs:inline">Acquire</span>
+                  <i class="fa-solid fa-bag-shopping sm:mr-1"></i> <span class="hidden xs:inline">${t('btn_acquire', 'Dapatkan')}</span>
                 </button>
               </div>
             </div>
@@ -832,7 +1047,7 @@
               class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass text-xs font-orbitron text-zinc-300 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
               ${state.currentPage === 1 ? 'disabled' : ''}
             >
-              &larr; <span class="hidden xs:inline">Prev</span>
+              &larr; <span class="hidden xs:inline">${t('pagination_prev', 'Sebelumnya')}</span>
             </button>
             <div class="flex items-center gap-1 sm:gap-1.5">
               ${pagesHtml}
@@ -842,7 +1057,7 @@
               class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass text-xs font-orbitron text-zinc-300 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
               ${state.currentPage === totalPages ? 'disabled' : ''}
             >
-              <span class="hidden xs:inline">Next</span> &rarr;
+              <span class="hidden xs:inline">${t('pagination_next', 'Selanjutnya')}</span> &rarr;
             </button>
           </div>
         `;
@@ -1200,21 +1415,21 @@
 
           <div class="p-4 rounded-2xl liquid-glass border border-white/10 space-y-2 text-xs">
             <div class="flex justify-between">
-              <span class="text-zinc-400 uppercase font-mono text-[10px]">Atelier Provenance:</span>
+              <span class="text-zinc-400 uppercase font-mono text-[10px]">${t('dossier_provenance', 'Asal-Usul Pabrikan:')}</span>
               <span class="text-white font-sans font-medium">${product.provenance}</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-zinc-400 uppercase font-mono text-[10px]">Allocation Status:</span>
-              <span class="text-[#00ff87] font-mono font-bold">${product.stock > 0 ? `In Stock (${product.stock} Units Remaining)` : 'Vault Allocation Exhausted'}</span>
+              <span class="text-zinc-400 uppercase font-mono text-[10px]">${t('dossier_stock_in', 'Status Alokasi:')}</span>
+              <span class="text-[#00ff87] font-mono font-bold">${product.stock > 0 ? t('dossier_stock_in', 'Tersedia ({count} Unit Tersisa)').replace('{count}', product.stock) : t('dossier_stock_out', 'Alokasi Vault Habis')}</span>
             </div>
             <div class="flex justify-between">
-              <span class="text-zinc-400 uppercase font-mono text-[10px]">Logistics Protocol:</span>
+              <span class="text-zinc-400 uppercase font-mono text-[10px]">${t('dossier_logistics', 'Protokol Logistik:')}</span>
               <span class="text-zinc-300 font-sans">${product.leadTime}</span>
             </div>
           </div>
 
           <div>
-            <h4 class="text-[10px] font-mono uppercase tracking-widest text-[#00ff87] mb-1 font-bold">Engineering Description</h4>
+            <h4 class="text-[10px] font-mono uppercase tracking-widest text-[#00ff87] mb-1 font-bold">${t('dossier_desc_title', 'Deskripsi Rekayasa')}</h4>
             <p class="text-xs sm:text-sm text-zinc-300 font-sans leading-relaxed font-light">
               ${product.description}
             </p>
@@ -1224,7 +1439,7 @@
           <div class="space-y-3 pt-1">
             ${product.variants.colors && product.variants.colors.length > 0 ? `
               <div>
-                <label class="block text-[10px] font-mono uppercase text-zinc-400 mb-1.5">Color / Edition Shroud</label>
+                <label class="block text-[10px] font-mono uppercase text-zinc-400 mb-1.5">${t('dossier_color_label', 'Warna / Edisi Shroud')}</label>
                 <div class="flex flex-wrap gap-2" id="modalColorVariants">
                   ${product.variants.colors.map((c, idx) => `
                     <button 
@@ -1244,7 +1459,7 @@
 
             ${product.variants.sizes && product.variants.sizes.length > 0 ? `
               <div>
-                <label class="block text-[10px] font-mono uppercase text-zinc-400 mb-1.5">Socket / Form Factor / Spec</label>
+                <label class="block text-[10px] font-mono uppercase text-zinc-400 mb-1.5">${t('dossier_spec_label', 'Socket / Faktor Bentuk / Spek')}</label>
                 <div class="flex flex-wrap gap-2" id="modalSizeVariants">
                   ${product.variants.sizes.map((s, idx) => `
                     <button 
@@ -1266,7 +1481,7 @@
           <!-- Valuation & Action Buttons -->
           <div class="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
             <div>
-              <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider block">Acquisition Valuation</span>
+              <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider block">${t('dossier_valuation', 'Valuasi Akuisisi')}</span>
               <span class="text-2xl font-bold font-orbitron text-emerald-gradient">${formattedPrice}</span>
             </div>
 
@@ -1274,7 +1489,7 @@
               <button 
                 id="modalWishlistBtn" 
                 class="w-12 h-12 rounded-full liquid-glass border border-white/10 flex items-center justify-center text-zinc-300 hover:text-[#f43f5e] transition cursor-pointer shrink-0"
-                title="Save to Wishlist"
+                title="${state.language === 'en' ? 'Save to Wishlist' : 'Simpan ke Wishlist'}"
               >
                 <i class="${isWishlisted ? 'fa-solid fa-heart text-[#f43f5e]' : 'fa-regular fa-heart'} text-base"></i>
               </button>
@@ -1284,7 +1499,7 @@
                 class="flex-1 sm:flex-none btn-luxury-emerald py-3.5 px-8 text-xs font-orbitron tracking-widest uppercase cursor-pointer"
               >
                 <i class="fa-solid fa-crown mr-1.5"></i>
-                Acquire Creation
+                ${t('dossier_btn_acquire', 'Dapatkan Mahakarya')}
               </button>
             </div>
           </div>
@@ -1294,7 +1509,7 @@
               id="modalConsultConciergeBtn" 
               class="text-[11px] font-mono text-zinc-400 hover:text-[#00ff87] tracking-wider transition underline cursor-pointer"
             >
-              <i class="fa-solid fa-phone mr-1"></i> Inquire with Private Overclocking Concierge
+              <i class="fa-solid fa-phone mr-1"></i> ${t('dossier_consult_concierge', 'Konsultasi dengan Concierge Overclocking Pribadi')}
             </button>
           </div>
 
@@ -1447,25 +1662,25 @@
         </div>
 
         <div>
-          <span class="text-[10px] uppercase font-mono tracking-widest text-[#00ff87]">Brevet d'Adhésion Officiel</span>
-          <h3 class="text-2xl font-orbitron font-bold text-white mt-1">Credentials Formally Confirmed</h3>
+          <span class="text-[10px] uppercase font-mono tracking-widest text-[#00ff87]">${t('mem_success_badge', 'Brevet d\'Adhésion Officiel')}</span>
+          <h3 class="text-2xl font-orbitron font-bold text-white mt-1">${t('mem_success_title', 'Kredensial Resmi Dikonfirmasi')}</h3>
           <p class="text-xs text-zinc-400 font-sans mt-1">
-            Welcome to <strong class="text-[#f5e6b8]">Le Cercle Apex // Founders Atelier</strong>.
+            ${t('mem_success_welcome', 'Selamat datang di')} <strong class="text-[#f5e6b8]">Le Cercle Apex // Founders Atelier</strong>.
           </p>
         </div>
 
         <div class="p-5 rounded-2xl liquid-glass text-left space-y-2.5 text-xs font-sans border border-white/10">
           <div class="flex justify-between border-b border-white/10 pb-2">
-            <span class="text-zinc-500 uppercase text-[10px]">Patron Title</span>
+            <span class="text-zinc-500 uppercase text-[10px]">${t('mem_success_patron', 'Gelar Patron')}</span>
             <span class="text-white font-bold">${name}</span>
           </div>
           <div class="flex justify-between border-b border-white/10 pb-2">
-            <span class="text-zinc-500 uppercase text-[10px]">Registry Credential ID</span>
+            <span class="text-zinc-500 uppercase text-[10px]">${t('mem_success_reg_id', 'ID Kredensial Registri')}</span>
             <span class="text-[#00ff87] font-mono font-bold">${memberId}</span>
           </div>
           <div class="flex justify-between border-b border-white/10 pb-2">
-            <span class="text-zinc-500 uppercase text-[10px]">Privilege Tier</span>
-            <span class="text-[#f5e6b8] font-bold">Apex Founder (Tier I Halo Silicon Access)</span>
+            <span class="text-zinc-500 uppercase text-[10px]">${t('mem_success_tier', 'Tingkat Hak Istimewa')}</span>
+            <span class="text-[#f5e6b8] font-bold">${t('mem_success_tier_val', 'Apex Founder (Akses Silikon Halo Tingkat I)')}</span>
           </div>
           <div class="flex justify-between">
             <span class="text-zinc-500 uppercase text-[10px]">Private Allocation Vaults</span>
@@ -1478,7 +1693,7 @@
             id="closeSuccessModalBtn" 
             class="flex-1 btn-luxury-emerald py-3 text-xs uppercase tracking-wider font-orbitron cursor-pointer"
           >
-            Enter The Apex Vault
+            ${t('mem_success_close_btn', 'Masuki Atelier Sebagai Anggota Terdaftar')}
           </button>
         </div>
       </div>
@@ -1626,9 +1841,9 @@
 
           <div class="text-right">
             <span class="px-3 py-1 rounded-full bg-[#00ff87]/20 border border-[#00ff87] text-[#00ff87] text-[10px] font-mono font-bold uppercase tracking-widest">
-              OFFICIAL DEED OF PROVENANCE
+              ${t('deed_official_title', 'OFFICIAL DEED OF PROVENANCE')}
             </span>
-            <p class="text-xs text-zinc-400 font-mono mt-2">Ref: ${deedData.acquisitionRef}</p>
+            <p class="text-xs text-zinc-400 font-mono mt-2">${t('deed_ref', 'Nomor Registri:')} ${deedData.acquisitionRef}</p>
             <p class="text-xs text-zinc-400 font-sans">${deedData.dateIssued}</p>
           </div>
         </div>
@@ -1636,11 +1851,11 @@
         <!-- Acquisition Recipient Details -->
         <div class="grid grid-cols-2 sm:grid-cols-3 gap-6 p-5 rounded-xl liquid-glass text-xs font-sans">
           <div>
-            <span class="text-zinc-500 uppercase text-[9px] font-mono tracking-wider block">Acquiring Patron</span>
+            <span class="text-zinc-500 uppercase text-[9px] font-mono tracking-wider block">${t('deed_patron', 'Nama Pemilik Resmi:')}</span>
             <strong class="text-white text-sm font-orbitron">${deedData.recipientName}</strong>
           </div>
           <div>
-            <span class="text-zinc-500 uppercase text-[9px] font-mono tracking-wider block">Secured Destination</span>
+            <span class="text-zinc-500 uppercase text-[9px] font-mono tracking-wider block">${t('deed_destination', 'Tujuan Pengiriman:')}</span>
             <span class="text-zinc-300">${deedData.city || 'Private Battlestation Suite'}</span>
           </div>
           <div>
@@ -1654,10 +1869,10 @@
           <table class="w-full text-left">
             <thead>
               <tr class="border-b border-[#00ff87]/30 text-[10px] font-mono uppercase tracking-widest text-[#00ff87]">
-                <th class="pb-2">Masterpiece Creation</th>
-                <th class="pb-2">Atelier Classification</th>
-                <th class="pb-2 text-center">Exemplars</th>
-                <th class="pb-2 text-right">Valuation</th>
+                <th class="pb-2">${t('deed_table_item', 'Mahakarya Hardware')}</th>
+                <th class="pb-2">${t('deed_table_spec', 'Spesifikasi & Serial')}</th>
+                <th class="pb-2 text-center">${t('deed_table_qty', 'Jml')}</th>
+                <th class="pb-2 text-right">${t('deed_table_val', 'Valuasi')}</th>
               </tr>
             </thead>
             <tbody>
@@ -1666,7 +1881,7 @@
           </table>
 
           <div class="pt-4 flex justify-between items-baseline font-orbitron border-t border-white/10 mt-4">
-            <span class="text-xs text-zinc-400 uppercase tracking-widest">Total Sovereign Valuation:</span>
+            <span class="text-xs text-zinc-400 uppercase tracking-widest">${t('cart_total', 'Total Valuasi:')}</span>
             <span class="text-xl font-bold text-emerald-gradient">${formatRawAmount(grandTotal)}</span>
           </div>
         </div>
@@ -1969,6 +2184,10 @@
   const initApexApp = () => {
     loadHardwareCatalog();
     loadPersistentState();
+    applyTheme(state.theme);
+    setupLanguageSelector();
+    setupThemeToggle();
+    applyLanguage(state.language, false);
     setupCurrencySelector();
     renderCategoryFilters();
     renderProductGallery();

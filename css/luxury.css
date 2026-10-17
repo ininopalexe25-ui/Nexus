@@ -634,3 +634,247 @@ textarea:focus-visible {
     display: none !important;
   }
 }
+
+/* ============================================================
+   LIGHT THEME SYSTEM (PRESERVING GREEN & LUXURY ATELIER ACCENTS)
+   ============================================================ */
+
+/* Smooth Transitions for Theme Switch */
+html, body, section, header, aside, footer, 
+.liquid-glass, .liquid-glass-card, .btn-luxury-emerald, 
+.btn-luxury-outline, #acquisitionPanel, input, select, textarea {
+  transition: background-color 0.35s ease, border-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Light Mode Global Canvas & Typographic Palette */
+.light-mode,
+.light-mode body {
+  background-color: #f4f6fa !important;
+  color: #1e293b !important;
+}
+
+.light-mode section {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 232, 240, 0.85) !important;
+}
+
+.light-mode section:nth-of-type(even) {
+  background-color: #f8fafc !important;
+}
+
+.light-mode aside {
+  background-color: rgba(248, 250, 252, 0.95) !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #475569 !important;
+}
+
+.light-mode header.liquid-glass-nav {
+  background: rgba(255, 255, 255, 0.88) !important;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9) !important;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.05) !important;
+}
+
+.light-mode footer {
+  background-color: #ffffff !important;
+  border-top: 1px solid rgba(226, 232, 240, 0.9) !important;
+  color: #64748b !important;
+}
+
+/* Headings & Text Contrast in Light Mode */
+.light-mode h1,
+.light-mode h2,
+.light-mode h3,
+.light-mode h4,
+.light-mode .text-white {
+  color: #090d16 !important;
+}
+
+.light-mode .text-zinc-100 {
+  color: #1e293b !important;
+}
+
+.light-mode .text-zinc-300 {
+  color: #334155 !important;
+}
+
+.light-mode .text-zinc-400 {
+  color: #64748b !important;
+}
+
+.light-mode .text-zinc-500 {
+  color: #94a3b8 !important;
+}
+
+/* PRESERVED GREEN & EMERALD NEON ACCENTS */
+.light-mode .text-emerald-gradient {
+  background: linear-gradient(135deg, #00994d 0%, #059669 50%, #007038 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+.light-mode .text-\[\#00ff87\],
+.light-mode .neon-text-emerald {
+  color: #00994d !important;
+}
+
+.light-mode .bg-\[\#00ff87\]\/15,
+.light-mode .bg-\[\#00ff87\]\/20 {
+  background-color: rgba(0, 180, 80, 0.12) !important;
+  border-color: rgba(0, 180, 80, 0.35) !important;
+  color: #008744 !important;
+}
+
+.light-mode .btn-luxury-emerald {
+  background: linear-gradient(135deg, #00c860 0%, #047857 100%) !important;
+  color: #ffffff !important;
+  box-shadow: 0 10px 25px rgba(0, 180, 80, 0.3) !important;
+}
+
+.light-mode .btn-luxury-emerald:hover {
+  box-shadow: 0 15px 35px rgba(0, 180, 80, 0.45) !important;
+  filter: brightness(1.05) !important;
+}
+
+.light-mode .btn-luxury-outline {
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #008744 !important;
+  border-color: rgba(0, 180, 80, 0.45) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04) !important;
+}
+
+.light-mode .btn-luxury-outline:hover {
+  background: rgba(0, 200, 90, 0.1) !important;
+  border-color: #00c860 !important;
+  color: #006633 !important;
+}
+
+/* Glass Surfaces in Light Mode */
+.light-mode .liquid-glass {
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  border-top: 1px solid rgba(255, 255, 255, 1) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  color: #1e293b !important;
+}
+
+.light-mode .liquid-glass-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.96) 0%, rgba(248, 250, 252, 0.9) 100%) !important;
+  border: 1px solid rgba(226, 232, 240, 0.95) !important;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.06), 0 0 25px rgba(0, 200, 90, 0.06) !important;
+}
+
+.light-mode .liquid-glass-card:hover {
+  border-color: rgba(0, 200, 90, 0.4) !important;
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.1), 0 0 30px rgba(0, 200, 90, 0.12) !important;
+}
+
+.light-mode .liquid-glass-emerald {
+  background: linear-gradient(135deg, rgba(0, 200, 90, 0.08) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
+  border: 1px solid rgba(0, 200, 90, 0.3) !important;
+}
+
+.light-mode .liquid-glass-magenta {
+  background: linear-gradient(135deg, rgba(255, 0, 127, 0.06) 0%, rgba(255, 255, 255, 0.95) 100%) !important;
+  border: 1px solid rgba(255, 0, 127, 0.25) !important;
+}
+
+/* Preserved Cyan, Magenta, Gold in Light Mode */
+.light-mode .text-\[\#00f0ff\],
+.light-mode .neon-text-cyan {
+  color: #0284c7 !important;
+}
+
+.light-mode .text-\[\#ff007f\],
+.light-mode .neon-text-magenta {
+  color: #db2777 !important;
+}
+
+.light-mode .text-\[\#f5e6b8\] {
+  color: #b45309 !important;
+}
+
+.light-mode .border-white\/10,
+.light-mode .border-white\/5,
+.light-mode .border-white\/15,
+.light-mode .border-white\/20,
+.light-mode .border-white\/\[0\.08\] {
+  border-color: rgba(226, 232, 240, 0.9) !important;
+}
+
+.light-mode .bg-white\/5,
+.light-mode .bg-white\/\[0\.03\] {
+  background-color: rgba(241, 245, 249, 0.8) !important;
+}
+
+/* Image Frames and Mockups in Light Mode */
+.light-mode .bg-zinc-950\/80,
+.light-mode .bg-zinc-950\/90,
+.light-mode .bg-\[\#07080a\]\/85,
+.light-mode .bg-\[\#07080a\]\/90,
+.light-mode .bg-\[\#06080d\]\/80,
+.light-mode .bg-\[\#05070c\]\/90,
+.light-mode .bg-\[\#0a0c12\],
+.light-mode .bg-zinc-900,
+.light-mode .bg-zinc-900\/90 {
+  background-color: #f1f5f9 !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #1e293b !important;
+}
+
+/* Modals, Drawer, Inputs in Light Mode */
+.light-mode #acquisitionPanel,
+.light-mode #productDossierModal .liquid-glass-card,
+.light-mode #acquisitionCheckoutModal .liquid-glass-card,
+.light-mode #membershipSuccessModal .liquid-glass-card {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #1e293b !important;
+}
+
+.light-mode #productDossierBackdrop,
+.light-mode #checkoutModalBackdrop,
+.light-mode #acquisitionBackdrop,
+.light-mode #deedOfProvenanceBackdrop,
+.light-mode #membershipSuccessBackdrop {
+  background-color: rgba(15, 23, 42, 0.45) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+.light-mode input,
+.light-mode select,
+.light-mode textarea {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border: 1px solid #cbd5e1 !important;
+}
+
+.light-mode input:focus,
+.light-mode select:focus,
+.light-mode textarea:focus {
+  border-color: #00c860 !important;
+  box-shadow: 0 0 0 2px rgba(0, 200, 90, 0.2) !important;
+}
+
+.light-mode input::placeholder,
+.light-mode textarea::placeholder {
+  color: #94a3b8 !important;
+}
+
+/* Background Cyber Grid & Refraction Orbs in Light Mode */
+.light-mode .cyber-grid-perspective {
+  background-image: 
+    linear-gradient(to right, rgba(0, 180, 90, 0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(2, 132, 199, 0.08) 1px, transparent 1px) !important;
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 80%) !important;
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0) 80%) !important;
+}
+
+.light-mode .scanlines-overlay {
+  opacity: 0.03 !important;
+}
+
+.light-mode .carousel-3d-slide.border-\[\#00ff87\]\/60 {
+  border-color: #00c860 !important;
+  box-shadow: 0 15px 40px rgba(0, 180, 80, 0.25) !important;
+}
+
