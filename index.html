@@ -137,9 +137,19 @@
           <a href="#membership" data-i18n="nav_membership" class="hover:text-[#00ff87] transition">Cercle Privé</a>
         </nav>
 
-        <!-- Right Controls: Language, Theme Toggle, Currency, Wishlist, Bag, Mobile Menu Toggle -->
+        <!-- Right Controls: DSA Lab, Language, Theme Toggle, Currency, Wishlist, Bag, Mobile Menu Toggle -->
         <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
           
+          <!-- DSA Algorithm & Data Structure Lab Button -->
+          <button 
+            id="dsaNavTriggerBtn" 
+            class="hidden md:flex items-center gap-1.5 px-3 py-1.5 rounded-full liquid-glass border border-[#00ff87]/50 text-[#00ff87] hover:bg-[#00ff87]/20 text-[10px] sm:text-xs font-orbitron font-bold transition cursor-pointer shadow-sm"
+            title="Laboratorium Struktur Data & Algoritma"
+          >
+            <i class="fa-solid fa-code text-[10px]"></i>
+            <span data-i18n="dsa_nav_btn">Lab Struktur Data</span>
+          </button>
+
           <!-- Language Selector ID / EN -->
           <div class="relative">
             <select 
@@ -282,8 +292,15 @@
             <span data-i18n="nav_membership">Cercle Privé</span>
             <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
           </a>
-          <div class="pt-2 border-t border-white/10 mt-1">
-            <a href="gaming.html" class="px-4 py-2.5 rounded-xl bg-[#00ff87]/10 text-[#00ff87] flex items-center justify-between font-mono text-[11px] tracking-normal">
+          <div class="pt-2 border-t border-white/10 mt-1 space-y-2">
+            <button 
+              id="mobileDsaBtn" 
+              class="w-full px-4 py-2.5 rounded-xl bg-[#00ff87]/20 border border-[#00ff87]/50 text-[#00ff87] flex items-center justify-between font-mono text-[11px] tracking-normal font-bold cursor-pointer"
+            >
+              <span><i class="fa-solid fa-code mr-2"></i><span data-i18n="dsa_nav_btn">Lab Struktur Data</span></span>
+              <i class="fa-solid fa-flask-vial text-[10px]"></i>
+            </button>
+            <a href="gaming.html" class="px-4 py-2.5 rounded-xl bg-white/5 text-zinc-300 hover:text-white flex items-center justify-between font-mono text-[11px] tracking-normal">
               <span><i class="fa-solid fa-gamepad mr-2"></i><span data-i18n="ticker_classic_btn">Katalog Standard (140+ Gear)</span></span>
               <i class="fa-solid fa-arrow-right text-[10px]"></i>
             </a>
@@ -975,6 +992,46 @@
         </div>
       </div>
 
+      <!-- DSA Academic Telemetry Banner (Tugas Kuliah: Array, Pointer, Struct, Sorting & Searching) -->
+      <div id="dsaTelemetryBanner" class="mb-6 p-4 sm:p-5 rounded-2xl liquid-glass border border-[#00ff87]/30 bg-gradient-to-r from-[#00ff87]/10 via-[#07090e]/95 to-[#00f0ff]/10 shadow-lg relative overflow-hidden">
+        <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+          <!-- Left: Academic Title & Description -->
+          <div class="space-y-1">
+            <div class="flex items-center gap-2">
+              <span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-[#00ff87]/20 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-mono font-bold uppercase tracking-wider">
+                <i class="fa-solid fa-graduation-cap"></i> Tugas Kuliah: Struktur Data
+              </span>
+              <span class="text-[10px] font-mono text-zinc-400">140 Product Structs Contiguously Mapped</span>
+            </div>
+            <h3 class="font-orbitron text-sm sm:text-base font-bold text-white flex items-center gap-2">
+              <span class="text-emerald-gradient" data-i18n="dsa_banner_title">Telemetri Struktur Data & Algoritma</span>
+            </h3>
+            <p class="text-[11px] text-zinc-300 font-sans" data-i18n="dsa_banner_desc">
+              Array of Struct (140 Produk) • Doubly Linked List Pointer • Live Sorting & Searching Engine
+            </p>
+          </div>
+
+          <!-- Middle / Right: Live Status Metrics & Open Modal CTA -->
+          <div class="flex flex-wrap items-center gap-2.5">
+            <div class="px-3 py-1.5 rounded-xl bg-black/40 border border-white/10 text-[10px] font-mono text-zinc-300 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#00ff87] animate-pulse"></span>
+              <span>Sort: <strong id="dsaBannerSortStatus" class="text-[#00ff87]">QuickSort O(N log N)</strong></span>
+            </div>
+            <div class="px-3 py-1.5 rounded-xl bg-black/40 border border-white/10 text-[10px] font-mono text-zinc-300 flex items-center gap-2">
+              <span class="w-2 h-2 rounded-full bg-[#00f0ff] animate-pulse"></span>
+              <span>Search: <strong id="dsaBannerSearchStatus" class="text-[#00f0ff]">Binary Search O(log N)</strong></span>
+            </div>
+            <button 
+              id="dsaBannerOpenBtn" 
+              class="px-4 py-2 rounded-xl btn-luxury-emerald text-xs font-orbitron font-bold tracking-wider uppercase flex items-center gap-2 cursor-pointer shadow-md"
+            >
+              <i class="fa-solid fa-terminal text-xs"></i>
+              <span data-i18n="dsa_banner_open_btn">Buka Lab Struktur Data & Log</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
       <!-- Category Filter Pills with Counts -->
       <div class="mb-8 sm:mb-10 flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-3 scrollbar-none max-w-full touch-pan-x" id="luxuryCategoryPills">
         <!-- Rendered dynamically by JavaScript -->
@@ -1426,6 +1483,542 @@
   </div>
 
   <!-- ============================================================
+       FLOATING DSA LAB HUD TRIGGER (BOTTOM LEFT)
+       ============================================================ -->
+  <div id="dsaFloatingContainer" class="fixed bottom-6 left-6 z-40">
+    <button 
+      id="dsaFloatingBtn" 
+      class="group relative flex items-center gap-2.5 px-4 py-3 rounded-full liquid-glass border border-[#00ff87]/60 text-[#00ff87] hover:bg-[#00ff87]/20 transition-all duration-300 shadow-[0_0_25px_rgba(0,255,135,0.35)] cursor-pointer"
+      title="Buka Lab Struktur Data & Algoritma"
+    >
+      <span class="w-2.5 h-2.5 rounded-full bg-[#00ff87] animate-ping absolute -top-1 -right-1"></span>
+      <i class="fa-solid fa-code text-sm group-hover:rotate-12 transition-transform"></i>
+      <div class="flex flex-col text-left">
+        <span class="text-[11px] font-orbitron font-extrabold tracking-wider leading-none">DSA LAB</span>
+        <span class="text-[9px] font-mono text-zinc-400 group-hover:text-white transition leading-none mt-1">Array • Pointer • Sort</span>
+      </div>
+    </button>
+  </div>
+
+  <!-- ============================================================
+       DATA STRUCTURES & ALGORITHMS INTERACTIVE LABORATORY MODAL
+       Tugas Kuliah: Array, Pointer, Struct, Sorting & Searching Logs
+       ============================================================ -->
+  <div id="dsaLabModal" class="fixed inset-0 z-50 hidden items-center justify-center p-3 sm:p-6 overflow-y-auto">
+    <div id="dsaLabBackdrop" class="fixed inset-0 bg-[#07080a]/90 backdrop-blur-md cursor-pointer"></div>
+    
+    <div class="relative liquid-glass-card bg-[#090b13]/98 rounded-3xl p-4 sm:p-8 max-w-5xl w-full z-10 border border-[#00ff87]/40 shadow-2xl space-y-6 max-h-[92vh] overflow-y-auto">
+      
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between pb-4 border-b border-white/10 gap-4">
+        <div>
+          <div class="flex flex-wrap items-center gap-2 mb-1.5">
+            <span class="px-2.5 py-0.5 rounded-full bg-[#00ff87]/20 border border-[#00ff87]/50 text-[#00ff87] text-[10px] font-mono font-bold uppercase tracking-wider">
+              <i class="fa-solid fa-flask-vial mr-1"></i> Tugas Kuliah: Struktur Data
+            </span>
+            <span class="text-[10px] font-mono text-zinc-400">140 Product Nodes • O(1) Memory Addressing</span>
+          </div>
+          <h2 class="font-orbitron text-lg sm:text-2xl font-black text-white uppercase tracking-wider" data-i18n="dsa_modal_title">
+            Laboratorium Struktur Data & Algoritma
+          </h2>
+          <p class="text-xs text-zinc-400 font-sans mt-1" data-i18n="dsa_modal_subtitle">
+            Implementasi Array, Pointer, Struct, Sorting (QuickSort, MergeSort, BubbleSort) & Searching (Binary Search, Linear Search)
+          </p>
+        </div>
+
+        <button 
+          id="closeDsaLabBtn" 
+          class="w-9 h-9 rounded-full liquid-glass border border-white/15 text-zinc-400 hover:text-white flex items-center justify-center transition cursor-pointer shrink-0"
+          title="Tutup Laboratorium"
+        >
+          <i class="fa-solid fa-xmark text-sm"></i>
+        </button>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="flex items-center gap-2 border-b border-white/10 pb-3 overflow-x-auto scrollbar-none">
+        <button 
+          id="dsaTabStructBtn" 
+          class="dsa-tab-btn px-4 py-2 rounded-xl text-xs font-orbitron font-bold transition flex items-center gap-2 cursor-pointer bg-[#00ff87] text-[#07080a] shadow-[0_0_15px_rgba(0,255,135,0.4)]"
+          data-tab="struct"
+        >
+          <i class="fa-solid fa-diagram-project text-xs"></i>
+          <span data-i18n="dsa_tab_struct">1. Struct & Pointer</span>
+        </button>
+        <button 
+          id="dsaTabSortBtn" 
+          class="dsa-tab-btn px-4 py-2 rounded-xl text-xs font-orbitron font-medium text-zinc-400 hover:text-white liquid-glass transition flex items-center gap-2 cursor-pointer"
+          data-tab="sort"
+        >
+          <i class="fa-solid fa-arrow-down-a-z text-xs"></i>
+          <span data-i18n="dsa_tab_sort">2. Sorting & Log</span>
+        </button>
+        <button 
+          id="dsaTabSearchBtn" 
+          class="dsa-tab-btn px-4 py-2 rounded-xl text-xs font-orbitron font-medium text-zinc-400 hover:text-white liquid-glass transition flex items-center gap-2 cursor-pointer"
+          data-tab="search"
+        >
+          <i class="fa-solid fa-magnifying-glass-chart text-xs"></i>
+          <span data-i18n="dsa_tab_search">3. Searching & Log</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: STRUCT & POINTER VISUALIZER -->
+      <div id="dsaTabStructPanel" class="space-y-6">
+        
+        <!-- Academic Theoretical Context -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div class="flex items-center gap-2 text-[#00ff87]">
+              <i class="fa-solid fa-table-cells text-sm"></i>
+              <h4 class="font-orbitron text-xs font-bold uppercase tracking-wider text-white">1. Array of Structs</h4>
+            </div>
+            <p class="text-[11px] text-zinc-300 font-sans leading-relaxed">
+              140 objek produk dialokasikan secara kontigu pada memori komputer. Setiap indeks [0..139] dapat diakses dalam kompleksitas konstan <strong>O(1)</strong> melalui pointer offset heksadesimal.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div class="flex items-center gap-2 text-[#00f0ff]">
+              <i class="fa-solid fa-cubes-stacked text-sm"></i>
+              <h4 class="font-orbitron text-xs font-bold uppercase tracking-wider text-white">2. ProductStruct</h4>
+            </div>
+            <p class="text-[11px] text-zinc-300 font-sans leading-relaxed">
+              Tipe data bentukan majemuk (Struct) yang membungkus atribut heterogen: <code class="text-[#00f0ff]">id</code>, <code class="text-[#00f0ff]">name</code>, <code class="text-[#00f0ff]">price</code>, <code class="text-[#00f0ff]">stock</code>, <code class="text-[#00f0ff]">prev</code> pointer, & <code class="text-[#00f0ff]">next</code> pointer.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 space-y-2">
+            <div class="flex items-center gap-2 text-[#a855f7]">
+              <i class="fa-solid fa-arrows-left-right text-sm"></i>
+              <h4 class="font-orbitron text-xs font-bold uppercase tracking-wider text-white">3. Doubly Linked Pointers</h4>
+            </div>
+            <p class="text-[11px] text-zinc-300 font-sans leading-relaxed">
+              Struktur data dua arah di mana setiap simpul menyimpan alamat memori simpul sebelumnya (<code class="text-[#a855f7]">ptr-&gt;prev</code>) dan selanjutnya (<code class="text-[#a855f7]">ptr-&gt;next</code>), dikontrol oleh <code class="text-[#a855f7]">head</code> & <code class="text-[#a855f7]">tail</code>.
+            </p>
+          </div>
+        </div>
+
+        <!-- Interactive Pointer Memory Navigator -->
+        <div class="p-5 sm:p-6 rounded-2xl bg-[#05070c] border border-[#00ff87]/30 space-y-5">
+          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-white/10">
+            <div>
+              <span class="text-[10px] font-mono text-[#00ff87] uppercase tracking-widest block">Live RAM Dereferencing</span>
+              <h3 class="font-orbitron text-sm sm:text-base font-bold text-white">Interactive Pointer Traversal Studio</h3>
+            </div>
+            <div class="flex items-center gap-2 font-mono text-xs">
+              <span class="text-zinc-400">Current Node:</span>
+              <span id="dsaCurrentIndexBadge" class="px-2.5 py-1 rounded bg-[#00ff87]/20 border border-[#00ff87]/40 text-[#00ff87] font-bold">Node 1 / 140</span>
+            </div>
+          </div>
+
+          <!-- Pointers Tri-Node Visualizer (Prev -> Current -> Next) -->
+          <div class="grid grid-cols-1 md:grid-cols-12 gap-3 items-center">
+            
+            <!-- Previous Node Box -->
+            <div class="md:col-span-3 p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1.5 opacity-75">
+              <div class="flex items-center justify-between text-[10px] font-mono">
+                <span class="text-zinc-400">Pointer: <strong class="text-[#a855f7]">ptr-&gt;prev</strong></span>
+                <span id="dsaPrevMemAddress" class="text-zinc-500">NULL (Head)</span>
+              </div>
+              <h5 id="dsaPrevNodeName" class="font-orbitron text-xs font-bold text-zinc-300 truncate">-- Awal Daftar --</h5>
+              <p id="dsaPrevNodePrice" class="text-[10px] font-mono text-zinc-400">Rp 0</p>
+            </div>
+
+            <!-- Arrow Indicator -->
+            <div class="hidden md:flex md:col-span-1 justify-center text-zinc-500 text-xs">
+              <i class="fa-solid fa-arrows-left-right text-base text-[#00ff87]"></i>
+            </div>
+
+            <!-- Current Active Node Box (Highlight) -->
+            <div class="md:col-span-4 p-4 rounded-2xl bg-gradient-to-b from-[#00ff87]/15 to-transparent border-2 border-[#00ff87] shadow-[0_0_20px_rgba(0,255,135,0.2)] space-y-3">
+              <div class="flex items-center justify-between text-[10px] font-mono">
+                <span class="px-2 py-0.5 rounded bg-[#00ff87] text-[#07080a] font-extrabold uppercase">*ptr (DEREFERENCED)</span>
+                <span id="dsaCurrentMemAddress" class="text-[#00ff87] font-bold">0x7FFE0010</span>
+              </div>
+              
+              <div class="flex items-center gap-3">
+                <img 
+                  id="dsaCurrentNodeImg" 
+                  src="https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=200&auto=format&fit=crop" 
+                  alt="Component" 
+                  class="w-14 h-14 object-contain rounded-xl bg-black/60 p-1 border border-white/10 shrink-0"
+                >
+                <div class="min-w-0">
+                  <span id="dsaCurrentNodeCategory" class="text-[9px] font-mono text-zinc-400 uppercase tracking-widest block">Komponen PC</span>
+                  <h4 id="dsaCurrentNodeName" class="font-orbitron text-sm font-bold text-white truncate">ASUS ROG Strix RTX 4090</h4>
+                  <span id="dsaCurrentNodePrice" class="text-xs font-bold font-orbitron text-emerald-gradient">Rp 38.999.000</span>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2 text-[10px] font-mono pt-2 border-t border-white/10 text-zinc-300">
+                <div>ID: <strong id="dsaCurrentNodeId" class="text-white">GPU-001</strong></div>
+                <div>Stok: <strong id="dsaCurrentNodeStock" class="text-white">5 Unit</strong></div>
+              </div>
+            </div>
+
+            <!-- Arrow Indicator -->
+            <div class="hidden md:flex md:col-span-1 justify-center text-zinc-500 text-xs">
+              <i class="fa-solid fa-arrows-left-right text-base text-[#00f0ff]"></i>
+            </div>
+
+            <!-- Next Node Box -->
+            <div class="md:col-span-3 p-3.5 rounded-xl bg-white/5 border border-white/10 space-y-1.5 opacity-75">
+              <div class="flex items-center justify-between text-[10px] font-mono">
+                <span class="text-zinc-400">Pointer: <strong class="text-[#00f0ff]">ptr-&gt;next</strong></span>
+                <span id="dsaNextMemAddress" class="text-zinc-500">0x7FFE0058</span>
+              </div>
+              <h5 id="dsaNextNodeName" class="font-orbitron text-xs font-bold text-zinc-300 truncate">MSI Suprim X 4090</h5>
+              <p id="dsaNextNodePrice" class="text-[10px] font-mono text-zinc-400">Rp 37.500.000</p>
+            </div>
+
+          </div>
+
+          <!-- Pointer Controller Buttons -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-3 border-t border-white/10">
+            <button 
+              id="dsaPtrPrevBtn" 
+              class="px-4 py-2 rounded-xl liquid-glass border border-white/15 text-xs font-orbitron text-zinc-300 hover:text-white flex items-center gap-2 cursor-pointer"
+            >
+              <i class="fa-solid fa-arrow-left text-[10px]"></i>
+              <span>Mundur (ptr = ptr-&gt;prev)</span>
+            </button>
+
+            <button 
+              id="dsaPtrResetBtn" 
+              class="px-4 py-2 rounded-xl bg-white/10 hover:bg-white/20 text-xs font-mono text-zinc-300 flex items-center gap-1.5 cursor-pointer"
+            >
+              <i class="fa-solid fa-rotate-left text-[10px]"></i>
+              <span>Reset ke Head (ptr = head)</span>
+            </button>
+
+            <button 
+              id="dsaPtrNextBtn" 
+              class="px-4 py-2 rounded-xl btn-luxury-emerald text-xs font-orbitron font-bold flex items-center gap-2 cursor-pointer"
+            >
+              <span>Maju (ptr = ptr-&gt;next)</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- TAB 2: SORTING LAB & LOGS -->
+      <div id="dsaTabSortPanel" class="hidden space-y-5">
+        
+        <!-- Controls Bar -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            
+            <!-- Algorithm Selection -->
+            <div>
+              <label class="block text-[10px] font-mono text-zinc-400 uppercase tracking-wider mb-1">
+                Metode Algoritma Sorting
+              </label>
+              <select 
+                id="dsaSortAlgoSelect" 
+                class="w-full px-3 py-2 text-xs rounded-xl liquid-glass border border-white/15 text-white font-orbitron focus:outline-none focus:border-[#00ff87] cursor-pointer"
+              >
+                <option value="quick" class="bg-[#0a0c12]">QuickSort (Divide & Conquer - O(N log N))</option>
+                <option value="merge" class="bg-[#0a0c12]">MergeSort (Stable - O(N log N))</option>
+                <option value="bubble" class="bg-[#0a0c12]">BubbleSort (Iterative Swap - O(N²))</option>
+              </select>
+            </div>
+
+            <!-- Sort Key Selection -->
+            <div>
+              <label class="block text-[10px] font-mono text-zinc-400 uppercase tracking-wider mb-1">
+                Kunci Pengurutan (Struct Property)
+              </label>
+              <select 
+                id="dsaSortKeySelect" 
+                class="w-full px-3 py-2 text-xs rounded-xl liquid-glass border border-white/15 text-white font-sans focus:outline-none focus:border-[#00ff87] cursor-pointer"
+              >
+                <option value="price" class="bg-[#0a0c12]">Valuasi / Harga (price)</option>
+                <option value="name" class="bg-[#0a0c12]">Nama Produk (name - Alfabetis)</option>
+                <option value="rating" class="bg-[#0a0c12]">Rating Pelanggan (rating)</option>
+                <option value="stock" class="bg-[#0a0c12]">Kuantitas Stok (stock)</option>
+              </select>
+            </div>
+
+            <!-- Order Selection -->
+            <div>
+              <label class="block text-[10px] font-mono text-zinc-400 uppercase tracking-wider mb-1">
+                Arah Urutan (Order)
+              </label>
+              <select 
+                id="dsaSortOrderSelect" 
+                class="w-full px-3 py-2 text-xs rounded-xl liquid-glass border border-white/15 text-white font-sans focus:outline-none focus:border-[#00ff87] cursor-pointer"
+              >
+                <option value="asc" class="bg-[#0a0c12]">Ascending (Menaik / A-Z / Termurah)</option>
+                <option value="desc" class="bg-[#0a0c12]">Descending (Menurun / Z-A / Termahal)</option>
+              </select>
+            </div>
+
+          </div>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap items-center justify-between gap-3 pt-2">
+            <div class="flex items-center gap-2">
+              <button 
+                id="dsaRunSortBtn" 
+                class="btn-luxury-emerald px-5 py-2.5 text-xs font-orbitron font-bold tracking-wider uppercase flex items-center gap-2 cursor-pointer shadow-lg"
+              >
+                <i class="fa-solid fa-play text-xs"></i>
+                <span data-i18n="dsa_sort_run_btn">Jalankan Sorting & Rekam Log</span>
+              </button>
+
+              <button 
+                id="dsaApplySortToCatalogBtn" 
+                class="btn-luxury-outline px-4 py-2.5 text-xs font-orbitron tracking-wider uppercase flex items-center gap-2 cursor-pointer"
+                title="Terapkan hasil sorting ini langsung ke grid etalase katalog toko"
+              >
+                <i class="fa-solid fa-shop text-xs"></i>
+                <span data-i18n="dsa_sort_apply_btn">Terapkan ke Katalog Web</span>
+              </button>
+            </div>
+
+            <div class="text-[11px] font-mono text-zinc-400">
+              Target Dataset: <strong class="text-white">140 ProductStruct Elements</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Telemetry Metrics Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Algoritma</span>
+            <span id="dsaSortMetricAlgo" class="text-xs font-orbitron font-bold text-white truncate block">QuickSort</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Waktu Eksekusi</span>
+            <span id="dsaSortMetricTime" class="text-xs font-orbitron font-bold text-[#00ff87]">0.000 ms</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Total Komparasi</span>
+            <span id="dsaSortMetricComps" class="text-xs font-orbitron font-bold text-[#00f0ff]">0 kali</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Total Pertukaran</span>
+            <span id="dsaSortMetricSwaps" class="text-xs font-orbitron font-bold text-[#f5e6b8]">0 kali</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 col-span-2 sm:col-span-1">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Kompleksitas</span>
+            <span id="dsaSortMetricBigO" class="text-xs font-orbitron font-bold text-[#a855f7]">O(N log N)</span>
+          </div>
+        </div>
+
+        <!-- Terminal Execution Log -->
+        <div class="rounded-2xl bg-[#04060a] border border-[#00ff87]/30 overflow-hidden shadow-2xl">
+          <div class="flex items-center justify-between px-4 py-2.5 bg-black/60 border-b border-white/10">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+              <span class="text-[11px] font-mono text-zinc-400 ml-2">sorting_execution_log.txt // Step-by-Step Terminal</span>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <button 
+                id="dsaCopySortLogBtn" 
+                class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-[10px] font-mono text-zinc-300 transition cursor-pointer"
+              >
+                <i class="fa-regular fa-copy mr-1"></i> <span data-i18n="dsa_copy_log_btn">Salin Log</span>
+              </button>
+              <button 
+                id="dsaDownloadSortLogBtn" 
+                class="px-2.5 py-1 rounded bg-[#00ff87]/20 border border-[#00ff87]/40 hover:bg-[#00ff87]/30 text-[10px] font-mono text-[#00ff87] transition cursor-pointer"
+              >
+                <i class="fa-solid fa-download mr-1"></i> <span data-i18n="dsa_download_log_btn">Unduh Log (.txt)</span>
+              </button>
+              <button 
+                id="dsaClearSortLogBtn" 
+                class="px-2 py-1 rounded bg-white/5 hover:bg-white/15 text-[10px] font-mono text-zinc-400 hover:text-white transition cursor-pointer"
+                title="Bersihkan Log"
+              >
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terminal Content View -->
+          <pre 
+            id="dsaSortTerminalContent" 
+            class="p-4 text-xs font-mono text-[#00ff87] bg-[#05070c] max-h-80 overflow-y-auto leading-relaxed scrollbar-thin whitespace-pre-wrap select-text selection:bg-[#00ff87]/30 selection:text-white"
+          >[DSA-ENGINE] Laboratorium Sorting Siap. Silakan tekan tombol "Jalankan Sorting & Rekam Log" untuk memulai.</pre>
+        </div>
+
+      </div>
+
+      <!-- TAB 3: SEARCHING LAB & LOGS -->
+      <div id="dsaTabSearchPanel" class="hidden space-y-5">
+        
+        <!-- Controls Bar -->
+        <div class="p-4 sm:p-5 rounded-2xl bg-white/5 border border-white/10 space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-3 items-end">
+            
+            <!-- Search Method -->
+            <div class="sm:col-span-4">
+              <label class="block text-[10px] font-mono text-zinc-400 uppercase tracking-wider mb-1">
+                Algoritma Pencarian
+              </label>
+              <select 
+                id="dsaSearchAlgoSelect" 
+                class="w-full px-3 py-2 text-xs rounded-xl liquid-glass border border-white/15 text-white font-orbitron focus:outline-none focus:border-[#00ff87] cursor-pointer"
+              >
+                <option value="binary" class="bg-[#0a0c12]">Binary Search (O(log N) - Bagi Dua)</option>
+                <option value="linear" class="bg-[#0a0c12]">Linear Search (O(N) - Sekuensial)</option>
+              </select>
+            </div>
+
+            <!-- Search Mode -->
+            <div class="sm:col-span-3">
+              <label class="block text-[10px] font-mono text-zinc-400 uppercase tracking-wider mb-1">
+                Mode Target
+              </label>
+              <select 
+                id="dsaSearchModeSelect" 
+                class="w-full px-3 py-2 text-xs rounded-xl liquid-glass border border-white/15 text-white font-sans focus:outline-none focus:border-[#00ff87] cursor-pointer"
+              >
+                <option value="name" class="bg-[#0a0c12]">Nama / Kata Kunci Produk</option>
+                <option value="price" class="bg-[#0a0c12]">Harga Nominal Tepat (IDR)</option>
+              </select>
+            </div>
+
+            <!-- Search Input Field -->
+            <div class="sm:col-span-5 flex items-center gap-2">
+              <div class="relative flex-1">
+                <input 
+                  type="text" 
+                  id="dsaSearchQueryInput" 
+                  value="ASUS ROG"
+                  placeholder="Ketik kata kunci produk..."
+                  class="w-full pl-3 pr-3 py-2 text-xs rounded-xl liquid-glass border border-white/15 text-white focus:outline-none focus:border-[#00ff87] font-sans"
+                >
+              </div>
+
+              <button 
+                id="dsaRunSearchBtn" 
+                class="btn-luxury-emerald px-4 py-2 text-xs font-orbitron font-bold tracking-wider uppercase shrink-0 flex items-center gap-1.5 cursor-pointer shadow-lg"
+              >
+                <i class="fa-solid fa-magnifying-glass text-xs"></i>
+                <span data-i18n="dsa_search_run_btn">Cari & Lacak Pointer</span>
+              </button>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Binary Search Pointer Tracker Display -->
+        <div id="dsaPointerTrackerCard" class="p-4 rounded-2xl bg-[#05070c] border border-[#00f0ff]/30 space-y-3">
+          <div class="flex items-center justify-between text-[10px] font-mono">
+            <span class="text-[#00f0ff] uppercase tracking-wider font-bold">
+              <i class="fa-solid fa-crosshairs mr-1"></i> Binary Search Pointer Boundaries (lowPtr, midPtr, highPtr)
+            </span>
+            <span class="text-zinc-400">Array Terurut (140 Elemen)</span>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-center">
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[9px] font-mono text-zinc-400 uppercase block">Low Pointer (lowPtr)</span>
+              <span id="dsaTrackerLow" class="text-sm font-orbitron font-bold text-[#00ff87]">Index: [0]</span>
+            </div>
+            <div class="p-3 rounded-xl bg-gradient-to-b from-[#00f0ff]/20 to-transparent border border-[#00f0ff]">
+              <span class="text-[9px] font-mono text-[#00f0ff] uppercase font-bold block">Mid Pointer (midPtr)</span>
+              <span id="dsaTrackerMid" class="text-sm font-orbitron font-bold text-white">Index: [69]</span>
+            </div>
+            <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+              <span class="text-[9px] font-mono text-zinc-400 uppercase block">High Pointer (highPtr)</span>
+              <span id="dsaTrackerHigh" class="text-sm font-orbitron font-bold text-[#ff007f]">Index: [139]</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Search Telemetry Metrics Bar -->
+        <div class="grid grid-cols-2 sm:grid-cols-5 gap-3">
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Status Hasil</span>
+            <span id="dsaSearchMetricStatus" class="text-xs font-orbitron font-bold text-[#00ff87] truncate block">Siap</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Waktu Pencarian</span>
+            <span id="dsaSearchMetricTime" class="text-xs font-orbitron font-bold text-white">0.000 ms</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Total Iterasi</span>
+            <span id="dsaSearchMetricIters" class="text-xs font-orbitron font-bold text-[#00f0ff]">0 langkah</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Komparasi</span>
+            <span id="dsaSearchMetricComps" class="text-xs font-orbitron font-bold text-[#f5e6b8]">0 kali</span>
+          </div>
+          <div class="p-3 rounded-xl bg-white/5 border border-white/10 col-span-2 sm:col-span-1">
+            <span class="text-[9px] font-mono text-zinc-400 uppercase block">Kompleksitas</span>
+            <span id="dsaSearchMetricBigO" class="text-xs font-orbitron font-bold text-[#a855f7]">O(log N)</span>
+          </div>
+        </div>
+
+        <!-- Result Preview Card -->
+        <div id="dsaSearchResultBox" class="p-4 rounded-xl bg-white/5 border border-white/10 hidden">
+          <div class="flex items-center gap-4">
+            <img id="dsaSearchFoundImg" src="" alt="Found Item" class="w-12 h-12 object-contain rounded-lg bg-black/60 p-1 border border-white/10 shrink-0">
+            <div class="min-w-0 flex-1">
+              <span id="dsaSearchFoundCategory" class="text-[9px] font-mono text-[#00ff87] uppercase tracking-wider block">Kategori</span>
+              <h4 id="dsaSearchFoundName" class="font-orbitron text-xs font-bold text-white truncate">Nama Produk</h4>
+              <span id="dsaSearchFoundPrice" class="text-xs font-bold font-orbitron text-emerald-gradient">Rp 0</span>
+            </div>
+            <div class="text-right">
+              <span id="dsaSearchFoundAddress" class="text-[10px] font-mono text-zinc-400 block">Ptr: 0x7FFE...</span>
+              <button 
+                id="dsaSearchFoundViewBtn" 
+                class="mt-1 px-3 py-1 rounded bg-[#00ff87]/20 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-mono hover:bg-[#00ff87]/30 transition cursor-pointer"
+              >
+                Lihat Dossier
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Terminal Execution Log -->
+        <div class="rounded-2xl bg-[#04060a] border border-[#00f0ff]/30 overflow-hidden shadow-2xl">
+          <div class="flex items-center justify-between px-4 py-2.5 bg-black/60 border-b border-white/10">
+            <div class="flex items-center gap-2">
+              <span class="w-3 h-3 rounded-full bg-[#ff5f56]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#ffbd2e]"></span>
+              <span class="w-3 h-3 rounded-full bg-[#27c93f]"></span>
+              <span class="text-[11px] font-mono text-zinc-400 ml-2">searching_pointer_log.txt // Pointer Steps Terminal</span>
+            </div>
+            
+            <div class="flex items-center gap-2">
+              <button 
+                id="dsaCopySearchLogBtn" 
+                class="px-2.5 py-1 rounded bg-white/10 hover:bg-white/20 text-[10px] font-mono text-zinc-300 transition cursor-pointer"
+              >
+                <i class="fa-regular fa-copy mr-1"></i> <span data-i18n="dsa_copy_log_btn">Salin Log</span>
+              </button>
+              <button 
+                id="dsaDownloadSearchLogBtn" 
+                class="px-2.5 py-1 rounded bg-[#00f0ff]/20 border border-[#00f0ff]/40 hover:bg-[#00f0ff]/30 text-[10px] font-mono text-[#00f0ff] transition cursor-pointer"
+              >
+                <i class="fa-solid fa-download mr-1"></i> <span data-i18n="dsa_download_log_btn">Unduh Log (.txt)</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Terminal Content View -->
+          <pre 
+            id="dsaSearchTerminalContent" 
+            class="p-4 text-xs font-mono text-[#00f0ff] bg-[#05070c] max-h-80 overflow-y-auto leading-relaxed scrollbar-thin whitespace-pre-wrap select-text selection:bg-[#00f0ff]/30 selection:text-white"
+          >[DSA-ENGINE] Laboratorium Searching Siap. Masukkan target pencarian dan klik "Cari & Lacak Pointer".</pre>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ============================================================
        FLOATING LUXURY TOAST NOTIFICATIONS
        ============================================================ -->
   <div id="luxuryToastContainer" class="fixed bottom-6 right-6 z-50 flex flex-col gap-3 pointer-events-none">
@@ -1507,6 +2100,8 @@
   <script src="js/data.js"></script>
   <!-- Internationalization (ID/EN) -->
   <script src="js/translations.js"></script>
+  <!-- Academic Data Structures & Algorithms Engine (Array, Pointer, Struct, Sort & Search) -->
+  <script src="js/dsa-engine.js"></script>
   <!-- Apex SPA Core Application Engine -->
   <script src="js/apex-app.js"></script>
 </body>

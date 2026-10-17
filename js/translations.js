@@ -262,7 +262,25 @@ window.NEXUS_I18N = {
     footer_alt_gaming: 'Katalog Esports Standar (140+ Gear) →',
     footer_alt_luxury: 'Tampilan Perhiasan Maison Vendôme →',
     footer_rights: '© 2026 NEXUS APEX // BATTLESTATION ATELIER. Hak Cipta Dilindungi Undang-Undang.',
-    footer_top: 'Kembali ke Puncak (Zenith) ↑'
+    footer_top: 'Kembali ke Puncak (Zenith) ↑',
+
+    // DSA Laboratory (Struktur Data & Algoritma)
+    dsa_nav_btn: 'Lab Struktur Data',
+    dsa_banner_title: 'Telemetri Struktur Data & Algoritma',
+    dsa_banner_desc: 'Array of Struct (140 Produk) • Doubly Linked List Pointer • Live Sorting & Searching Engine',
+    dsa_banner_open_btn: 'Buka Lab Struktur Data & Log',
+    dsa_modal_title: 'Laboratorium Struktur Data & Algoritma',
+    dsa_modal_subtitle: 'Tugas Kuliah Struktur Data • Implementasi Array, Pointer, Struct, Sorting (QuickSort, MergeSort, BubbleSort) & Searching (Binary Search, Linear Search)',
+    dsa_tab_struct: '1. Struct & Pointer',
+    dsa_tab_sort: '2. Sorting & Log',
+    dsa_tab_search: '3. Searching & Log',
+    dsa_struct_info_title: 'Konsep Struct & Pointer Memori',
+    dsa_sort_run_btn: 'Jalankan Sorting & Rekam Log',
+    dsa_sort_apply_btn: 'Terapkan Hasil ke Katalog Toko',
+    dsa_search_run_btn: 'Cari & Lacak Pointer',
+    dsa_copy_log_btn: 'Salin Log',
+    dsa_download_log_btn: 'Unduh Log (.txt)',
+    dsa_clear_log_btn: 'Bersihkan Log'
   },
 
   en: {
@@ -523,6 +541,24 @@ window.NEXUS_I18N = {
     footer_alt_gaming: 'Classic Esports Store (140+ Gear) →',
     footer_alt_luxury: 'Maison Vendôme Jewelry View →',
     footer_rights: '© 2026 NEXUS APEX // BATTLESTATION ATELIER. All Rights Reserved.',
-    footer_top: 'Return to Zenith ↑'
+    footer_top: 'Return to Zenith ↑',
+
+    // DSA Laboratory (Data Structures & Algorithms)
+    dsa_nav_btn: 'DSA Lab',
+    dsa_banner_title: 'Data Structure & Algorithm Telemetry',
+    dsa_banner_desc: 'Array of Struct (140 Products) • Doubly Linked List Pointers • Live Sorting & Searching Engine',
+    dsa_banner_open_btn: 'Open DSA Lab & Logs',
+    dsa_modal_title: 'Data Structures & Algorithm Laboratory',
+    dsa_modal_subtitle: 'Course Project • Implementation of Array, Pointer, Struct, Sorting (QuickSort, MergeSort, BubbleSort) & Searching (Binary Search, Linear Search)',
+    dsa_tab_struct: '1. Struct & Pointers',
+    dsa_tab_sort: '2. Sorting & Logs',
+    dsa_tab_search: '3. Searching & Logs',
+    dsa_struct_info_title: 'Struct & Memory Pointer Architecture',
+    dsa_sort_run_btn: 'Execute Sorting & Generate Log',
+    dsa_sort_apply_btn: 'Apply Order to Store Catalog',
+    dsa_search_run_btn: 'Execute Search & Track Pointers',
+    dsa_copy_log_btn: 'Copy Log',
+    dsa_download_log_btn: 'Download Log (.txt)',
+    dsa_clear_log_btn: 'Clear Log'
   }
 };

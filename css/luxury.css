@@ -878,3 +878,75 @@ html, body, section, header, aside, footer,
   box-shadow: 0 15px 40px rgba(0, 180, 80, 0.25) !important;
 }
 
+/* ============================================================
+   DSA LABORATORY & TERMINAL STYLES
+   ============================================================ */
+#dsaFloatingBtn {
+  box-shadow: 0 0 25px rgba(0, 255, 135, 0.35), inset 0 0 15px rgba(0, 255, 135, 0.1);
+}
+
+#dsaFloatingBtn:hover {
+  box-shadow: 0 0 35px rgba(0, 255, 135, 0.6), inset 0 0 20px rgba(0, 255, 135, 0.25);
+  transform: translateY(-2px);
+}
+
+#dsaSortTerminalContent::-webkit-scrollbar,
+#dsaSearchTerminalContent::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+#dsaSortTerminalContent::-webkit-scrollbar-track,
+#dsaSearchTerminalContent::-webkit-scrollbar-track {
+  background: #05070c;
+}
+
+#dsaSortTerminalContent::-webkit-scrollbar-thumb,
+#dsaSearchTerminalContent::-webkit-scrollbar-thumb {
+  background: rgba(0, 255, 135, 0.35);
+  border-radius: 9999px;
+}
+
+#dsaSortTerminalContent::-webkit-scrollbar-thumb:hover,
+#dsaSearchTerminalContent::-webkit-scrollbar-thumb:hover {
+  background: #00ff87;
+}
+
+/* Light Mode adaptations for DSA Modal while preserving CLI terminal authenticity */
+.light-mode #dsaLabModal .liquid-glass-card {
+  background-color: #ffffff !important;
+  border-color: rgba(226, 232, 240, 0.9) !important;
+  color: #1e293b !important;
+}
+
+.light-mode #dsaLabModal h2,
+.light-mode #dsaLabModal h3,
+.light-mode #dsaLabModal h4,
+.light-mode #dsaLabModal h5 {
+  color: #0f172a !important;
+}
+
+.light-mode #dsaLabModal .bg-white\/5 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+.light-mode #dsaLabModal .text-zinc-300,
+.light-mode #dsaLabModal .text-zinc-400 {
+  color: #475569 !important;
+}
+
+.light-mode #dsaLabBackdrop {
+  background-color: rgba(15, 23, 42, 0.6) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Keep the actual terminal console authentic dark CLI in light mode too */
+.light-mode #dsaSortTerminalContent,
+.light-mode #dsaSearchTerminalContent {
+  background-color: #06080d !important;
+  color: #00ff87 !important;
+  border-color: #1e293b !important;
+}
+
+

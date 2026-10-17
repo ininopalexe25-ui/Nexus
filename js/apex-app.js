@@ -1935,6 +1935,421 @@
     };
   };
 
+  // ============================================================
+  // DSA LABORATORY CONTROLLER (Tugas Kuliah Struktur Data)
+  // ============================================================
+  const setupDsaLaboratory = () => {
+    const modal = document.getElementById('dsaLabModal');
+    const backdrop = document.getElementById('dsaLabBackdrop');
+    const closeBtn = document.getElementById('closeDsaLabBtn');
+    const navBtn = document.getElementById('dsaNavTriggerBtn');
+    const mobileBtn = document.getElementById('mobileDsaBtn');
+    const bannerOpenBtn = document.getElementById('dsaBannerOpenBtn');
+    const floatingBtn = document.getElementById('dsaFloatingBtn');
+
+    if (!modal) return;
+
+    // Ensure NexusDSA is initialized with INITIAL_PRODUCTS
+    if (window.NexusDSA && (!window.NexusDSA.isInitialized || window.NexusDSA.structArray.length === 0)) {
+      if (window.INITIAL_PRODUCTS) {
+        window.NexusDSA.init(window.INITIAL_PRODUCTS);
+      }
+    }
+
+    const openModal = (tab = 'struct') => {
+      modal.classList.remove('hidden');
+      modal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+      switchTab(tab);
+      if (tab === 'struct') {
+        updatePointerView();
+      }
+    };
+
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+
+    if (closeBtn) closeBtn.onclick = closeModal;
+    if (backdrop) backdrop.onclick = closeModal;
+    if (navBtn) navBtn.onclick = () => openModal('struct');
+    if (mobileBtn) mobileBtn.onclick = () => openModal('struct');
+    if (bannerOpenBtn) bannerOpenBtn.onclick = () => openModal('sort');
+    if (floatingBtn) floatingBtn.onclick = () => openModal('struct');
+
+    // Tab Switching
+    const tabBtns = document.querySelectorAll('.dsa-tab-btn');
+    const structPanel = document.getElementById('dsaTabStructPanel');
+    const sortPanel = document.getElementById('dsaTabSortPanel');
+    const searchPanel = document.getElementById('dsaTabSearchPanel');
+
+    const switchTab = (tabName) => {
+      tabBtns.forEach(btn => {
+        const isCurrent = btn.getAttribute('data-tab') === tabName;
+        if (isCurrent) {
+          btn.className = 'dsa-tab-btn px-4 py-2 rounded-xl text-xs font-orbitron font-bold transition flex items-center gap-2 cursor-pointer bg-[#00ff87] text-[#07080a] shadow-[0_0_15px_rgba(0,255,135,0.4)]';
+        } else {
+          btn.className = 'dsa-tab-btn px-4 py-2 rounded-xl text-xs font-orbitron font-medium text-zinc-400 hover:text-white liquid-glass transition flex items-center gap-2 cursor-pointer';
+        }
+      });
+
+      if (structPanel) structPanel.classList.toggle('hidden', tabName !== 'struct');
+      if (sortPanel) sortPanel.classList.toggle('hidden', tabName !== 'sort');
+      if (searchPanel) searchPanel.classList.toggle('hidden', tabName !== 'search');
+
+      if (tabName === 'struct') updatePointerView();
+    };
+
+    tabBtns.forEach(btn => {
+      btn.onclick = () => {
+        const tab = btn.getAttribute('data-tab');
+        switchTab(tab);
+      };
+    });
+
+    // --- TAB 1: STRUCT & POINTER TRAVERSAL STUDIO ---
+    const updatePointerView = () => {
+      if (!window.NexusDSA || !window.NexusDSA.doublyLinkedList) return;
+      const list = window.NexusDSA.doublyLinkedList;
+      const curr = list.current;
+      if (!curr) return;
+
+      const idxBadge = document.getElementById('dsaCurrentIndexBadge');
+      if (idxBadge) idxBadge.textContent = `Node ${list.currentIndex + 1} / ${list.length}`;
+
+      // Current Node Dereferenced (*ptr)
+      const currMem = document.getElementById('dsaCurrentMemAddress');
+      const currName = document.getElementById('dsaCurrentNodeName');
+      const currCat = document.getElementById('dsaCurrentNodeCategory');
+      const currPrice = document.getElementById('dsaCurrentNodePrice');
+      const currId = document.getElementById('dsaCurrentNodeId');
+      const currStock = document.getElementById('dsaCurrentNodeStock');
+      const currImg = document.getElementById('dsaCurrentNodeImg');
+
+      if (currMem) currMem.textContent = curr.memAddress;
+      if (currName) currName.textContent = curr.name;
+      if (currCat) currCat.textContent = curr.category;
+      if (currPrice) currPrice.textContent = `Rp ${Number(curr.price).toLocaleString('id-ID')}`;
+      if (currId) currId.textContent = curr.id;
+      if (currStock) currStock.textContent = `${curr.stock} Unit`;
+      if (currImg) currImg.src = curr.image;
+
+      // Previous Node Pointer (ptr->prev)
+      const prevMem = document.getElementById('dsaPrevMemAddress');
+      const prevName = document.getElementById('dsaPrevNodeName');
+      const prevPrice = document.getElementById('dsaPrevNodePrice');
+      if (curr.prev) {
+        if (prevMem) prevMem.textContent = curr.prev.memAddress;
+        if (prevName) prevName.textContent = curr.prev.name;
+        if (prevPrice) prevPrice.textContent = `Rp ${Number(curr.prev.price).toLocaleString('id-ID')}`;
+      } else {
+        if (prevMem) prevMem.textContent = 'NULL (Head)';
+        if (prevName) prevName.textContent = '-- Awal Daftar --';
+        if (prevPrice) prevPrice.textContent = 'Rp 0';
+      }
+
+      // Next Node Pointer (ptr->next)
+      const nextMem = document.getElementById('dsaNextMemAddress');
+      const nextName = document.getElementById('dsaNextNodeName');
+      const nextPrice = document.getElementById('dsaNextNodePrice');
+      if (curr.next) {
+        if (nextMem) nextMem.textContent = curr.next.memAddress;
+        if (nextName) nextName.textContent = curr.next.name;
+        if (nextPrice) nextPrice.textContent = `Rp ${Number(curr.next.price).toLocaleString('id-ID')}`;
+      } else {
+        if (nextMem) nextMem.textContent = 'NULL (Tail)';
+        if (nextName) nextName.textContent = '-- Akhir Daftar --';
+        if (nextPrice) nextPrice.textContent = 'Rp 0';
+      }
+    };
+
+    const prevBtn = document.getElementById('dsaPtrPrevBtn');
+    const nextBtn = document.getElementById('dsaPtrNextBtn');
+    const resetBtn = document.getElementById('dsaPtrResetBtn');
+
+    if (prevBtn) {
+      prevBtn.onclick = () => {
+        if (window.NexusDSA) {
+          window.NexusDSA.doublyLinkedList.movePrev();
+          updatePointerView();
+        }
+      };
+    }
+    if (nextBtn) {
+      nextBtn.onclick = () => {
+        if (window.NexusDSA) {
+          window.NexusDSA.doublyLinkedList.moveNext();
+          updatePointerView();
+        }
+      };
+    }
+    if (resetBtn) {
+      resetBtn.onclick = () => {
+        if (window.NexusDSA) {
+          window.NexusDSA.doublyLinkedList.resetToHead();
+          updatePointerView();
+        }
+      };
+    }
+
+    // --- TAB 2: SORTING LAB ---
+    let lastSortedProducts = null;
+    const runSortBtn = document.getElementById('dsaRunSortBtn');
+    const applySortBtn = document.getElementById('dsaApplySortToCatalogBtn');
+    const sortAlgoSelect = document.getElementById('dsaSortAlgoSelect');
+    const sortKeySelect = document.getElementById('dsaSortKeySelect');
+    const sortOrderSelect = document.getElementById('dsaSortOrderSelect');
+    const sortTerminal = document.getElementById('dsaSortTerminalContent');
+
+    const copySortLogBtn = document.getElementById('dsaCopySortLogBtn');
+    const downloadSortLogBtn = document.getElementById('dsaDownloadSortLogBtn');
+    const clearSortLogBtn = document.getElementById('dsaClearSortLogBtn');
+
+    const sortMetricAlgo = document.getElementById('dsaSortMetricAlgo');
+    const sortMetricTime = document.getElementById('dsaSortMetricTime');
+    const sortMetricComps = document.getElementById('dsaSortMetricComps');
+    const sortMetricSwaps = document.getElementById('dsaSortMetricSwaps');
+    const sortMetricBigO = document.getElementById('dsaSortMetricBigO');
+
+    if (runSortBtn) {
+      runSortBtn.onclick = () => {
+        if (!window.NexusDSA) return;
+        const algo = sortAlgoSelect ? sortAlgoSelect.value : 'quick';
+        const key = sortKeySelect ? sortKeySelect.value : 'price';
+        const isAsc = sortOrderSelect ? sortOrderSelect.value === 'asc' : true;
+
+        const sortRes = window.NexusDSA.executeSort(algo, key, isAsc);
+        lastSortedProducts = sortRes.sortedItems;
+
+        // Update metrics
+        if (sortMetricAlgo) sortMetricAlgo.textContent = sortRes.metrics.algorithm;
+        if (sortMetricTime) sortMetricTime.textContent = `${sortRes.metrics.elapsedMs} ms`;
+        if (sortMetricComps) sortMetricComps.textContent = `${sortRes.metrics.comparisons} kali`;
+        if (sortMetricSwaps) sortMetricSwaps.textContent = `${sortRes.metrics.swaps} kali`;
+        if (sortMetricBigO) sortMetricBigO.textContent = sortRes.metrics.complexity;
+
+        // Render terminal text
+        if (sortTerminal) {
+          sortTerminal.textContent = window.NexusDSA.logger.toFormattedText();
+          sortTerminal.scrollTop = 0;
+        }
+
+        // Update banner sort status
+        const bannerSortStatus = document.getElementById('dsaBannerSortStatus');
+        if (bannerSortStatus) {
+          bannerSortStatus.textContent = `${sortRes.metrics.algorithm} (${sortRes.metrics.elapsedMs}ms, ${sortRes.metrics.comparisons} comp)`;
+        }
+
+        showLuxuryToast('Sorting Selesai', `${sortRes.metrics.algorithm} memproses 140 produk dalam ${sortRes.metrics.elapsedMs} ms.`);
+      };
+    }
+
+    if (applySortBtn) {
+      applySortBtn.onclick = () => {
+        if (!lastSortedProducts || lastSortedProducts.length === 0) {
+          // If haven't run sort yet, run it first
+          if (runSortBtn) runSortBtn.click();
+        }
+
+        if (lastSortedProducts && lastSortedProducts.length > 0) {
+          // Reorder state.products to match sorted struct IDs
+          const idMap = new Map();
+          state.products.forEach(p => idMap.set(p.id, p));
+          const newProductsList = [];
+          lastSortedProducts.forEach(node => {
+            const original = idMap.get(node.id);
+            if (original) newProductsList.push(original);
+          });
+
+          if (newProductsList.length > 0) {
+            state.products = newProductsList;
+            state.currentPage = 1;
+            renderProductGallery();
+            closeModal();
+            document.getElementById('collections')?.scrollIntoView({ behavior: 'smooth' });
+            showLuxuryToast('Katalog Diperbarui', 'Urutan katalog toko kini disesuaikan dengan hasil sorting algoritma.', 'promo');
+          }
+        }
+      };
+    }
+
+    if (copySortLogBtn) {
+      copySortLogBtn.onclick = () => {
+        if (!sortTerminal) return;
+        navigator.clipboard.writeText(sortTerminal.textContent).then(() => {
+          showLuxuryToast('Log Disalin', 'Log eksekusi sorting berhasil disalin ke clipboard.');
+        }).catch(() => {
+          showLuxuryToast('Gagal Menyalin', 'Izin clipboard ditolak peramban.', 'error');
+        });
+      };
+    }
+
+    if (downloadSortLogBtn) {
+      downloadSortLogBtn.onclick = () => {
+        if (!sortTerminal) return;
+        const text = sortTerminal.textContent;
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `nexus_sorting_log_${Date.now()}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showLuxuryToast('Log Diunduh', 'File log sorting teks berhasil disimpan.');
+      };
+    }
+
+    if (clearSortLogBtn) {
+      clearSortLogBtn.onclick = () => {
+        if (sortTerminal) {
+          sortTerminal.textContent = '[DSA-ENGINE] Log sorting dibersihkan.';
+        }
+      };
+    }
+
+    // --- TAB 3: SEARCHING LAB ---
+    const runSearchBtn = document.getElementById('dsaRunSearchBtn');
+    const searchAlgoSelect = document.getElementById('dsaSearchAlgoSelect');
+    const searchModeSelect = document.getElementById('dsaSearchModeSelect');
+    const searchQueryInput = document.getElementById('dsaSearchQueryInput');
+    const searchTerminal = document.getElementById('dsaSearchTerminalContent');
+
+    const copySearchLogBtn = document.getElementById('dsaCopySearchLogBtn');
+    const downloadSearchLogBtn = document.getElementById('dsaDownloadSearchLogBtn');
+
+    const searchMetricStatus = document.getElementById('dsaSearchMetricStatus');
+    const searchMetricTime = document.getElementById('dsaSearchMetricTime');
+    const searchMetricIters = document.getElementById('dsaSearchMetricIters');
+    const searchMetricComps = document.getElementById('dsaSearchMetricComps');
+    const searchMetricBigO = document.getElementById('dsaSearchMetricBigO');
+
+    const trackerLow = document.getElementById('dsaTrackerLow');
+    const trackerMid = document.getElementById('dsaTrackerMid');
+    const trackerHigh = document.getElementById('dsaTrackerHigh');
+    const resultBox = document.getElementById('dsaSearchResultBox');
+
+    if (runSearchBtn) {
+      runSearchBtn.onclick = () => {
+        if (!window.NexusDSA) return;
+        const algo = searchAlgoSelect ? searchAlgoSelect.value : 'binary';
+        const mode = searchModeSelect ? searchModeSelect.value : 'name';
+        const query = searchQueryInput ? searchQueryInput.value.trim() : '';
+
+        if (!query) {
+          showLuxuryToast('Query Kosong', 'Silakan ketik kata kunci atau nilai harga yang ingin dicari.', 'error');
+          return;
+        }
+
+        const searchRes = window.NexusDSA.executeSearch(query, algo, mode);
+
+        // Update metrics
+        if (searchMetricStatus) {
+          searchMetricStatus.textContent = searchRes.found ? `DITEMUKAN [${searchRes.index}]` : 'TIDAK DITEMUKAN';
+          searchMetricStatus.className = searchRes.found ? 'text-xs font-orbitron font-bold text-[#00ff87] truncate block' : 'text-xs font-orbitron font-bold text-[#ff007f] truncate block';
+        }
+        if (searchMetricTime) searchMetricTime.textContent = `${searchRes.elapsedMs} ms`;
+        if (searchMetricIters) searchMetricIters.textContent = `${searchRes.iterations} langkah`;
+        if (searchMetricComps) searchMetricComps.textContent = `${searchRes.comparisons} kali`;
+        if (searchMetricBigO) searchMetricBigO.textContent = searchRes.complexity;
+
+        // Update tracker (for binary search)
+        if (trackerLow) trackerLow.textContent = 'Index: [0]';
+        if (trackerMid) trackerMid.textContent = searchRes.found ? `Index: [${searchRes.index}]` : 'N/A';
+        if (trackerHigh) trackerHigh.textContent = 'Index: [139]';
+
+        // Result Preview Card
+        if (resultBox) {
+          if (searchRes.found && searchRes.item) {
+            resultBox.classList.remove('hidden');
+            const foundImg = document.getElementById('dsaSearchFoundImg');
+            const foundCat = document.getElementById('dsaSearchFoundCategory');
+            const foundName = document.getElementById('dsaSearchFoundName');
+            const foundPrice = document.getElementById('dsaSearchFoundPrice');
+            const foundAddr = document.getElementById('dsaSearchFoundAddress');
+            const foundBtn = document.getElementById('dsaSearchFoundViewBtn');
+
+            if (foundImg) foundImg.src = searchRes.item.image;
+            if (foundCat) foundCat.textContent = searchRes.item.category;
+            if (foundName) foundName.textContent = searchRes.item.name;
+            if (foundPrice) foundPrice.textContent = `Rp ${Number(searchRes.item.price).toLocaleString('id-ID')}`;
+            if (foundAddr) foundAddr.textContent = `Ptr: ${searchRes.item.memAddress}`;
+            if (foundBtn) {
+              foundBtn.onclick = () => {
+                closeModal();
+                openProductDossierModal(searchRes.item.id);
+              };
+            }
+          } else {
+            resultBox.classList.add('hidden');
+          }
+        }
+
+        // Terminal text
+        if (searchTerminal) {
+          searchTerminal.textContent = window.NexusDSA.logger.toFormattedText();
+          searchTerminal.scrollTop = 0;
+        }
+
+        // Update banner search status
+        const bannerSearchStatus = document.getElementById('dsaBannerSearchStatus');
+        if (bannerSearchStatus) {
+          bannerSearchStatus.textContent = `${searchRes.algorithm} (${searchRes.elapsedMs}ms, ${searchRes.comparisons} comp)`;
+        }
+
+        showLuxuryToast(
+          searchRes.found ? 'Target Ditemukan' : 'Tidak Ditemukan',
+          searchRes.found 
+            ? `${searchRes.item.name} ditemukan pada indeks [${searchRes.index}] setelah ${searchRes.comparisons} komparasi.`
+            : `Pencarian untuk "${query}" tidak menemukan data yang cocok.`
+        );
+      };
+    }
+
+    if (searchQueryInput) {
+      searchQueryInput.onkeydown = (e) => {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          if (runSearchBtn) runSearchBtn.click();
+        }
+      };
+    }
+
+    if (copySearchLogBtn) {
+      copySearchLogBtn.onclick = () => {
+        if (!searchTerminal) return;
+        navigator.clipboard.writeText(searchTerminal.textContent).then(() => {
+          showLuxuryToast('Log Disalin', 'Log pencarian pointer berhasil disalin ke clipboard.');
+        }).catch(() => {
+          showLuxuryToast('Gagal Menyalin', 'Izin clipboard ditolak.', 'error');
+        });
+      };
+    }
+
+    if (downloadSearchLogBtn) {
+      downloadSearchLogBtn.onclick = () => {
+        if (!searchTerminal) return;
+        const text = searchTerminal.textContent;
+        const blob = new Blob([text], { type: 'text/plain;charset=utf-8' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `nexus_searching_log_${Date.now()}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        showLuxuryToast('Log Diunduh', 'File log pencarian berhasil diunduh.');
+      };
+    }
+
+    // Auto initialize pointer view when ready
+    setTimeout(updatePointerView, 100);
+  };
+
   // --- EVENT LISTENERS INITIALIZATION ---
   const setupEventListeners = () => {
     // Nav Drawer triggers
@@ -2047,6 +2462,15 @@
         state.searchQuery = e.target.value;
         state.currentPage = 1;
         renderProductGallery();
+
+        // DSA Academic Telemetry hook
+        if (window.NexusDSA && state.searchQuery.trim().length >= 2) {
+          const searchRes = window.NexusDSA.executeSearch(state.searchQuery.trim(), 'binary', 'name');
+          const searchStatusEl = document.getElementById('dsaBannerSearchStatus');
+          if (searchStatusEl) {
+            searchStatusEl.textContent = `Binary Search (${searchRes.elapsedMs}ms, ${searchRes.comparisons} comp)`;
+          }
+        }
       };
     }
 
@@ -2057,6 +2481,22 @@
         state.sortBy = e.target.value;
         state.currentPage = 1;
         renderProductGallery();
+
+        // DSA Academic Telemetry hook
+        if (window.NexusDSA) {
+          let algoKey = 'price';
+          let asc = true;
+          if (state.sortBy === 'price-high') { algoKey = 'price'; asc = false; }
+          else if (state.sortBy === 'price-low') { algoKey = 'price'; asc = true; }
+          else if (state.sortBy === 'rating') { algoKey = 'rating'; asc = false; }
+          else if (state.sortBy === 'alpha') { algoKey = 'name'; asc = true; }
+          
+          const sortRes = window.NexusDSA.executeSort('quick', algoKey, asc);
+          const sortStatusEl = document.getElementById('dsaBannerSortStatus');
+          if (sortStatusEl) {
+            sortStatusEl.textContent = `QuickSort (${sortRes.metrics.elapsedMs}ms, ${sortRes.metrics.comparisons} comp)`;
+          }
+        }
       };
     }
 
@@ -2165,6 +2605,11 @@
         closeProductDossierModal();
         closeAcquisitionDrawer();
         closeDeedModal();
+        const dsaModal = document.getElementById('dsaLabModal');
+        if (dsaModal) {
+          dsaModal.classList.add('hidden');
+          dsaModal.classList.remove('flex');
+        }
         const checkoutModal = document.getElementById('acquisitionCheckoutModal');
         if (checkoutModal) {
           checkoutModal.classList.add('hidden');
@@ -2197,6 +2642,7 @@
     updateCartBadge();
     updateWishlistBadge();
     setupEventListeners();
+    setupDsaLaboratory();
   };
 
   if (document.readyState === 'loading') {
