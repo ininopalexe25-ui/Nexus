@@ -927,10 +927,12 @@
     if (!drawer || !backdrop || !panel) return;
 
     renderAcquisitionDrawer();
-    drawer.classList.remove('pointer-events-none');
-    backdrop.classList.remove('opacity-0');
-    backdrop.classList.add('opacity-100');
-    panel.classList.remove('translate-x-full');
+    drawer.classList.remove('hidden', 'pointer-events-none');
+    backdrop.classList.remove('pointer-events-none', 'opacity-0');
+    backdrop.classList.add('pointer-events-auto', 'opacity-100');
+    requestAnimationFrame(() => {
+      panel.classList.remove('translate-x-full');
+    });
     document.body.style.overflow = 'hidden';
   };
 
@@ -941,10 +943,10 @@
     if (!drawer || !backdrop || !panel) return;
 
     panel.classList.add('translate-x-full');
-    backdrop.classList.remove('opacity-100');
-    backdrop.classList.add('opacity-0');
+    backdrop.classList.remove('opacity-100', 'pointer-events-auto');
+    backdrop.classList.add('opacity-0', 'pointer-events-none');
     setTimeout(() => {
-      drawer.classList.add('pointer-events-none');
+      drawer.classList.add('hidden', 'pointer-events-none');
       document.body.style.overflow = '';
     }, 300);
   };
