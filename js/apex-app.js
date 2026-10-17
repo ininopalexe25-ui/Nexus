@@ -327,12 +327,19 @@
       const slides = track.querySelectorAll('.carousel-3d-slide');
       const count = productsList.length;
 
+      const isMobile = window.innerWidth < 640;
+      const isTablet = window.innerWidth < 1024;
+      const tx = isMobile ? 36 : (isTablet ? 50 : 62);
+      const rotY = isMobile ? 14 : (isTablet ? 20 : 24);
+      const sc = isMobile ? 0.78 : (isTablet ? 0.82 : 0.85);
+      const centerZ = isMobile ? '40px' : '100px';
+
       slides.forEach((slide, idx) => {
         const offset = (idx - state.activeCarouselIndex + count) % count;
 
         if (offset === 0) {
           // Active Center
-          slide.style.transform = 'translateX(0) translateZ(100px) rotateY(0deg) scale(1)';
+          slide.style.transform = `translateX(0) translateZ(${centerZ}) rotateY(0deg) scale(1)`;
           slide.style.opacity = '1';
           slide.style.filter = 'none';
           slide.style.zIndex = '30';
@@ -340,16 +347,16 @@
           slide.classList.add('border-[#00ff87]/60', 'shadow-[0_0_40px_rgba(0,255,135,0.25)]');
         } else if (offset === 1) {
           // Right
-          slide.style.transform = 'translateX(62%) translateZ(-70px) rotateY(-24deg) scale(0.85)';
-          slide.style.opacity = '0.65';
+          slide.style.transform = `translateX(${tx}%) translateZ(-70px) rotateY(-${rotY}deg) scale(${sc})`;
+          slide.style.opacity = isMobile ? '0.35' : '0.65';
           slide.style.filter = 'brightness(0.7)';
           slide.style.zIndex = '20';
           slide.style.pointerEvents = 'auto';
           slide.classList.remove('border-[#00ff87]/60', 'shadow-[0_0_40px_rgba(0,255,135,0.25)]');
         } else if (offset === count - 1) {
           // Left
-          slide.style.transform = 'translateX(-62%) translateZ(-70px) rotateY(24deg) scale(0.85)';
-          slide.style.opacity = '0.65';
+          slide.style.transform = `translateX(-${tx}%) translateZ(-70px) rotateY(${rotY}deg) scale(${sc})`;
+          slide.style.opacity = isMobile ? '0.35' : '0.65';
           slide.style.filter = 'brightness(0.7)';
           slide.style.zIndex = '20';
           slide.style.pointerEvents = 'auto';
@@ -379,34 +386,36 @@
       const activeProd = productsList[state.activeCarouselIndex];
       if (activeDetailsContainer && activeProd) {
         activeDetailsContainer.innerHTML = `
-          <div class="liquid-glass rounded-2xl p-6 border border-[#00ff87]/30 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-            <div class="space-y-1 text-center md:text-left">
+          <div class="liquid-glass rounded-2xl p-4 sm:p-6 border border-[#00ff87]/30 flex flex-col md:flex-row items-center justify-between gap-4 sm:gap-6 shadow-2xl">
+            <div class="space-y-1 text-center md:text-left w-full md:w-auto">
               <div class="flex items-center justify-center md:justify-start gap-2 text-xs font-mono">
                 <span class="text-[#00ff87] font-bold uppercase tracking-wider">${activeProd.category}</span>
                 <span class="text-zinc-600">•</span>
                 <span class="text-zinc-400">Ref: ${activeProd.id}</span>
               </div>
-              <h3 class="font-orbitron text-xl sm:text-2xl font-bold text-white">${activeProd.name}</h3>
-              <p class="text-xs text-zinc-400 font-sans max-w-xl line-clamp-1">${activeProd.description}</p>
+              <h3 class="font-orbitron text-lg sm:text-2xl font-bold text-white">${activeProd.name}</h3>
+              <p class="text-xs text-zinc-400 font-sans max-w-xl line-clamp-2">${activeProd.description}</p>
             </div>
 
-            <div class="flex items-center gap-4 shrink-0">
-              <div class="text-right">
-                <span class="text-[9px] font-mono text-zinc-400 uppercase tracking-widest block">Valuation</span>
-                <span class="text-2xl font-bold font-orbitron text-emerald-gradient">${formatPrice(activeProd)}</span>
+            <div class="flex flex-col sm:flex-row items-center justify-between w-full md:w-auto gap-3 sm:gap-4 shrink-0 pt-3 md:pt-0 border-t md:border-t-0 border-white/10">
+              <div class="flex items-center justify-between w-full sm:w-auto sm:text-right gap-3">
+                <span class="text-[9px] font-mono text-zinc-400 uppercase tracking-widest block sm:hidden">Valuation:</span>
+                <span class="text-xl sm:text-2xl font-bold font-orbitron text-emerald-gradient">${formatPrice(activeProd)}</span>
               </div>
-              <button 
-                id="carouselViewDossierBtn"
-                class="btn-luxury-outline py-3 px-5 text-xs font-orbitron tracking-wider uppercase cursor-pointer"
-              >
-                <i class="fa-solid fa-eye mr-1"></i> Dossier
-              </button>
-              <button 
-                id="carouselAcquireBtn"
-                class="btn-luxury-emerald py-3 px-6 text-xs font-orbitron tracking-wider uppercase cursor-pointer"
-              >
-                <i class="fa-solid fa-bag-shopping mr-1"></i> Acquire
-              </button>
+              <div class="grid grid-cols-2 sm:flex items-center gap-2 w-full sm:w-auto">
+                <button 
+                  id="carouselViewDossierBtn"
+                  class="btn-luxury-outline py-2.5 sm:py-3 px-3 sm:px-5 text-xs font-orbitron tracking-wider uppercase cursor-pointer text-center"
+                >
+                  <i class="fa-solid fa-eye mr-1"></i> Dossier
+                </button>
+                <button 
+                  id="carouselAcquireBtn"
+                  class="btn-luxury-emerald py-2.5 sm:py-3 px-3 sm:px-6 text-xs font-orbitron tracking-wider uppercase cursor-pointer text-center"
+                >
+                  <i class="fa-solid fa-bag-shopping mr-1"></i> Acquire
+                </button>
+              </div>
             </div>
           </div>
         `;
@@ -434,6 +443,36 @@
       };
     }
 
+    // Touch swipe gestures on mobile
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    track.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+    }, { passive: true });
+
+    track.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      const diff = touchEndX - touchStartX;
+      if (Math.abs(diff) > 40) {
+        if (diff < 0) {
+          state.activeCarouselIndex = (state.activeCarouselIndex + 1) % haloProducts.length;
+        } else {
+          state.activeCarouselIndex = (state.activeCarouselIndex - 1 + haloProducts.length) % haloProducts.length;
+        }
+        update3DCarousel(haloProducts);
+      }
+    }, { passive: true });
+
+    // Handle viewport resize
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        update3DCarousel(haloProducts);
+      }, 150);
+    });
+
     // Bind slide click to jump
     track.querySelectorAll('.carousel-3d-slide').forEach(slide => {
       slide.onclick = () => {
@@ -454,6 +493,11 @@
 
   // --- 3D INTERACTIVE CARD TILT ---
   const init3DCardTilt = () => {
+    // Disable on touchscreens so mobile vertical scrolling is completely smooth
+    if (window.matchMedia && window.matchMedia('(hover: none) and (pointer: coarse)').matches) {
+      return;
+    }
+
     const cards = document.querySelectorAll('.card-3d-tilt');
     cards.forEach(card => {
       card.onmousemove = (e) => {
@@ -714,25 +758,25 @@
             </div>
 
             <!-- Price & Action -->
-            <div class="pt-4 border-t border-white/10 flex items-center justify-between gap-3">
-              <div>
+            <div class="pt-3.5 border-t border-white/10 flex items-center justify-between gap-2 min-w-0">
+              <div class="min-w-0 flex-1">
                 <span class="text-[9px] font-mono uppercase text-zinc-500 tracking-wider block">Valuation</span>
-                <span class="text-base font-bold font-orbitron text-emerald-gradient tracking-wide">${formattedPrice}</span>
+                <span class="text-xs sm:text-sm font-bold font-orbitron text-emerald-gradient tracking-tight truncate block" title="${formattedPrice}">${formattedPrice}</span>
               </div>
 
-              <div class="flex items-center gap-2">
+              <div class="flex items-center gap-1.5 shrink-0">
                 <button 
                   data-id="${product.id}" 
-                  class="view-detail-trigger w-9 h-9 rounded-full liquid-glass text-zinc-300 hover:text-white hover:border-[#00ff87]/50 flex items-center justify-center transition text-xs cursor-pointer"
+                  class="view-detail-trigger w-8 h-8 rounded-full liquid-glass text-zinc-300 hover:text-white hover:border-[#00ff87]/50 flex items-center justify-center transition text-xs cursor-pointer"
                   title="View Technical Dossier"
                 >
-                  <i class="fa-solid fa-eye"></i>
+                  <i class="fa-solid fa-eye text-[11px]"></i>
                 </button>
                 <button 
                   data-acquire-id="${product.id}" 
-                  class="acquire-btn btn-luxury-emerald py-2 px-3.5 text-[10px] tracking-wider uppercase cursor-pointer"
+                  class="acquire-btn btn-luxury-emerald py-1.5 sm:py-2 px-2.5 sm:px-3.5 text-[10px] tracking-wider uppercase cursor-pointer whitespace-nowrap"
                 >
-                  <i class="fa-solid fa-bag-shopping mr-1"></i> Acquire
+                  <i class="fa-solid fa-bag-shopping sm:mr-1"></i> <span class="hidden xs:inline">Acquire</span>
                 </button>
               </div>
             </div>
@@ -743,46 +787,62 @@
       `;
     }).join('');
 
-    // Render Pagination Controls
+    // Render Pagination Controls with smart sliding window to prevent mobile overflow
     if (paginationContainer) {
       if (totalPages <= 1) {
         paginationContainer.innerHTML = '';
       } else {
-        let pagesHtml = '';
-        for (let i = 1; i <= totalPages; i++) {
-          const isCurr = i === state.currentPage;
-          pagesHtml += `
+        const getVisiblePages = (curr, total) => {
+          if (total <= 6) {
+            return Array.from({ length: total }, (_, i) => i + 1);
+          }
+          if (curr <= 3) {
+            return [1, 2, 3, 4, '...', total];
+          }
+          if (curr >= total - 2) {
+            return [1, '...', total - 3, total - 2, total - 1, total];
+          }
+          return [1, '...', curr - 1, curr, curr + 1, '...', total];
+        };
+
+        const visiblePages = getVisiblePages(state.currentPage, totalPages);
+        const pagesHtml = visiblePages.map(page => {
+          if (page === '...') {
+            return `<span class="w-5 sm:w-6 text-center text-zinc-500 font-mono text-xs select-none">...</span>`;
+          }
+          const isCurr = page === state.currentPage;
+          return `
             <button 
-              data-page="${i}"
-              class="pagination-page-btn w-9 h-9 rounded-full text-xs font-mono font-bold transition cursor-pointer ${
+              data-page="${page}"
+              class="pagination-page-btn w-7 h-7 sm:w-9 sm:h-9 rounded-full text-[11px] sm:text-xs font-mono font-bold transition cursor-pointer ${
                 isCurr 
                   ? 'bg-gradient-to-r from-[#00ff87] to-[#00f0ff] text-[#07080a] shadow-[0_0_15px_rgba(0,255,135,0.4)]' 
                   : 'liquid-glass text-zinc-300 hover:text-white hover:border-[#00ff87]/40'
               }"
             >
-              ${i}
+              ${page}
             </button>
           `;
-        }
+        }).join('');
 
         paginationContainer.innerHTML = `
-          <div class="flex items-center justify-center gap-2 py-6">
+          <div class="flex flex-wrap items-center justify-center gap-1.5 sm:gap-2 py-6 max-w-full">
             <button 
               id="prevPageBtn" 
-              class="px-4 py-2 rounded-full liquid-glass text-xs font-orbitron text-zinc-300 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+              class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass text-xs font-orbitron text-zinc-300 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
               ${state.currentPage === 1 ? 'disabled' : ''}
             >
-              &larr; Prev
+              &larr; <span class="hidden xs:inline">Prev</span>
             </button>
-            <div class="flex items-center gap-1.5 mx-2">
+            <div class="flex items-center gap-1 sm:gap-1.5">
               ${pagesHtml}
             </div>
             <button 
               id="nextPageBtn" 
-              class="px-4 py-2 rounded-full liquid-glass text-xs font-orbitron text-zinc-300 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
+              class="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full liquid-glass text-xs font-orbitron text-zinc-300 hover:text-white disabled:opacity-30 disabled:pointer-events-none cursor-pointer"
               ${state.currentPage === totalPages ? 'disabled' : ''}
             >
-              Next &rarr;
+              <span class="hidden xs:inline">Next</span> &rarr;
             </button>
           </div>
         `;
@@ -1834,6 +1894,41 @@
       discordBtn.onclick = () => {
         showLuxuryToast('Discord Lounge Link', 'Redirecting to Nexus Apex Squad Discord Lounge (4,820 online)...', 'promo');
       };
+    }
+
+    // Mobile navigation menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuToggleBtn');
+    const mobileNavMenu = document.getElementById('mobileNavMenu');
+    const mobileMenuIcon = document.getElementById('mobileMenuIcon');
+
+    if (mobileMenuBtn && mobileNavMenu) {
+      mobileMenuBtn.onclick = () => {
+        const isClosed = mobileNavMenu.classList.contains('hidden');
+        if (isClosed) {
+          mobileNavMenu.classList.remove('hidden');
+          if (mobileMenuIcon) {
+            mobileMenuIcon.classList.remove('fa-bars');
+            mobileMenuIcon.classList.add('fa-xmark');
+          }
+        } else {
+          mobileNavMenu.classList.add('hidden');
+          if (mobileMenuIcon) {
+            mobileMenuIcon.classList.remove('fa-xmark');
+            mobileMenuIcon.classList.add('fa-bars');
+          }
+        }
+      };
+
+      // Auto close mobile menu when clicking nav link
+      document.querySelectorAll('.mobile-nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+          mobileNavMenu.classList.add('hidden');
+          if (mobileMenuIcon) {
+            mobileMenuIcon.classList.remove('fa-xmark');
+            mobileMenuIcon.classList.add('fa-bars');
+          }
+        });
+      });
     }
 
     // Smooth scroll for nav anchor links

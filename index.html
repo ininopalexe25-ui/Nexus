@@ -76,10 +76,10 @@
   <!-- ============================================================
        TOP TELEMETRY & CROSS-NAVIGATION TICKER
        ============================================================ -->
-  <aside class="relative z-50 bg-[#090b10]/90 backdrop-blur-md text-zinc-300 text-[11px] font-cinzel py-2 px-4 border-b border-white/[0.08] tracking-widest uppercase">
-    <div class="max-w-7xl mx-auto flex items-center justify-between gap-4">
-      <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] font-bold text-[9px] tracking-[0.2em]">
+  <aside class="relative z-50 bg-[#090b10]/90 backdrop-blur-md text-zinc-300 text-[10px] sm:text-[11px] font-cinzel py-2 px-3 sm:px-4 border-b border-white/[0.08] tracking-widest uppercase overflow-hidden">
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 sm:gap-4">
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] font-bold text-[9px] tracking-[0.2em] whitespace-nowrap">
           <span class="w-1.5 h-1.5 rounded-full bg-[#00ff87] animate-pulse"></span>
           HAUTE BATTLESTATION ATELIER
         </span>
@@ -88,10 +88,10 @@
         </span>
       </div>
 
-      <div class="flex items-center gap-4 text-xs font-mono">
-        <a href="gaming.html" class="px-2.5 py-0.5 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] text-[10px] tracking-wider transition flex items-center gap-1.5">
+      <div class="flex items-center gap-2 sm:gap-4 text-xs font-mono shrink-0">
+        <a href="gaming.html" class="px-2.5 py-0.5 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] text-[10px] tracking-wider transition flex items-center gap-1.5 whitespace-nowrap">
           <i class="fa-solid fa-gamepad text-[10px] text-[#00ff87]"></i>
-          <span>Katalog Standard (140+ Gear)</span>
+          <span><span class="hidden sm:inline">Katalog Standard </span>(140+ Gear)</span>
           <i class="fa-solid fa-arrow-right text-[8px]"></i>
         </a>
         <span class="text-zinc-600 hidden sm:inline">•</span>
@@ -104,23 +104,23 @@
        LIQUID GLASS STICKY NAVIGATION BAR
        ============================================================ -->
   <header class="sticky top-0 z-40 liquid-glass-nav transition-all duration-300">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-20 gap-4">
+    <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20 gap-2 sm:gap-4">
         
         <!-- Brand Insignia -->
-        <a href="#hero" class="flex items-center gap-3 group">
-          <div class="relative w-11 h-11 rounded-2xl liquid-glass border border-[#00ff87]/40 flex items-center justify-center text-[#00ff87] shadow-[0_0_20px_rgba(0,255,135,0.25)] group-hover:shadow-[0_0_25px_rgba(0,255,135,0.45)] transition-all duration-300">
-            <i class="fa-solid fa-crown text-base group-hover:scale-110 transition-transform"></i>
+        <a href="#hero" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+          <div class="relative w-9 h-9 sm:w-11 sm:h-11 rounded-xl sm:rounded-2xl liquid-glass border border-[#00ff87]/40 flex items-center justify-center text-[#00ff87] shadow-[0_0_20px_rgba(0,255,135,0.25)] group-hover:shadow-[0_0_25px_rgba(0,255,135,0.45)] transition-all duration-300">
+            <i class="fa-solid fa-crown text-sm sm:text-base group-hover:scale-110 transition-transform"></i>
             <span class="absolute -top-1 -right-1 w-2.5 h-2.5 bg-[#00ff87] rounded-full animate-ping opacity-75"></span>
           </div>
           <div>
-            <div class="flex items-center gap-2">
-              <span class="font-cinzel text-xl sm:text-2xl font-black tracking-[0.25em] text-white">NEXUS</span>
-              <span class="text-[10px] font-cinzel font-black tracking-[0.3em] px-1.5 py-0.5 rounded bg-gradient-to-r from-[#00ff87] to-[#00f0ff] text-[#07080a] uppercase shadow-sm">
+            <div class="flex items-center gap-1.5 sm:gap-2">
+              <span class="font-cinzel text-lg sm:text-2xl font-black tracking-[0.2em] sm:tracking-[0.25em] text-white">NEXUS</span>
+              <span class="text-[9px] sm:text-[10px] font-cinzel font-black tracking-[0.25em] sm:tracking-[0.3em] px-1.5 py-0.5 rounded bg-gradient-to-r from-[#00ff87] to-[#00f0ff] text-[#07080a] uppercase shadow-sm">
                 APEX
               </span>
             </div>
-            <span class="text-[9px] uppercase tracking-[0.3em] text-[#00ff87] font-cinzel block -mt-1 font-semibold">
+            <span class="text-[8px] sm:text-[9px] uppercase tracking-[0.25em] sm:tracking-[0.3em] text-[#00ff87] font-cinzel block -mt-0.5 sm:-mt-1 font-semibold">
               Battlestation Atelier
             </span>
           </div>
@@ -137,33 +137,33 @@
           <a href="#membership" class="hover:text-[#00ff87] transition">Cercle Privé</a>
         </nav>
 
-        <!-- Right Controls: Currency, Wishlist, Bag -->
-        <div class="flex items-center gap-2.5 sm:gap-3.5">
+        <!-- Right Controls: Currency, Wishlist, Bag, Mobile Menu Toggle -->
+        <div class="flex items-center gap-2 sm:gap-3.5 shrink-0">
           
           <!-- Tri-Currency Devise Switcher -->
           <div class="relative">
             <select 
               id="currencySelector" 
-              class="liquid-glass text-xs text-[#00ff87] font-cinzel px-3 py-1.5 rounded-full border border-white/10 focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-7 tracking-wider"
+              class="liquid-glass text-[11px] sm:text-xs text-[#00ff87] font-cinzel px-2.5 sm:px-3 py-1.5 rounded-full border border-white/10 focus:outline-none focus:border-[#00ff87] cursor-pointer appearance-none pr-6 sm:pr-7 tracking-wider"
               title="Devise / Currency"
             >
-              <option value="IDR" class="bg-[#0a0c12] text-white">IDR (Rp)</option>
-              <option value="USD" class="bg-[#0a0c12] text-white">USD ($)</option>
-              <option value="EUR" class="bg-[#0a0c12] text-white">EUR (€)</option>
+              <option value="IDR" class="bg-[#0a0c12] text-white">IDR</option>
+              <option value="USD" class="bg-[#0a0c12] text-white">USD</option>
+              <option value="EUR" class="bg-[#0a0c12] text-white">EUR</option>
             </select>
-            <i class="fa-solid fa-chevron-down absolute right-2.5 top-3 text-[9px] text-[#00ff87] pointer-events-none"></i>
+            <i class="fa-solid fa-chevron-down absolute right-2 sm:right-2.5 top-2.5 sm:top-3 text-[8px] sm:text-[9px] text-[#00ff87] pointer-events-none"></i>
           </div>
 
           <!-- Private Viewing Salon Wishlist Button -->
           <button 
             id="navWishlistBtn" 
-            class="relative w-10 h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#f43f5e] flex items-center justify-center transition border border-white/10 hover:border-[#f43f5e]/40 cursor-pointer"
+            class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#f43f5e] flex items-center justify-center transition border border-white/10 hover:border-[#f43f5e]/40 cursor-pointer"
             title="Salon Privé / Private Viewings"
           >
-            <i class="fa-regular fa-heart text-sm"></i>
+            <i class="fa-regular fa-heart text-xs sm:text-sm"></i>
             <span 
               id="navWishlistBadge" 
-              class="hidden absolute -top-1 -right-1 bg-[#f43f5e] text-white text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center font-mono shadow-md"
+              class="hidden absolute -top-1 -right-1 bg-[#f43f5e] text-white text-[9px] sm:text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center font-mono shadow-md"
             >
               0
             </span>
@@ -172,22 +172,80 @@
           <!-- Acquisition Bag Button -->
           <button 
             id="navCartBtn" 
-            class="relative flex items-center gap-2.5 h-10 px-4 rounded-full btn-luxury-emerald cursor-pointer"
+            class="relative flex items-center gap-1.5 sm:gap-2.5 h-9 sm:h-10 px-3 sm:px-4 rounded-full btn-luxury-emerald cursor-pointer"
             title="Acquisition Bag"
           >
             <i class="fa-solid fa-bag-shopping text-xs"></i>
-            <span class="hidden sm:inline font-cinzel text-[11px] tracking-widest font-black">BAG</span>
+            <span class="hidden md:inline font-cinzel text-[11px] tracking-widest font-black">BAG</span>
             <span 
               id="navCartBadge" 
-              class="hidden bg-[#07080a] text-[#00ff87] border border-[#00ff87]/60 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center font-mono"
+              class="hidden bg-[#07080a] text-[#00ff87] border border-[#00ff87]/60 text-[9px] sm:text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center font-mono"
             >
               0
             </span>
           </button>
 
+          <!-- Mobile Hamburger Toggle Button -->
+          <button 
+            id="mobileMenuToggleBtn" 
+            class="xl:hidden w-9 h-9 sm:w-10 sm:h-10 rounded-full liquid-glass text-zinc-300 hover:text-[#00ff87] flex items-center justify-center transition border border-white/10 hover:border-[#00ff87]/50 cursor-pointer"
+            title="Open Navigation Menu"
+            aria-label="Toggle navigation menu"
+          >
+            <i id="mobileMenuIcon" class="fa-solid fa-bars text-xs sm:text-sm"></i>
+          </button>
+
         </div>
 
       </div>
+
+      <!-- Mobile Dropdown Navigation Menu -->
+      <div 
+        id="mobileNavMenu" 
+        class="hidden xl:hidden border-t border-white/10 py-4 px-2 space-y-1 liquid-glass-card rounded-2xl my-2 shadow-2xl backdrop-blur-2xl bg-[#090b12]/95 transition-all duration-300"
+      >
+        <nav class="flex flex-col space-y-1 text-xs font-cinzel tracking-[0.2em] uppercase">
+          <a href="#hero" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
+            <span>Zenith</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <a href="#alchemy" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
+            <span>L'Alchimie</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <a href="#showcase" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
+            <span>3D Spatial Vault</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <a href="#community" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00f0ff] flex items-center justify-between transition">
+            <span>The Syndicate</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <a href="#download-app" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#ff007f] flex items-center justify-between transition">
+            <span>Apex Suite</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <a href="#collections" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
+            <span>140 Hardware Catalog</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <a href="#values" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
+            <span>Atelier Pillars</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <a href="#membership" class="mobile-nav-link px-4 py-2.5 rounded-xl hover:bg-white/5 text-zinc-300 hover:text-[#00ff87] flex items-center justify-between transition">
+            <span>Cercle Privé</span>
+            <i class="fa-solid fa-chevron-right text-[10px] text-zinc-500"></i>
+          </a>
+          <div class="pt-2 border-t border-white/10 mt-1">
+            <a href="gaming.html" class="px-4 py-2.5 rounded-xl bg-[#00ff87]/10 text-[#00ff87] flex items-center justify-between font-mono text-[11px] tracking-normal">
+              <span><i class="fa-solid fa-gamepad mr-2"></i>Katalog Standard (140+ Gear)</span>
+              <i class="fa-solid fa-arrow-right text-[10px]"></i>
+            </a>
+          </div>
+        </nav>
+      </div>
+
     </div>
   </header>
 
@@ -207,7 +265,7 @@
             L'Élite du Silicium • Battlestation Atelier 2026
           </div>
 
-          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-orbitron font-black text-white leading-[1.12] tracking-tight uppercase">
+          <h1 class="text-2xl sm:text-5xl lg:text-6xl font-orbitron font-black text-white leading-[1.15] tracking-tight uppercase">
             L'Art du Silicium.<br>
             <span class="text-emerald-gradient">Where Power Transcends Speed.</span>
           </h1>
@@ -220,7 +278,7 @@
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
             <a 
               href="#collections" 
-              class="w-full sm:w-auto btn-luxury-emerald py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel shadow-xl cursor-pointer"
+              class="w-full sm:w-auto btn-luxury-emerald py-4 px-8 text-xs tracking-[0.2em] uppercase font-cinzel shadow-xl cursor-pointer text-center"
             >
               <i class="fa-solid fa-gem mr-1.5"></i>
               Explore 140 Hardware Masterpieces
@@ -235,18 +293,18 @@
           </div>
 
           <!-- Pillars Telemetry Strip -->
-          <div class="grid grid-cols-3 gap-6 pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0">
+          <div class="grid grid-cols-3 gap-2 sm:gap-6 pt-6 sm:pt-8 border-t border-white/10 max-w-lg mx-auto lg:mx-0 text-center sm:text-left">
             <div>
-              <p class="text-lg font-cinzel font-bold text-emerald-gradient">140+</p>
-              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Official Creations</p>
+              <p class="text-base sm:text-lg font-cinzel font-bold text-emerald-gradient">140+</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Official Creations</p>
             </div>
             <div>
-              <p class="text-lg font-cinzel font-bold text-emerald-gradient">TOP 1%</p>
-              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">ASIC Binned Silicon</p>
+              <p class="text-base sm:text-lg font-cinzel font-bold text-emerald-gradient">TOP 1%</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">ASIC Binned Silicon</p>
             </div>
             <div>
-              <p class="text-lg font-cinzel font-bold text-emerald-gradient">100%</p>
-              <p class="text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Factory Provenance</p>
+              <p class="text-base sm:text-lg font-cinzel font-bold text-emerald-gradient">100%</p>
+              <p class="text-[9px] sm:text-[10px] text-zinc-400 font-cinzel tracking-wider uppercase mt-0.5">Factory Provenance</p>
             </div>
           </div>
 
@@ -255,25 +313,25 @@
         <!-- Right: 3D Interactive Halo Masterpiece Spotlight Card -->
         <div class="lg:col-span-5 relative perspective-1000">
           
-          <div class="card-3d-tilt relative liquid-glass-card rounded-3xl p-7 border border-[#00ff87]/30 shadow-2xl group">
+          <div class="card-3d-tilt relative liquid-glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-[#00ff87]/30 shadow-2xl group">
             
             <!-- Floating Hallmark Pill -->
             <div class="flex items-center justify-between pb-4 border-b border-white/10 depth-layer-2">
               <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 text-[#00ff87] text-[10px] font-cinzel font-bold tracking-widest uppercase">
                 <i class="fa-solid fa-crown mr-1"></i> Halo Masterpiece
               </span>
-              <span class="text-[11px] font-mono text-zinc-400 tracking-wider">GPU-001 • AD102 Silicon</span>
+              <span class="text-[10px] sm:text-[11px] font-mono text-zinc-400 tracking-wider">GPU-001 • AD102</span>
             </div>
 
             <!-- Halo Timepiece Image with 3D Depth -->
-            <div class="relative aspect-square rounded-2xl overflow-hidden bg-zinc-950/80 p-6 flex items-center justify-center luxury-image-frame cursor-pointer view-detail-trigger my-5 depth-layer-3" data-id="GPU-001">
+            <div class="relative aspect-square rounded-2xl overflow-hidden bg-zinc-950/80 p-4 sm:p-6 flex items-center justify-center luxury-image-frame cursor-pointer view-detail-trigger my-4 sm:my-5 depth-layer-3" data-id="GPU-001">
               <img 
                 src="https://commons.wikimedia.org/wiki/Special:FilePath/ASUS%20ROG%20Strix%20GeForce%20RTX%204090.jpg?width=800" 
                 alt="ASUS ROG Strix GeForce RTX 4090 24GB GDDR6X OC Edition" 
                 onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=800&auto=format&fit=crop';"
                 class="w-full h-full object-contain filter drop-shadow-[0_20px_35px_rgba(0,0,0,0.95)] group-hover:scale-105 transition-transform duration-700 pointer-events-none"
               >
-              <div class="absolute bottom-3 left-3 bg-[#07080a]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[10px] font-cinzel text-[#00ff87]">
+              <div class="absolute bottom-3 left-3 bg-[#07080a]/85 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[9px] sm:text-[10px] font-cinzel text-[#00ff87]">
                 <i class="fa-solid fa-fan text-[#00ff87] mr-1 inline-block animate-spin"></i> Integrated Vapor Chamber
               </div>
             </div>
@@ -281,20 +339,20 @@
             <!-- Hardware Spec Summary -->
             <div class="space-y-2 depth-layer-1">
               <span class="text-[10px] font-cinzel tracking-[0.25em] text-[#00ff87] uppercase block">Komponen Rakit PC • Flagship AD102</span>
-              <h3 class="text-xl sm:text-2xl font-serif text-white font-medium">ASUS ROG Strix GeForce RTX 4090 24GB OC</h3>
+              <h3 class="text-lg sm:text-2xl font-serif text-white font-medium">ASUS ROG Strix GeForce RTX 4090 24GB OC</h3>
               <p class="text-xs text-zinc-400 font-sans leading-relaxed">
                 AD102 GPU with 16,384 CUDA Cores, 24GB GDDR6X 384-bit memory, axial-tech vapor chamber cooling, and patented diecast shroud.
               </p>
 
               <!-- Valuation & Action -->
-              <div class="pt-4 border-t border-white/10 flex items-center justify-between">
+              <div class="pt-4 border-t border-white/10 flex flex-col xs:flex-row items-stretch xs:items-center justify-between gap-3">
                 <div>
-                  <span class="text-[10px] text-zinc-500 font-cinzel uppercase block">Valuation</span>
+                  <span class="text-[9px] sm:text-[10px] text-zinc-500 font-cinzel uppercase block">Valuation</span>
                   <span class="text-xl font-bold font-cinzel text-emerald-gradient">Rp 36.999.000</span>
                 </div>
                 <button 
                   data-acquire-id="GPU-001" 
-                  class="acquire-btn btn-luxury-emerald py-2.5 px-5 text-[11px] font-cinzel tracking-wider cursor-pointer"
+                  class="acquire-btn btn-luxury-emerald py-2.5 px-5 text-[11px] font-cinzel tracking-wider cursor-pointer w-full xs:w-auto text-center"
                 >
                   Acquire Creation
                 </button>
@@ -458,13 +516,13 @@
       </div>
 
       <!-- Top Row: Pro Player Loadout Cards -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-12">
         
         <!-- Loadout 1: CS2 Majors Spec -->
-        <div class="liquid-glass-card rounded-3xl p-7 border border-white/10 space-y-5">
-          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+        <div class="liquid-glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-white/10 space-y-5">
+          <div class="flex flex-col xs:flex-row xs:items-center justify-between pb-4 border-b border-white/10 gap-2">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 flex items-center justify-center text-[#00ff87] font-orbitron font-bold text-sm">
+              <div class="w-10 h-10 rounded-full bg-[#00ff87]/15 border border-[#00ff87]/40 flex items-center justify-center text-[#00ff87] font-orbitron font-bold text-sm shrink-0">
                 S1
               </div>
               <div>
@@ -472,43 +530,43 @@
                 <p class="text-[10px] font-mono text-[#00ff87] uppercase tracking-wider">Tactical FPS Tournament Loadout</p>
               </div>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
+            <span class="self-start xs:self-auto px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
               540Hz Calibrated
             </span>
           </div>
 
           <div class="space-y-3 text-xs font-sans">
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">GPU:</span>
-              <span class="text-white font-medium">ASUS ROG Strix RTX 4090 24GB OC (AD102)</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">GPU:</span>
+              <span class="text-white font-medium text-right truncate">ASUS ROG Strix RTX 4090 24GB OC (AD102)</span>
             </div>
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">Keyboard:</span>
-              <span class="text-white font-medium">Wooting 60HE+ Rapid Trigger Analog</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">Keyboard:</span>
+              <span class="text-white font-medium text-right truncate">Wooting 60HE+ Rapid Trigger Analog</span>
             </div>
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">Mouse:</span>
-              <span class="text-white font-medium">Logitech G PRO X Superlight 2 (4000Hz)</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">Mouse:</span>
+              <span class="text-white font-medium text-right truncate">Logitech G PRO X Superlight 2 (4000Hz)</span>
             </div>
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">Audio:</span>
-              <span class="text-white font-medium">SteelSeries Arctis Nova Pro Wireless</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">Audio:</span>
+              <span class="text-white font-medium text-right truncate">SteelSeries Arctis Nova Pro Wireless</span>
             </div>
           </div>
 
-          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+          <div class="pt-3 border-t border-white/10 flex flex-col xs:flex-row xs:items-center justify-between gap-3">
             <span class="text-xs font-mono text-zinc-400">Total Loadout: <strong class="text-emerald-gradient font-orbitron font-bold">Rp 71.748.000</strong></span>
-            <button data-acquire-id="GPU-001" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer">
+            <button data-acquire-id="GPU-001" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer w-full xs:w-auto text-center">
               Acquire Core GPU
             </button>
           </div>
         </div>
 
         <!-- Loadout 2: VCT Immortal Spec -->
-        <div class="liquid-glass-card rounded-3xl p-7 border border-white/10 space-y-5">
-          <div class="flex items-center justify-between pb-4 border-b border-white/10">
+        <div class="liquid-glass-card rounded-2xl sm:rounded-3xl p-5 sm:p-7 border border-white/10 space-y-5">
+          <div class="flex flex-col xs:flex-row xs:items-center justify-between pb-4 border-b border-white/10 gap-2">
             <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-full bg-[#00f0ff]/15 border border-[#00f0ff]/40 flex items-center justify-center text-[#00f0ff] font-orbitron font-bold text-sm">
+              <div class="w-10 h-10 rounded-full bg-[#00f0ff]/15 border border-[#00f0ff]/40 flex items-center justify-center text-[#00f0ff] font-orbitron font-bold text-sm shrink-0">
                 TZ
               </div>
               <div>
@@ -516,33 +574,33 @@
                 <p class="text-[10px] font-mono text-[#00f0ff] uppercase tracking-wider">Sub-Millisecond Reflex Rig</p>
               </div>
             </div>
-            <span class="px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
+            <span class="self-start xs:self-auto px-2.5 py-1 rounded-full bg-white/5 border border-white/10 text-[10px] font-mono text-zinc-300">
               0.125ms Input
             </span>
           </div>
 
           <div class="space-y-3 text-xs font-sans">
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">CPU:</span>
-              <span class="text-white font-medium">AMD Ryzen 7 7800X3D 3D V-Cache</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">CPU:</span>
+              <span class="text-white font-medium text-right truncate">AMD Ryzen 7 7800X3D 3D V-Cache</span>
             </div>
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">Mouse:</span>
-              <span class="text-white font-medium">Finalmouse UltralightX Lion Carbon (29g)</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">Mouse:</span>
+              <span class="text-white font-medium text-right truncate">Finalmouse UltralightX Lion Carbon (29g)</span>
             </div>
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">Display:</span>
-              <span class="text-white font-medium">ASUS ROG Swift PG27AQDM OLED 240Hz</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">Display:</span>
+              <span class="text-white font-medium text-right truncate">ASUS ROG Swift PG27AQDM OLED 240Hz</span>
             </div>
-            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5">
-              <span class="text-zinc-400 font-mono">Throne:</span>
-              <span class="text-white font-medium">Herman Miller x Logitech G Embody</span>
+            <div class="flex items-center justify-between p-2.5 rounded-xl bg-white/[0.03] border border-white/5 gap-2">
+              <span class="text-zinc-400 font-mono shrink-0">Throne:</span>
+              <span class="text-white font-medium text-right truncate">Herman Miller x Logitech G Embody</span>
             </div>
           </div>
 
-          <div class="pt-3 border-t border-white/10 flex items-center justify-between">
+          <div class="pt-3 border-t border-white/10 flex flex-col xs:flex-row xs:items-center justify-between gap-3">
             <span class="text-xs font-mono text-zinc-400">Total Loadout: <strong class="text-emerald-gradient font-orbitron font-bold">Rp 56.499.000</strong></span>
-            <button data-acquire-id="CHR-007" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer">
+            <button data-acquire-id="CHR-007" class="acquire-btn btn-luxury-emerald py-2 px-4 text-[10px] font-cinzel tracking-wider uppercase cursor-pointer w-full xs:w-auto text-center">
               Acquire Throne
             </button>
           </div>
@@ -551,16 +609,16 @@
       </div>
 
       <!-- Middle: 4K Ray-Tracing Telemetry Benchmarks -->
-      <div class="liquid-glass rounded-3xl p-8 border border-white/10 mb-12">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-4">
+      <div class="liquid-glass rounded-2xl sm:rounded-3xl p-5 sm:p-8 border border-white/10 mb-12">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-white/10 gap-3">
           <div>
             <span class="text-[10px] font-mono text-[#00ff87] uppercase tracking-widest block mb-1">
               <i class="fa-solid fa-chart-line mr-1"></i> Verified Silicon Telemetry
             </span>
-            <h3 class="font-orbitron text-xl text-white font-bold">4K Ultra Ray-Tracing Benchmark Suite</h3>
+            <h3 class="font-orbitron text-lg sm:text-xl text-white font-bold">4K Ultra Ray-Tracing Benchmark Suite</h3>
           </div>
-          <span class="text-xs font-mono text-zinc-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/10">
-            Hardware: RTX 4090 OC • i9-14900K • 64GB DDR5-6400
+          <span class="text-[10px] sm:text-xs font-mono text-zinc-400 bg-white/5 px-3 py-1.5 rounded-full border border-white/10 self-start sm:self-auto">
+            RTX 4090 OC • i9-14900K • 64GB DDR5
           </span>
         </div>
 
@@ -689,8 +747,8 @@
   <section id="download-app" class="py-20 lg:py-28 relative z-10 border-b border-white/[0.08] bg-[#07090e] overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="liquid-glass rounded-3xl p-8 sm:p-14 border border-[#00f0ff]/30 shadow-2xl relative">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+      <div class="liquid-glass rounded-2xl sm:rounded-3xl p-6 sm:p-14 border border-[#00f0ff]/30 shadow-2xl relative">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-10 items-center">
           
           <!-- Left: Suite Description & Download Buttons -->
           <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
@@ -708,7 +766,7 @@
             </p>
 
             <!-- Feature Checkpoints -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300 font-sans pt-1">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs text-zinc-300 font-sans pt-1 text-left">
               <div class="flex items-center gap-2.5">
                 <i class="fa-solid fa-microchip text-[#00ff87]"></i>
                 <span>Direct GPU/CPU Voltage Curve Editor</span>
@@ -731,7 +789,7 @@
             <div class="flex flex-col sm:flex-row items-center gap-4 pt-4">
               <button 
                 id="downloadEngineBtn" 
-                class="w-full sm:w-auto btn-luxury-emerald py-4 px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 shadow-xl cursor-pointer"
+                class="w-full sm:w-auto btn-luxury-emerald py-3.5 sm:py-4 px-6 sm:px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 shadow-xl cursor-pointer text-center"
               >
                 <i class="fa-brands fa-windows text-base"></i>
                 <span>Download for Windows (x64)</span>
@@ -739,14 +797,14 @@
 
               <button 
                 id="downloadEngineMacBtn" 
-                class="w-full sm:w-auto btn-luxury-outline py-4 px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 cursor-pointer"
+                class="w-full sm:w-auto btn-luxury-outline py-3.5 sm:py-4 px-6 sm:px-8 text-xs font-cinzel tracking-widest uppercase flex items-center justify-center gap-3 cursor-pointer text-center"
               >
                 <i class="fa-brands fa-apple text-base"></i>
                 <span>macOS Apple Silicon</span>
               </button>
             </div>
 
-            <div class="text-[11px] font-mono text-zinc-500 pt-2 flex items-center justify-center lg:justify-start gap-4">
+            <div class="text-[10px] sm:text-[11px] font-mono text-zinc-500 pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2 sm:gap-4">
               <span>SHA-256 Verified Release</span>
               <span>•</span>
               <span>84 MB Installer</span>
@@ -757,7 +815,7 @@
 
           <!-- Right: Futuristic HUD Console Preview Mockup -->
           <div class="lg:col-span-5">
-            <div class="bg-[#05070c]/90 rounded-2xl p-6 border border-[#00f0ff]/40 shadow-2xl font-mono text-xs space-y-4">
+            <div class="bg-[#05070c]/90 rounded-2xl p-4 sm:p-6 border border-[#00f0ff]/40 shadow-2xl font-mono text-xs space-y-4 max-w-full overflow-hidden">
               
               <div class="flex items-center justify-between pb-3 border-b border-white/10 text-[10px]">
                 <div class="flex items-center gap-2">
@@ -869,12 +927,12 @@
       </div>
 
       <!-- Category Filter Pills with Counts -->
-      <div class="mb-10 flex items-center gap-2.5 overflow-x-auto pb-3 scrollbar-none" id="luxuryCategoryPills">
+      <div class="mb-8 sm:mb-10 flex items-center gap-2 sm:gap-2.5 overflow-x-auto pb-3 scrollbar-none max-w-full touch-pan-x" id="luxuryCategoryPills">
         <!-- Rendered dynamically by JavaScript -->
       </div>
 
       <!-- Products Grid -->
-      <div id="luxuryProductsGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+      <div id="luxuryProductsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
         <!-- Rendered dynamically by JavaScript -->
       </div>
 
@@ -1018,7 +1076,7 @@
                   >
                 </div>
 
-                <div class="grid grid-cols-2 gap-2.5">
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <div>
                     <label class="block text-[10px] font-cinzel uppercase text-zinc-400 mb-1">Telephone / Signal</label>
                     <input 

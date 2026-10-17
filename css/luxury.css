@@ -15,14 +15,21 @@
   --color-pearl: #e5e5e0;
 }
 
-/* Base Typographic Hierarchy - Futuristic Gaming & Sci-Fi Esports */
-body {
+/* Base Typographic Hierarchy & Strict Mobile Overflow Prevention */
+html, body {
   font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
   background-color: var(--color-obsidian);
   color: #ededed;
-  overflow-x: hidden;
-  selection-background-color: rgba(0, 255, 135, 0.3);
-  selection-color: #ffffff;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+  width: 100%;
+  position: relative;
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
 }
 
 ::selection {
@@ -382,21 +389,24 @@ textarea:focus-visible {
 
 /* Retro-Futuristic Synthwave / Cyber Grid Horizon */
 .cyber-grid-perspective {
-  position: absolute;
+  position: fixed;
   bottom: 0;
-  left: -50%;
-  width: 200%;
-  height: 60%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  max-width: 100vw;
+  height: 50vh;
   background-image: 
-    linear-gradient(to right, rgba(0, 255, 135, 0.12) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 240, 255, 0.12) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 255, 135, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 240, 255, 0.1) 1px, transparent 1px);
   background-size: 55px 55px;
-  transform: perspective(400px) rotateX(72deg);
+  transform: perspective(350px) rotateX(72deg);
   transform-origin: bottom center;
-  mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 80%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 80%);
+  mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 80%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0) 80%);
   pointer-events: none !important;
   z-index: 1;
+  overflow: hidden;
   animation: gridScroll 12s linear infinite;
 }
 
@@ -451,6 +461,7 @@ textarea:focus-visible {
 .carousel-3d-container {
   position: relative;
   width: 100%;
+  max-width: 100vw;
   height: 480px;
   perspective: 1200px;
   display: flex;
@@ -462,20 +473,40 @@ textarea:focus-visible {
 .carousel-3d-track {
   position: relative;
   width: 100%;
+  max-width: 100vw;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   transform-style: preserve-3d;
+  touch-action: pan-y;
 }
 
 .carousel-3d-slide {
   position: absolute;
-  width: min(88vw, 420px);
+  width: min(84vw, 420px);
+  max-width: calc(100vw - 32px);
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.65s ease, filter 0.65s ease;
   transform-style: preserve-3d;
   cursor: pointer;
   user-select: none;
+}
+
+@media (max-width: 640px) {
+  .carousel-3d-container {
+    height: 440px;
+    perspective: 800px;
+  }
+  .carousel-3d-slide {
+    width: min(84vw, 320px);
+  }
+}
+
+/* Touchscreens: disable 3D mouse tilt to keep native vertical scroll buttery smooth */
+@media (hover: none) and (pointer: coarse) {
+  .card-3d-tilt {
+    transform: none !important;
+  }
 }
 
 /* Vibrant Neon Glows & Palettes */
